@@ -1,0 +1,212 @@
+{
+  "name": "Samsung 980 PRO 1TB NVMe SSD",
+  "type": 2,
+  "description": "High-performance consumer NVMe SSD with 3D V-NAND technology",
+  "version": "1.0",
+  "manufacturer": "Samsung",
+  "model": "MZ-V8P1T0BW",
+  "category": "storage",
+  "storage_type": "NVMe",
+  "release_year": 2020,
+  "baseline_performance": {
+    "storage_type": "NVMe",
+    "capacity_gb": 1024,
+    "iops_read": 1000000,
+    "iops_write": 1000000,
+    "latency_read_us": 20.0,
+    "latency_write_us": 25.0,
+    "bandwidth_mbps": 7000.0,
+    "queue_depth": 128,
+    "block_size_bytes": 4096,
+    "controller_cache_mb": 1024,
+    "thermal_limit_c": 70.0,
+    "over_provisioning_gb": 102
+  },
+  "performance_factors": {
+    "load_sensitivity": 0.15,
+    "queue_sensitivity": 0.20,
+    "health_impact": 0.10,
+    "variance_factor": 0.05
+  },
+  "technology_specs": {
+    "storage_type": "NVMe",
+    "interface": "PCIe 4.0 x4",
+    "form_factor": "M.2 2280",
+    "nand_type": "3D V-NAND TLC",
+    "controller": "Samsung Elpis",
+    "thermal_limit_c": 70.0,
+    "endurance_tbw": 600,
+    "warranty_years": 5
+  },
+  "convergence_models": {
+    "controller_cache": {
+      "convergence_point": 0.85,
+      "base_variance": 0.03,
+      "min_operations": 5000,
+      "convergence_rate": 0.001
+    },
+    "sequential_optimization": {
+      "convergence_point": 0.75,
+      "base_variance": 0.05,
+      "min_operations": 3000,
+      "convergence_rate": 0.002
+    },
+    "wear_leveling": {
+      "convergence_point": 1.0,
+      "base_variance": 0.01,
+      "min_operations": 10000,
+      "convergence_rate": 0.0001
+    }
+  },
+  "feature_profiles": {
+    "minimal": {
+      "description": "Basic IOPS limits only - fastest simulation",
+      "accuracy_percentage": 50,
+      "performance_multiplier": 10.0,
+      "enabled_features": [
+        "iops_limits"
+      ]
+    },
+    "basic": {
+      "description": "Core storage features - good balance",
+      "accuracy_percentage": 85,
+      "performance_multiplier": 3.0,
+      "enabled_features": [
+        "iops_limits",
+        "sequential_optimization",
+        "queue_depth_management",
+        "basic_wear_leveling",
+        "filesystem_overhead",
+        "controller_cache",
+        "statistical_modeling",
+        "dynamic_behavior"
+      ]
+    },
+    "advanced": {
+      "description": "Most features enabled - high accuracy",
+      "accuracy_percentage": 95,
+      "performance_multiplier": 1.5,
+      "enabled_features": [
+        "iops_limits",
+        "sequential_optimization",
+        "queue_depth_management",
+        "basic_wear_leveling",
+        "filesystem_overhead",
+        "controller_cache",
+        "trim_garbage_collection",
+        "advanced_wear_leveling",
+        "thermal_throttling",
+        "compression_effects",
+        "statistical_modeling",
+        "convergence_tracking",
+        "dynamic_behavior"
+      ]
+    },
+    "maximum": {
+      "description": "All features enabled - maximum accuracy",
+      "accuracy_percentage": 99,
+      "performance_multiplier": 1.0,
+      "enabled_features": [
+        "iops_limits",
+        "sequential_optimization",
+        "queue_depth_management",
+        "basic_wear_leveling",
+        "filesystem_overhead",
+        "controller_cache",
+        "trim_garbage_collection",
+        "advanced_wear_leveling",
+        "thermal_throttling",
+        "error_correction",
+        "advanced_prefetching",
+        "compression_effects",
+        "encryption_overhead",
+        "multi_stream_io",
+        "statistical_modeling",
+        "convergence_tracking",
+        "dynamic_behavior",
+        "realtime_adaptation"
+      ]
+    }
+  },
+  "real_world_specifications": {
+    "interface": "PCIe 4.0 x4",
+    "form_factor": "M.2 2280",
+    "nand_type": "3D V-NAND TLC",
+    "controller": "Samsung Elpis",
+    "dram_cache": "1GB LPDDR4",
+    "sequential_read_mbps": 7000,
+    "sequential_write_mbps": 5100,
+    "random_read_4k_iops": 1000000,
+    "random_write_4k_iops": 1000000,
+    "endurance_tbw": 600,
+    "mtbf_hours": 2000000,
+    "power_consumption_active_w": 6.8,
+    "power_consumption_idle_mw": 45,
+    "operating_temp_range_c": "0 to 70"
+  },
+  "behavioral_characteristics": {
+    "write_amplification_factor": 1.1,
+    "over_provisioning_percentage": 10,
+    "garbage_collection_threshold": 0.8,
+    "wear_leveling_algorithm": "advanced_dynamic",
+    "error_correction": "LDPC",
+    "encryption_support": "AES-256",
+    "trim_support": true,
+    "smart_monitoring": true
+  },
+  "performance_curves": {
+    "sequential_read_by_queue_depth": {
+      "1": 3500,
+      "2": 5000,
+      "4": 6200,
+      "8": 6800,
+      "16": 7000,
+      "32": 7000,
+      "64": 7000,
+      "128": 7000
+    },
+    "sequential_write_by_queue_depth": {
+      "1": 2800,
+      "2": 3800,
+      "4": 4500,
+      "8": 4900,
+      "16": 5100,
+      "32": 5100,
+      "64": 5100,
+      "128": 5100
+    },
+    "random_read_iops_by_queue_depth": {
+      "1": 22000,
+      "2": 44000,
+      "4": 88000,
+      "8": 176000,
+      "16": 350000,
+      "32": 700000,
+      "64": 900000,
+      "128": 1000000
+    },
+    "random_write_iops_by_queue_depth": {
+      "1": 20000,
+      "2": 40000,
+      "4": 80000,
+      "8": 160000,
+      "16": 320000,
+      "32": 640000,
+      "64": 850000,
+      "128": 1000000
+    }
+  },
+  "thermal_characteristics": {
+    "idle_temperature_c": 25,
+    "active_temperature_c": 45,
+    "throttling_temperature_c": 70,
+    "critical_temperature_c": 85,
+    "thermal_resistance_c_per_w": 10.0
+  },
+  "validation_data": {
+    "source": "Samsung official specifications and independent benchmarks",
+    "benchmark_tools": ["CrystalDiskMark", "ATTO", "AS SSD", "Anvil's Storage Utilities"],
+    "validation_date": "2024-01-15",
+    "notes": "Performance figures based on Samsung official specs and verified through multiple independent benchmarks"
+  }
+}

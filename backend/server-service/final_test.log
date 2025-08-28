@@ -1,0 +1,159 @@
+2025/07/16 19:41:13 Starting API Gateway on port 8000
+2025/07/16 19:41:13 Connected to Redis at localhost:6379 with pool size 10
+2025/07/16 19:41:14 Warning: Failed to initialize gRPC clients: failed to create auth service pool: failed to create connection 0: failed to connect to localhost:9000: context deadline exceeded
+2025/07/16 19:41:14 Continuing without backend services (API calls will return errors)
+2025/07/16 19:41:14 Starting WebSocket hub...
+2025/07/16 19:41:14 HTTP/2 server optimized for maximum throughput
+2025/07/16 19:41:14 API Gateway initialized with HTTP/2 + TLS
+2025/07/16 19:41:14 Starting API Gateway on port 8000 with HTTP/2
+2025/07/16 19:41:14 Subscribed to Redis channels: [auth:events:* project:events:* simulation:events:* simulation:data:*]
+2025/07/16 19:41:14 API Gateway starting with HTTP/2 + TLS on 0.0.0.0:8000
+2025/07/16 19:41:18 Started GET /health
+2025/07/16 19:41:18 Completed GET /health with status 0 in 1.043091ms
+2025/07/16 19:41:18 Started GET /metrics
+2025/07/16 19:41:18 Completed GET /metrics with status 200 in 58.727µs
+2025/07/16 19:41:18 Started POST /api/auth/validate
+[ERROR] 2025/07/16 19:41:18 handler.go:136: Error: authentication_error | Code: missing_token | Message: Authorization header with Bearer token required | Path: /api/auth/validate | Method: POST | RequestID:  | Caller: /home/satid/Desktop/system/backend/server-service/internal/gateway/gateway.go:292
+2025/07/16 19:41:18 Completed POST /api/auth/validate with status 401 in 466.15µs
+2025/07/16 19:41:18 Started POST /api/auth/validate
+2025/07/16 19:41:18 Completed POST /api/auth/validate with status 200 in 76.47µs
+2025/07/16 19:41:18 Started GET /api/auth/profile
+2025/07/16 19:41:18 Completed GET /api/auth/profile with status 200 in 102.376µs
+2025/07/16 19:41:18 Started GET /api/auth/permissions
+2025/07/16 19:41:18 Completed GET /api/auth/permissions with status 200 in 99.044µs
+2025/07/16 19:41:18 Started GET /api/auth/health
+2025/07/16 19:41:18 Completed GET /api/auth/health with status 200 in 72.18µs
+2025/07/16 19:41:18 Started GET /api/projects
+2025/07/16 19:41:18 Completed GET /api/projects with status 401 in 809.974µs
+2025/07/16 19:41:18 Started GET /api/projects
+2025/07/16 19:41:18 Completed GET /api/projects with status 200 in 133.53µs
+2025/07/16 19:41:18 Started POST /api/projects
+2025/07/16 19:41:18 Completed POST /api/projects with status 201 in 86.258µs
+2025/07/16 19:41:18 Started GET /api/simulations
+2025/07/16 19:41:18 Completed GET /api/simulations with status 401 in 90.798µs
+2025/07/16 19:41:18 Started GET /api/simulations
+2025/07/16 19:41:18 Completed GET /api/simulations with status 200 in 126.742µs
+2025/07/16 19:41:18 Started POST /api/simulations
+2025/07/16 19:41:18 Completed POST /api/simulations with status 201 in 109.415µs
+2025/07/16 19:41:18 Started GET /ws
+2025/07/16 19:41:18 Completed GET /ws with status 200 in 35.736µs
+2025/07/16 19:41:18 Started GET /nonexistent
+2025/07/16 19:41:18 Completed GET /nonexistent with status 404 in 37.194µs
+2025/07/16 19:41:18 Started POST /api/invalid
+2025/07/16 19:41:18 Completed POST /api/invalid with status 404 in 151.149µs
+2025/07/16 19:41:18 Started OPTIONS /health
+2025/07/16 19:41:18 Completed OPTIONS /health with status 200 in 8.205µs
+2025/07/16 19:41:18 Started GET /health
+2025/07/16 19:41:18 Completed GET /health with status 0 in 227.869µs
+2025/07/16 19:41:18 Started GET /health
+2025/07/16 19:41:18 Completed GET /health with status 0 in 156.23µs
+2025/07/16 19:41:18 Started GET /health
+2025/07/16 19:41:18 Completed GET /health with status 0 in 66.89µs
+2025/07/16 19:41:18 Started GET /health
+2025/07/16 19:41:18 Completed GET /health with status 0 in 157.73µs
+2025/07/16 19:41:19 Started GET /health
+2025/07/16 19:41:19 Completed GET /health with status 0 in 129.156µs
+2025/07/16 19:41:19 Started GET /health
+2025/07/16 19:41:19 Completed GET /health with status 0 in 57.227µs
+2025/07/16 19:41:19 Started GET /health
+2025/07/16 19:41:19 Started GET /health
+2025/07/16 19:41:19 Started GET /health
+2025/07/16 19:41:19 Completed GET /health with status 0 in 1.724307ms
+2025/07/16 19:41:19 Completed GET /health with status 0 in 475.934µs
+2025/07/16 19:41:19 Completed GET /health with status 0 in 1.556541ms
+2025/07/16 19:41:19 Started GET /health
+2025/07/16 19:41:19 Started GET /health
+2025/07/16 19:41:19 Completed GET /health with status 0 in 69.847µs
+2025/07/16 19:41:19 Completed GET /health with status 0 in 59.976µs
+2025/07/16 19:41:19 Started GET /health
+2025/07/16 19:41:19 Completed GET /health with status 0 in 44.774µs
+2025/07/16 19:41:19 Started GET /health
+2025/07/16 19:41:19 Completed GET /health with status 0 in 40.192µs
+2025/07/16 19:41:19 Started GET /health
+2025/07/16 19:41:19 Completed GET /health with status 0 in 48.689µs
+2025/07/16 19:41:19 Started GET /health
+2025/07/16 19:41:19 Completed GET /health with status 0 in 70.013µs
+2025/07/16 19:41:19 Started GET /health
+2025/07/16 19:41:19 Completed GET /health with status 0 in 32.695µs
+2025/07/16 19:41:19 Started GET /health
+2025/07/16 19:41:19 Completed GET /health with status 0 in 26.531µs
+2025/07/16 19:41:19 Started GET /health
+2025/07/16 19:41:19 Completed GET /health with status 0 in 38.735µs
+2025/07/16 19:41:19 Started GET /health
+2025/07/16 19:41:19 Completed GET /health with status 0 in 66.432µs
+2025/07/16 19:41:19 Started GET /health
+2025/07/16 19:41:19 Completed GET /health with status 0 in 51.146µs
+2025/07/16 19:41:19 Started GET /health
+2025/07/16 19:41:19 Completed GET /health with status 0 in 49.356µs
+2025/07/16 19:41:19 Started GET /health
+2025/07/16 19:41:19 Completed GET /health with status 0 in 115.078µs
+2025/07/16 19:41:19 Started GET /health
+2025/07/16 19:41:19 Completed GET /health with status 0 in 61.641µs
+2025/07/16 19:41:19 Started GET /health
+2025/07/16 19:41:19 Started GET /health
+2025/07/16 19:41:19 Completed GET /health with status 0 in 56.935µs
+2025/07/16 19:41:19 Completed GET /health with status 0 in 103.125µs
+2025/07/16 19:41:19 Started GET /health
+2025/07/16 19:41:19 Started GET /health
+2025/07/16 19:41:19 Completed GET /health with status 0 in 57.185µs
+2025/07/16 19:41:19 Completed GET /health with status 0 in 98.46µs
+2025/07/16 19:41:19 Started GET /health
+2025/07/16 19:41:19 Completed GET /health with status 0 in 29.072µs
+2025/07/16 19:41:19 Started GET /health
+2025/07/16 19:41:19 Completed GET /health with status 0 in 78.718µs
+2025/07/16 19:41:19 Started GET /health
+2025/07/16 19:41:19 Completed GET /health with status 0 in 977.44µs
+2025/07/16 19:41:19 Started GET /health
+2025/07/16 19:41:19 Completed GET /health with status 0 in 40.483µs
+2025/07/16 19:41:19 Started GET /health
+2025/07/16 19:41:19 Completed GET /health with status 0 in 50.98µs
+2025/07/16 19:41:19 Started GET /health
+2025/07/16 19:41:19 Started GET /health
+2025/07/16 19:41:19 Started GET /health
+2025/07/16 19:41:19 Completed GET /health with status 0 in 46.106µs
+2025/07/16 19:41:19 Completed GET /health with status 0 in 50.479µs
+2025/07/16 19:41:19 Completed GET /health with status 0 in 38.985µs
+2025/07/16 19:41:19 Started GET /health
+2025/07/16 19:41:19 Started GET /health
+2025/07/16 19:41:19 Completed GET /health with status 0 in 32.07µs
+2025/07/16 19:41:19 Started GET /health
+2025/07/16 19:41:19 Completed GET /health with status 0 in 24.532µs
+2025/07/16 19:41:19 Completed GET /health with status 0 in 169.14µs
+2025/07/16 19:41:19 Started GET /health
+2025/07/16 19:41:19 Started GET /health
+2025/07/16 19:41:19 Completed GET /health with status 0 in 74.262µs
+2025/07/16 19:41:19 Completed GET /health with status 0 in 80.884µs
+2025/07/16 19:41:19 Started GET /health
+2025/07/16 19:41:19 Started GET /health
+2025/07/16 19:41:19 Completed GET /health with status 0 in 72.012µs
+2025/07/16 19:41:19 Started GET /health
+2025/07/16 19:41:19 Completed GET /health with status 0 in 502.339µs
+2025/07/16 19:41:19 Started GET /health
+2025/07/16 19:41:19 Started GET /health
+2025/07/16 19:41:19 Started GET /health
+2025/07/16 19:41:19 Completed GET /health with status 0 in 54.437µs
+2025/07/16 19:41:19 Completed GET /health with status 0 in 121.659µs
+2025/07/16 19:41:19 Completed GET /health with status 0 in 128.989µs
+2025/07/16 19:41:19 Started GET /health
+2025/07/16 19:41:19 Started GET /health
+2025/07/16 19:41:19 Completed GET /health with status 0 in 50.98µs
+2025/07/16 19:41:19 Started GET /health
+2025/07/16 19:41:19 Completed GET /health with status 0 in 94.712µs
+2025/07/16 19:41:19 Started GET /health
+2025/07/16 19:41:19 Started GET /health
+2025/07/16 19:41:19 Completed GET /health with status 0 in 4.302937ms
+2025/07/16 19:41:19 Completed GET /health with status 0 in 180.803µs
+2025/07/16 19:41:19 Completed GET /health with status 0 in 1.694152ms
+2025/07/16 19:41:19 Completed GET /health with status 0 in 627.29µs
+2025/07/16 19:50:27 Shutting down API Gateway...
+2025/07/16 19:50:27 Shutting down API Gateway...
+2025/07/16 19:50:27 Closing WebSocket hub...
+2025/07/16 19:50:27 WebSocket hub closed. Total connections served: 0
+2025/07/16 19:50:27 Closing Redis client...
+2025/07/16 19:50:27 Redis client closed
+2025/07/16 19:50:27 WebSocket hub shutting down...
+2025/07/16 19:50:27 Redis message processing stopped
+2025/07/16 19:50:27 API Gateway stopped
+2025/07/16 19:50:27 API Gateway stopped
+2025/07/16 19:50:27 Closing Redis client...
+2025/07/16 19:50:27 Error closing pubsub: redis: client is closed

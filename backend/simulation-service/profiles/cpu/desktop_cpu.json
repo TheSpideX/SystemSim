@@ -1,0 +1,164 @@
+{
+  "name": "Desktop CPU",
+  "type": 0,
+  "description": "Intel Core i7-12700K - 12 cores, 3.6GHz base, 5.0GHz boost, High-end desktop CPU with AVX2 SIMD support",
+  "version": "2.1",
+  "baseline_performance": {
+    "base_processing_time": 0.05,
+    "cores": 12,
+    "base_clock": 3.6,
+    "boost_clock": 5.0
+  },
+  "technology_specs": {
+    "cache_l1_kb": 32,
+    "cache_l2_kb": 1280,
+    "cache_l3_mb": 25,
+    "memory_channels": 2,
+    "tdp": 125,
+    "thermal_limit": 100,
+    "manufacturing_process": "10nm",
+    "socket": "LGA1700",
+    "max_memory": 128
+  },
+  "load_curves": {
+    "default": {
+      "optimal_threshold": 0.85,
+      "warning_threshold": 0.92,
+      "critical_threshold": 0.97,
+      "optimal_factor": 1.0,
+      "warning_factor": 1.1,
+      "critical_factor": 1.8
+    }
+  },
+  "engine_specific": {
+    "vectorization": {
+      "supported_instructions": ["SSE4.2", "AVX2"],
+      "vector_width": 256,
+      "simd_efficiency": 0.85,
+      "operation_vectorizability": {
+        "matrix_multiply": 0.88,
+        "image_process": 0.83,
+        "ml_inference": 0.78,
+        "array_sum": 0.92,
+        "vector_add": 0.92,
+        "fft": 0.83,
+        "crypto_hash": 0.70,
+        "string_process": 0.22,
+        "database_query": 0.15,
+        "network_process": 0.12,
+        "gaming": 0.25
+      }
+    },
+    "cache_behavior": {
+      "l1_hit_ratio_target": 0.93,
+      "l2_hit_ratio_target": 0.83,
+      "l3_hit_ratio_target": 0.70,
+      "cache_line_size": 64,
+      "l1_hit_multiplier": 1.0,
+      "l2_hit_multiplier": 1.3,
+      "l3_hit_multiplier": 2.1,
+      "memory_access_multiplier": 8.5,
+      "warmup_operations": 100,
+      "prefetch_efficiency": 0.85
+    },
+    "thermal_behavior": {
+      "heat_generation_rate": 1.4,
+      "cooling_capacity": 150,
+      "cooling_efficiency": 0.85,
+      "ambient_temp": 25,
+      "thermal_throttle_temp": 100,
+      "thermal_mass": 20
+    },
+    "numa_behavior": {
+      "cross_socket_penalty": 1.0,
+      "memory_bandwidth": 51200,
+      "numa_nodes": 1,
+      "local_memory_ratio": 1.0
+    },
+    "boost_behavior": {
+      "single_core_boost": 5.0,
+      "all_core_boost": 4.2,
+      "boost_duration": 20.0,
+      "thermal_dependent": true,
+      "load_dependent": true
+    },
+    "hyperthreading": {
+      "enabled": true,
+      "threads_per_core": 2,
+      "efficiency_factor": 0.68
+    },
+    "parallel_processing": {
+      "enabled": true,
+      "max_parallelizable_ratio": 0.82,
+      "overhead_per_core": 0.028,
+      "synchronization_overhead": 0.15,
+      "parallelizability_by_complexity": {
+        "O(1)": 0.25,
+        "O(log n)": 0.55,
+        "O(n)": 0.72,
+        "O(n log n)": 0.78,
+        "O(n²)": 0.85
+      },
+      "max_cores_for_complexity": {
+        "O(1)": 1,
+        "O(log n)": 3,
+        "O(n)": 8,
+        "O(n log n)": 10,
+        "O(n²)": 12
+      },
+      "efficiency_curve": {
+        "1": 1.0,
+        "2": 0.92,
+        "4": 0.85,
+        "6": 0.80,
+        "8": 0.76,
+        "10": 0.72,
+        "12": 0.68
+      }
+    },
+    "memory_bandwidth": {
+      "total_bandwidth_gbps": 51.2,
+      "per_core_degradation": 0.045,
+      "contention_threshold": 4,
+      "severe_contention_probability": 0.18,
+      "severe_contention_penalty": 0.20
+    },
+    "branch_prediction": {
+      "base_accuracy": 0.93,
+      "random_pattern_accuracy": 0.82,
+      "loop_pattern_accuracy": 0.96,
+      "call_return_accuracy": 0.97,
+      "misprediction_penalty": 0.18,
+      "pipeline_depth": 10
+    },
+    "advanced_prefetch": {
+      "hardware_prefetchers": 2,
+      "sequential_accuracy": 0.85,
+      "stride_accuracy": 0.80,
+      "pattern_accuracy": 0.72,
+      "prefetch_distance": 4,
+      "bandwidth_usage": 0.10
+    },
+    "language_multipliers": {
+      "c": 1.2,
+      "cpp": 1.2,
+      "rust": 1.1,
+      "go": 0.95,
+      "java": 1.0,
+      "csharp": 0.98,
+      "nodejs": 0.75,
+      "python": 0.28,
+      "ruby": 0.22,
+      "php": 0.38
+    },
+    "complexity_factors": {
+      "O(1)": 1.0,
+      "O(log n)": 1.5,
+      "O(n)": 2.0,
+      "O(n log n)": 3.0,
+      "O(n²)": 5.0,
+      "O(n³)": 8.0,
+      "O(2^n)": 15.0
+    }
+  }
+}

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WebSocket Test Client</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .section { margin: 20px 0; padding: 15px; border: 1px solid #ddd; }
+        button { margin: 5px; padding: 10px; }
+        #messages { height: 300px; overflow-y: scroll; border: 1px solid #ccc; padding: 10px; }
+        .message { margin: 5px 0; padding: 5px; background: #f5f5f5; }
+        .error { color: red; }
+        .success { color: green; }
+        .info { color: blue; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>WebSocket Test Client</h1>
+        
+        <div class="section">
+            <h3>Connection</h3>
+            <input type="text" id="wsUrl" value="ws://localhost:8000/ws" placeholder="WebSocket URL" style="width: 300px;">
+            <button onclick="connect()">Connect</button>
+            <button onclick="disconnect()">Disconnect</button>
+            <span id="status">Disconnected</span>
+        </div>
+
+        <div class="section">
+            <h3>Specific Endpoints</h3>
+            <button onclick="connectToNotifications()">Connect to Notifications</button>
+            <button onclick="connectToSimulation()">Connect to Simulation (demo)</button>
+            <button onclick="connectToCollaboration()">Connect to Collaboration (demo)</button>
+        </div>
+
+        <div class="section">
+            <h3>Send Message</h3>
+            <select id="messageType">
+                <option value="subscribe">Subscribe</option>
+                <option value="unsubscribe">Unsubscribe</option>
+                <option value="ping">Ping</option>
+            </select>
+            <input type="text" id="channel" placeholder="Channel (e.g., simulation:data:123)" style="width: 200px;">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+
+        <div class="section">
+            <h3>Messages</h3>
+            <button onclick="clearMessages()">Clear</button>
+            <div id="messages"></div>
+        </div>
+    </div>
+
+    <script>
+        let ws = null;
+        let messageCount = 0;
+
+        function addMessage(message, type = 'info') {
+            const messagesDiv = document.getElementById('messages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${type}`;
+            messageDiv.innerHTML = `<strong>[${new Date().toLocaleTimeString()}]</strong> ${message}`;
+            messagesDiv.appendChild(messageDiv);
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+            messageCount++;
+        }
+
+        function updateStatus(status, type = 'info') {
+            const statusSpan = document.getElementById('status');
+            statusSpan.textContent = status;
+            statusSpan.className = type;
+        }
+
+        function connect() {
+            const url = document.getElementById('wsUrl').value;
+            
+            if (ws) {
+                ws.close();
+            }
+
+            try {
+                ws = new WebSocket(url);
+                
+                ws.onopen = function(event) {
+                    updateStatus('Connected', 'success');
+                    addMessage('Connected to ' + url, 'success');
+                };
+
+                ws.onmessage = function(event) {
+                    try {
+                        const data = JSON.parse(event.data);
+                        addMessage('Received: ' + JSON.stringify(data, null, 2), 'info');
+                    } catch (e) {
+                        addMessage('Received (raw): ' + event.data, 'info');
+                    }
+                };
+
+                ws.onclose = function(event) {
+                    updateStatus('Disconnected', 'error');
+                    addMessage('Connection closed: ' + event.code + ' ' + event.reason, 'error');
+                };
+
+                ws.onerror = function(error) {
+                    updateStatus('Error', 'error');
+                    addMessage('WebSocket error: ' + error, 'error');
+                };
+
+            } catch (error) {
+                addMessage('Connection failed: ' + error, 'error');
+                updateStatus('Failed', 'error');
+            }
+        }
+
+        function disconnect() {
+            if (ws) {
+                ws.close();
+                ws = null;
+            }
+        }
+
+        function connectToNotifications() {
+            document.getElementById('wsUrl').value = 'ws://localhost:8000/ws/notifications?token=demo_token';
+            connect();
+        }
+
+        function connectToSimulation() {
+            document.getElementById('wsUrl').value = 'ws://localhost:8000/ws/simulation/demo?token=demo_token';
+            connect();
+        }
+
+        function connectToCollaboration() {
+            document.getElementById('wsUrl').value = 'ws://localhost:8000/ws/collaboration/demo?token=demo_token';
+            connect();
+        }
+
+        function sendMessage() {
+            if (!ws || ws.readyState !== WebSocket.OPEN) {
+                addMessage('Not connected', 'error');
+                return;
+            }
+
+            const messageType = document.getElementById('messageType').value;
+            const channel = document.getElementById('channel').value;
+
+            const message = {
+                type: messageType,
+                channel: channel,
+                timestamp: Date.now()
+            };
+
+            ws.send(JSON.stringify(message));
+            addMessage('Sent: ' + JSON.stringify(message), 'success');
+        }
+
+        function clearMessages() {
+            document.getElementById('messages').innerHTML = '';
+            messageCount = 0;
+        }
+
+        // Auto-connect on page load for testing
+        window.onload = function() {
+            // Uncomment to auto-connect
+            // connect();
+        };
+    </script>
+</body>
+</html>

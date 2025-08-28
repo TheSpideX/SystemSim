@@ -1,0 +1,136 @@
+{
+  "id": "database_server_default",
+  "type": "database_server",
+  "name": "Database Server",
+  "description": "High-performance database server with ACID properties and complex query processing",
+  
+  "required_engines": ["CPU", "Memory", "Storage", "Network"],
+  
+  "engine_profiles": {
+    "CPU": "server_cpu_profile",
+    "Memory": "database_memory_profile", 
+    "Storage": "ssd_storage_profile",
+    "Network": "gigabit_ethernet"
+  },
+  
+  "complexity_levels": {
+    "CPU": 2,
+    "Memory": 2,
+    "Storage": 2,
+    "Network": 1
+  },
+  
+  "decision_graph": {
+    "start_node": "network_input",
+    "end_nodes": ["network_output", "error_handler"],
+    
+    "nodes": {
+      "network_input": {
+        "id": "network_input",
+        "type": "processing",
+        "engine": "Network",
+        "operation": "receive_query",
+        "conditions": {
+          "default": "query_parser"
+        }
+      },
+      
+      "query_parser": {
+        "id": "query_parser", 
+        "type": "processing",
+        "engine": "CPU",
+        "operation": "parse_sql",
+        "conditions": {
+          "default": "cache_check"
+        }
+      },
+      
+      "cache_check": {
+        "id": "cache_check",
+        "type": "processing", 
+        "engine": "Memory",
+        "operation": "cache_lookup",
+        "conditions": {
+          "cache_hit": "result_formatter",
+          "cache_miss": "storage_read",
+          "default": "storage_read"
+        }
+      },
+      
+      "storage_read": {
+        "id": "storage_read",
+        "type": "processing",
+        "engine": "Storage", 
+        "operation": "read_data",
+        "conditions": {
+          "default": "query_execution"
+        }
+      },
+      
+      "query_execution": {
+        "id": "query_execution",
+        "type": "processing",
+        "engine": "CPU",
+        "operation": "execute_query",
+        "conditions": {
+          "default": "cache_update"
+        }
+      },
+      
+      "cache_update": {
+        "id": "cache_update",
+        "type": "processing",
+        "engine": "Memory",
+        "operation": "cache_store",
+        "conditions": {
+          "default": "result_formatter"
+        }
+      },
+      
+      "result_formatter": {
+        "id": "result_formatter",
+        "type": "processing",
+        "engine": "CPU", 
+        "operation": "format_result",
+        "conditions": {
+          "default": "network_output"
+        }
+      },
+      
+      "network_output": {
+        "id": "network_output",
+        "type": "terminal",
+        "engine": "Network",
+        "operation": "send_response",
+        "conditions": {}
+      },
+      
+      "error_handler": {
+        "id": "error_handler",
+        "type": "terminal",
+        "engine": "Network",
+        "operation": "send_error",
+        "conditions": {}
+      }
+    }
+  },
+  
+  "health_thresholds": {
+    "cpu_warning": 0.7,
+    "cpu_critical": 0.9,
+    "memory_warning": 0.8,
+    "memory_critical": 0.95,
+    "latency_warning": "100ms",
+    "latency_critical": "500ms",
+    "error_rate_warning": 0.01,
+    "error_rate_critical": 0.05
+  },
+  
+  "resource_limits": {
+    "max_cpu_cores": 8,
+    "max_memory_mb": 16384,
+    "max_storage_iops": 10000,
+    "max_network_mbps": 1000,
+    "max_operations_per_second": 1000
+  }
+}

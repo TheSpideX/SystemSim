@@ -1,0 +1,38 @@
+2025/07/16 21:05:34 Starting API Gateway on port 8000
+2025/07/16 21:05:34 Connected to Redis at localhost:6379 with pool size 10
+2025/07/16 21:05:34 Created dynamic gRPC pool for auth-service: 5 initial connections (min: 5, max: 20)
+2025/07/16 21:05:35 Warning: Failed to initialize gRPC clients: failed to create project service pool: failed to create initial connection 0: failed to connect to localhost:10000: context deadline exceeded
+2025/07/16 21:05:35 Continuing without backend services (API calls will return errors)
+2025/07/16 21:05:35 HTTP/2 server optimized for maximum throughput
+2025/07/16 21:05:35 API Gateway initialized with HTTP/2 + TLS
+2025/07/16 21:05:35 Starting WebSocket hub...
+2025/07/16 21:05:35 Starting API Gateway on port 8000 with HTTP/2
+2025/07/16 21:05:35 Subscribed to Redis channels: [auth:events:* project:events:* simulation:events:* simulation:data:*]
+2025/07/16 21:05:35 API Gateway starting with HTTP/2 + TLS on 0.0.0.0:8000
+2025/07/16 21:07:37 Started GET /health
+2025/07/16 21:07:37 Completed GET /health with status 0 in 829.178µs
+2025/07/16 21:07:37 Started POST /api/auth/login
+2025/07/16 21:07:37 Making HTTP/2 request to auth service: POST https://localhost:9001/api/v1/auth/login
+2025/07/16 21:07:37 Auth service response: 401 401 Unauthorized
+2025/07/16 21:07:37 Completed POST /api/auth/login with status 401 in 9.854307ms
+2025/07/16 21:07:46 Started POST /api/auth/login
+2025/07/16 21:07:46 Making HTTP/2 request to auth service: POST https://localhost:9001/api/v1/auth/login
+2025/07/16 21:07:46 Auth service response: 401 401 Unauthorized
+2025/07/16 21:07:46 Completed POST /api/auth/login with status 401 in 4.028962ms
+2025/07/16 21:07:54 Started POST /api/auth/register
+2025/07/16 21:07:54 Making HTTP/2 request to auth service: POST https://localhost:9001/api/v1/auth/register
+2025/07/16 21:07:54 Auth service response: 201 201 Created
+2025/07/16 21:07:54 Completed POST /api/auth/register with status 201 in 268.417579ms
+2025/07/16 21:08:07 Started POST /api/auth/validate
+2025/07/16 21:08:07 No gRPC pool available, using mock implementation
+2025/07/16 21:08:07 Completed POST /api/auth/validate with status 200 in 333.093µs
+2025/07/16 21:27:06 Shutting down API Gateway...
+2025/07/16 21:27:06 Shutting down API Gateway...
+2025/07/16 21:27:06 Closing WebSocket hub...
+2025/07/16 21:27:06 WebSocket hub closed. Total connections served: 0
+2025/07/16 21:27:06 Closing Redis client...
+2025/07/16 21:27:06 Redis client closed
+2025/07/16 21:27:06 API Gateway stopped
+2025/07/16 21:27:06 API Gateway stopped
+2025/07/16 21:27:06 Closing Redis client...
+2025/07/16 21:27:06 Error closing pubsub: redis: client is closed

@@ -1,0 +1,208 @@
+{
+  "name": "ddr4_3200_dual_channel",
+  "description": "DDR4-3200 Dual Channel Memory Configuration",
+  "type": 1,
+  "version": "1.0",
+  "created_by": "Augment Agent",
+  "created_at": "2025-01-22T00:00:00Z",
+  
+  "baseline_performance": {
+    "capacity_gb": 32,
+    "frequency_mhz": 3200,
+    "cas_latency": 16,
+    "channels": 2,
+    "bandwidth_gbps": 51.2,
+    "access_time": 10.0,
+    "frequency_normalization_baseline": 3200.0
+  },
+
+  "technology_specs": {
+    "memory_type": "DDR4",
+    "queue_processing": {
+      "max_ops_per_tick": 3,
+      "base_complexity_factor": 1.15,
+      "avg_operation_duration_ms": 0.8
+    }
+  },
+  
+  "engine_specific": {
+    "ddr_timings": {
+      "trcd": 16,
+      "trp": 16,
+      "tras": 36,
+      "trefi": 7800,
+      "bank_groups": 4,
+      "banks_per_group": 4,
+      "burst_size_bytes": 64.0,
+      "additional_burst_latency_ns": 2.5
+    },
+    
+    "numa_configuration": {
+      "socket_count": 2,
+      "cross_socket_penalty": 1.4,
+      "inter_socket_latency_ns": 60.0,
+      "local_access_ratio": 0.85
+    },
+    
+    "bandwidth_characteristics": {
+      "peak_bandwidth_gbps": 51.2,
+      "sustained_bandwidth_gbps": 45.0,
+      "saturation_threshold": 0.8,
+      "degradation_curve": "exponential"
+    },
+    
+    "access_patterns": {
+      "sequential_hit_rate": 0.85,
+      "random_hit_rate": 0.15,
+      "stride_hit_rate": 0.45,
+      "row_buffer_size_kb": 8
+    },
+
+    "hardware_prefetch": {
+      "prefetcher_count": 2,
+      "sequential_accuracy": 0.85,
+      "stride_accuracy": 0.70,
+      "pattern_accuracy": 0.45,
+      "prefetch_distance": 4,
+      "bandwidth_usage": 0.05,
+      "prefetch_benefit": 0.25
+    },
+
+    "cache_line_conflicts": {
+      "cache_line_size": 64,
+      "false_sharing_detection": true,
+      "conflict_threshold": 0.3,
+      "conflict_penalty": 0.4,
+      "conflict_window_ticks": 10
+    },
+
+    "memory_ordering": {
+      "ordering_model": "tso",
+      "reordering_window": 8,
+      "memory_barrier_cost": 20.0,
+      "load_store_reordering": false,
+      "store_store_reordering": true,
+      "load_load_reordering": true,
+      "reordering_benefit": 0.1,
+      "base_reordering_delay": 2
+    },
+
+    "memory_controller": {
+      "controller_count": 2,
+      "queue_depth": 16,
+      "arbitration_policy": "round_robin",
+      "bandwidth_per_controller": 25.6,
+      "controller_latency": 15.0,
+      "backpressure_delay": 50.0,
+      "base_queue_delay": 10.0
+    },
+
+    "advanced_numa": {
+      "node_affinity_policy": "preferred",
+      "migration_threshold": 0.7,
+      "base_inter_node_latency": 100.0,
+      "base_bandwidth_gbps": 100.0,
+      "migration_benefit": 50.0,
+      "migration_base_cost": 100.0,
+      "strict_affinity_penalty": 50.0,
+      "preferred_affinity_penalty": 20.0
+    },
+
+    "virtual_memory": {
+      "page_size": 4096,
+      "tlb_size": 64,
+      "tlb_hit_ratio": 0.95,
+      "page_table_levels": 4,
+      "page_walk_latency": 25.0,
+      "swap_enabled": true,
+      "swap_latency": 10000000.0,
+      "tlb_hit_latency": 1.0,
+      "page_fault_probability": 0.01
+    },
+
+    "ecc_modeling": {
+      "ecc_enabled": true,
+      "single_bit_error_rate": 0.1,
+      "multi_bit_error_rate": 0.001,
+      "correction_latency": 50.0,
+      "detection_latency": 5.0,
+      "multi_bit_penalty": 1000.0
+    },
+
+    "power_states": {
+      "state_transition_cost": 100.0,
+      "active_power_draw": 15.0,
+      "standby_power_draw": 8.0,
+      "sleep_power_draw": 2.0,
+      "wakeup_latency": 500.0,
+      "idle_threshold": 1000.0
+    },
+
+    "enhanced_thermal": {
+      "heat_dissipation_rate": 0.95,
+      "thermal_capacity": 50.0,
+      "ambient_temperature": 22.0,
+      "base_heat_per_operation": 0.1,
+      "thermal_zones": [
+        {
+          "max_temperature": 85.0,
+          "heat_generation": 5.0,
+          "cooling_capacity": 20.0,
+          "thermal_mass": 25.0
+        },
+        {
+          "max_temperature": 85.0,
+          "heat_generation": 5.0,
+          "cooling_capacity": 20.0,
+          "thermal_mass": 25.0
+        }
+      ],
+      "throttling_thresholds": [75.0, 80.0, 85.0],
+      "throttling_levels": [0.1, 0.3, 0.6]
+    },
+    
+    "realistic_factors": {
+      "refresh_overhead": 0.02,
+      "bank_conflict_probability": 0.1,
+      "bank_conflict_multiplier": 0.6,
+      "queue_depth_impact": {
+        "light_load": 1.0,
+        "medium_load": 1.2,
+        "heavy_load": 1.8
+      }
+    }
+  },
+  
+  "performance_variance": {
+    "base_variance": 0.05,
+    "load_multiplier": 1.2,
+    "scale_reduction": 0.8
+  },
+  
+  "health_thresholds": {
+    "utilization_warning": 0.8,
+    "utilization_critical": 0.95,
+    "temperature_warning": 85.0,
+    "temperature_critical": 95.0,
+    "error_rate_warning": 0.001,
+    "error_rate_critical": 0.01
+  },
+  
+  "convergence_models": {
+    "row_buffer_hits": {
+      "convergence_point": 0.65,
+      "base_variance": 0.05,
+      "min_operations": 500
+    },
+    "bandwidth_utilization": {
+      "convergence_point": 0.75,
+      "base_variance": 0.08,
+      "min_operations": 1000
+    },
+    "numa_locality": {
+      "convergence_point": 0.95,
+      "base_variance": 0.02,
+      "min_operations": 800
+    }
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "name": "WiFi 6 (802.11ax)",
+  "description": "Modern WiFi 6 wireless network with OFDMA and improved efficiency",
+  "type": 4,
+  "baseline_performance": {
+    "bandwidth_mbps": 600,
+    "base_latency_ms": 2.0,
+    "max_connections": 256,
+    "protocol": "TCP",
+    "network_type": "Wireless",
+    "geographic_distance_km": 0.05,
+    "packet_loss_rate": 0.005,
+    "jitter_ms": 1.0
+  },
+  "engine_specific": {
+    "bandwidth_characteristics": {
+      "theoretical_max_mbps": 1200,
+      "practical_max_mbps": 600,
+      "burst_capacity_mb": 20,
+      "congestion_threshold": 0.6,
+      "severe_congestion_threshold": 0.85
+    },
+    "latency_characteristics": {
+      "base_latency_ms": 2.0,
+      "switch_latency_ms": 0.1,
+      "propagation_delay_per_km": 0.003,
+      "processing_delay_ms": 0.5,
+      "queuing_delay_max_ms": 20.0
+    },
+    "connection_management": {
+      "tcp_handshake_rtt_multiplier": 1.8,
+      "connection_pool_size": 50,
+      "connection_timeout_ms": 45000,
+      "keep_alive_interval_ms": 3600000,
+      "connection_reuse_probability": 0.75
+    },
+    "protocol_overhead": {
+      "tcp_header_bytes": 20,
+      "ip_header_bytes": 20,
+      "wifi_header_bytes": 36,
+      "efficiency_factor": 0.75,
+      "mtu_bytes": 1500
+    },
+    "quality_characteristics": {
+      "packet_loss_base_rate": 0.005,
+      "bit_error_rate": 1e-6,
+      "jitter_variance_ms": 1.0,
+      "reliability_factor": 0.98
+    },
+    "geographic_modeling": {
+      "speed_of_light_mps": 299792458,
+      "fiber_optic_factor": 1.0,
+      "routing_overhead_factor": 1.2,
+      "typical_distance_km": 0.05
+    },
+    "congestion_behavior": {
+      "congestion_window_initial": 4,
+      "congestion_window_max": 16384,
+      "slow_start_threshold": 8192,
+      "congestion_avoidance_increment": 1,
+      "fast_recovery_enabled": true
+    },
+    "security_overhead": {
+      "tls_handshake_ms": 5.0,
+      "encryption_cpu_overhead": 0.1,
+      "certificate_validation_ms": 2.0,
+      "session_reuse_probability": 0.85
+    },
+    "compression_settings": {
+      "compression_ratio": 0.8,
+      "compression_cpu_overhead": 0.04,
+      "min_size_for_compression": 1024,
+      "compression_algorithm": "lz4"
+    },
+    "qos_configuration": {
+      "priority_levels": 4,
+      "high_priority_bandwidth_reserve": 0.25,
+      "low_priority_max_bandwidth": 0.4,
+      "dscp_marking_enabled": true
+    },
+    "wireless_specific": {
+      "channel_width_mhz": 80,
+      "mimo_streams": 4,
+      "ofdma_enabled": true,
+      "beamforming_enabled": true,
+      "interference_factor": 1.15,
+      "signal_strength_dbm": -45,
+      "noise_floor_dbm": -95
+    }
+  },
+  "workload_profiles": {
+    "mobile_apps": {
+      "typical_request_size": 1024,
+      "typical_response_size": 16384,
+      "connection_reuse_rate": 0.8,
+      "burst_factor": 1.3
+    },
+    "video_streaming": {
+      "typical_request_size": 512,
+      "typical_response_size": 262144,
+      "connection_reuse_rate": 0.9,
+      "burst_factor": 2.5
+    },
+    "web_browsing": {
+      "typical_request_size": 2048,
+      "typical_response_size": 65536,
+      "connection_reuse_rate": 0.7,
+      "burst_factor": 1.1
+    }
+  },
+  "convergence_models": {
+    "bandwidth_utilization": {
+      "convergence_point": 0.55,
+      "variance_range": 0.15,
+      "convergence_rate": 0.88
+    },
+    "latency_distribution": {
+      "convergence_point": 2.5,
+      "variance_range": 0.5,
+      "convergence_rate": 0.92
+    },
+    "connection_patterns": {
+      "convergence_point": 0.75,
+      "variance_range": 0.1,
+      "convergence_rate": 0.85
+    }
+  }
+}

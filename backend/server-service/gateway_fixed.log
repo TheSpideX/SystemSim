@@ -1,0 +1,26 @@
+2025/07/16 20:25:56 Starting API Gateway on port 8000
+2025/07/16 20:25:56 Connected to Redis at localhost:6379 with pool size 10
+2025/07/16 20:25:57 Warning: Failed to initialize gRPC clients: failed to create project service pool: failed to create connection 0: failed to connect to localhost:10000: context deadline exceeded
+2025/07/16 20:25:57 Continuing without backend services (API calls will return errors)
+2025/07/16 20:25:57 Starting WebSocket hub...
+2025/07/16 20:25:57 HTTP/2 server optimized for maximum throughput
+2025/07/16 20:25:57 API Gateway initialized with HTTP/2 + TLS
+2025/07/16 20:25:57 Starting API Gateway on port 8000 with HTTP/2
+2025/07/16 20:25:57 Subscribed to Redis channels: [auth:events:* project:events:* simulation:events:* simulation:data:*]
+2025/07/16 20:25:57 API Gateway starting with HTTP/2 + TLS on 0.0.0.0:8000
+2025/07/16 20:26:32 Started POST /api/auth/register
+2025/07/16 20:26:32 Auth service request failed: Post "https://localhost:9001/api/v1/auth/register": remote error: tls: bad certificate
+[ERROR] 2025/07/16 20:26:32 handler.go:136: Error: service_unavailable_error | Code: auth_service_unavailable | Message: Auth service is not available | Path: /api/auth/register | Method: POST | RequestID:  | Caller: /home/satid/Desktop/system/backend/server-service/internal/gateway/gateway.go:571
+2025/07/16 20:26:32 Completed POST /api/auth/register with status 503 in 8.358428ms
+2025/07/16 20:29:09 Shutting down API Gateway...
+2025/07/16 20:29:09 Shutting down API Gateway...
+2025/07/16 20:29:09 Closing WebSocket hub...
+2025/07/16 20:29:09 WebSocket hub shutting down...
+2025/07/16 20:29:09 WebSocket hub closed. Total connections served: 0
+2025/07/16 20:29:09 Closing Redis client...
+2025/07/16 20:29:09 Redis message processing stopped
+2025/07/16 20:29:09 Redis client closed
+2025/07/16 20:29:09 API Gateway stopped
+2025/07/16 20:29:09 API Gateway stopped
+2025/07/16 20:29:09 Closing Redis client...
+2025/07/16 20:29:09 Error closing pubsub: redis: client is closed

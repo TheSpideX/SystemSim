@@ -1,0 +1,144 @@
+2025/07/16 20:29:11 Starting API Gateway on port 8000
+2025/07/16 20:29:11 Connected to Redis at localhost:6379 with pool size 10
+2025/07/16 20:29:12 Warning: Failed to initialize gRPC clients: failed to create project service pool: failed to create connection 0: failed to connect to localhost:10000: context deadline exceeded
+2025/07/16 20:29:12 Continuing without backend services (API calls will return errors)
+2025/07/16 20:29:12 Starting WebSocket hub...
+2025/07/16 20:29:12 HTTP/2 server optimized for maximum throughput
+2025/07/16 20:29:12 API Gateway initialized with HTTP/2 + TLS
+2025/07/16 20:29:12 Starting API Gateway on port 8000 with HTTP/2
+2025/07/16 20:29:12 Subscribed to Redis channels: [auth:events:* project:events:* simulation:events:* simulation:data:*]
+2025/07/16 20:29:12 API Gateway starting with HTTP/2 + TLS on 0.0.0.0:8000
+2025/07/16 20:29:42 Started POST /api/auth/register
+2025/07/16 20:29:42 Making HTTP/2 request to auth service: POST https://localhost:9001/api/v1/auth/register
+2025/07/16 20:29:42 Auth service response: 201 201 Created
+2025/07/16 20:29:42 Completed POST /api/auth/register with status 201 in 295.2839ms
+2025/07/16 20:29:56 Started POST /api/auth/login
+2025/07/16 20:29:56 Making HTTP/2 request to auth service: POST https://localhost:9001/api/v1/auth/login
+2025/07/16 20:29:56 Auth service response: 200 200 OK
+2025/07/16 20:29:56 Completed POST /api/auth/login with status 200 in 295.453223ms
+2025/07/16 20:30:06 Started GET /health
+2025/07/16 20:30:06 Completed GET /health with status 0 in 1.528624ms
+2025/07/16 20:30:06 Started POST /api/auth/register
+2025/07/16 20:30:06 Making HTTP/2 request to auth service: POST https://localhost:9001/api/v1/auth/register
+2025/07/16 20:30:06 Auth service response: 201 201 Created
+2025/07/16 20:30:06 Completed POST /api/auth/register with status 201 in 317.785769ms
+2025/07/16 20:30:06 Started POST /api/auth/login
+2025/07/16 20:30:06 Making HTTP/2 request to auth service: POST https://localhost:9001/api/v1/auth/login
+2025/07/16 20:30:07 Auth service response: 200 200 OK
+2025/07/16 20:30:07 Completed POST /api/auth/login with status 200 in 303.687945ms
+2025/07/16 20:30:07 Started POST /api/auth/refresh
+2025/07/16 20:30:07 Making HTTP/2 request to auth service: POST https://localhost:9001/api/v1/auth/refresh
+2025/07/16 20:30:07 Auth service response: 200 200 OK
+2025/07/16 20:30:07 Completed POST /api/auth/refresh with status 200 in 12.486174ms
+2025/07/16 20:30:07 Started POST /api/auth/forgot-password
+2025/07/16 20:30:07 Making HTTP/2 request to auth service: POST https://localhost:9001/api/v1/auth/forgot-password
+2025/07/16 20:30:07 Auth service response: 200 200 OK
+2025/07/16 20:30:07 Completed POST /api/auth/forgot-password with status 200 in 5.296314ms
+2025/07/16 20:30:07 Started POST /api/auth/resend-verification
+2025/07/16 20:30:07 Making HTTP/2 request to auth service: POST https://localhost:9001/api/v1/auth/resend-verification
+2025/07/16 20:30:07 Auth service response: 200 200 OK
+2025/07/16 20:30:07 Completed POST /api/auth/resend-verification with status 200 in 10.741875ms
+2025/07/16 20:30:07 Started GET /api/user/profile
+2025/07/16 20:30:07 Making HTTP/2 request to auth service: GET https://localhost:9001/api/v1/user/profile
+2025/07/16 20:30:07 Auth service response: 200 200 OK
+2025/07/16 20:30:07 Completed GET /api/user/profile with status 200 in 9.314611ms
+2025/07/16 20:30:07 Started PUT /api/user/profile
+2025/07/16 20:30:07 Making HTTP/2 request to auth service: PUT https://localhost:9001/api/v1/user/profile
+2025/07/16 20:30:07 Auth service response: 200 200 OK
+2025/07/16 20:30:07 Completed PUT /api/user/profile with status 200 in 8.329838ms
+2025/07/16 20:30:07 Started GET /api/user/sessions
+2025/07/16 20:30:07 Making HTTP/2 request to auth service: GET https://localhost:9001/api/v1/user/sessions
+2025/07/16 20:30:07 Auth service response: 200 200 OK
+2025/07/16 20:30:07 Completed GET /api/user/sessions with status 200 in 11.451278ms
+2025/07/16 20:30:07 Started GET /api/user/stats
+2025/07/16 20:30:07 Making HTTP/2 request to auth service: GET https://localhost:9001/api/v1/user/stats
+2025/07/16 20:30:07 Auth service response: 200 200 OK
+2025/07/16 20:30:07 Completed GET /api/user/stats with status 200 in 9.181113ms
+2025/07/16 20:30:07 Started GET /api/rbac/my-roles
+2025/07/16 20:30:07 Making HTTP/2 request to auth service: GET https://localhost:9001/api/v1/rbac/my-roles
+2025/07/16 20:30:07 Auth service response: 200 200 OK
+2025/07/16 20:30:07 Completed GET /api/rbac/my-roles with status 200 in 7.806723ms
+2025/07/16 20:30:07 Started GET /api/rbac/my-permissions
+2025/07/16 20:30:07 Making HTTP/2 request to auth service: GET https://localhost:9001/api/v1/rbac/my-permissions
+2025/07/16 20:30:07 Auth service response: 200 200 OK
+2025/07/16 20:30:07 Completed GET /api/rbac/my-permissions with status 200 in 12.837709ms
+2025/07/16 20:30:07 Started POST /api/auth/validate
+2025/07/16 20:30:07 Completed POST /api/auth/validate with status 200 in 544.781µs
+2025/07/16 20:30:07 Started GET /api/auth/profile
+2025/07/16 20:30:07 Completed GET /api/auth/profile with status 200 in 928.524µs
+2025/07/16 20:30:07 Started GET /api/auth/permissions
+2025/07/16 20:30:07 Completed GET /api/auth/permissions with status 200 in 1.57472ms
+2025/07/16 20:30:07 Started GET /api/admin/roles
+2025/07/16 20:30:07 Making HTTP/2 request to auth service: GET https://localhost:9001/api/v1/admin/roles
+2025/07/16 20:30:07 Auth service response: 403 403 Forbidden
+2025/07/16 20:30:07 Completed GET /api/admin/roles with status 403 in 3.820342ms
+2025/07/16 20:31:50 Started GET /health
+2025/07/16 20:31:50 Completed GET /health with status 0 in 2.80541ms
+2025/07/16 20:31:50 Started GET /health
+2025/07/16 20:31:50 Completed GET /health with status 0 in 256.8µs
+2025/07/16 20:31:50 Started GET /api/auth/health
+2025/07/16 20:31:50 Completed GET /api/auth/health with status 200 in 343.123µs
+2025/07/16 20:31:50 Started POST /api/auth/register
+2025/07/16 20:31:50 Making HTTP/2 request to auth service: POST https://localhost:9001/api/v1/auth/register
+2025/07/16 20:31:50 Auth service response: 201 201 Created
+2025/07/16 20:31:50 Completed POST /api/auth/register with status 201 in 282.201542ms
+2025/07/16 20:31:50 Started POST /api/auth/login
+2025/07/16 20:31:50 Making HTTP/2 request to auth service: POST https://localhost:9001/api/v1/auth/login
+2025/07/16 20:31:51 Auth service response: 200 200 OK
+2025/07/16 20:31:51 Completed POST /api/auth/login with status 200 in 273.58317ms
+2025/07/16 20:31:51 Started POST /api/auth/validate
+2025/07/16 20:31:51 Completed POST /api/auth/validate with status 200 in 184.315µs
+2025/07/16 20:31:51 Started GET /api/auth/profile
+2025/07/16 20:31:51 Completed GET /api/auth/profile with status 200 in 198.075µs
+2025/07/16 20:31:51 Started GET /api/auth/permissions
+2025/07/16 20:31:51 Completed GET /api/auth/permissions with status 200 in 217.508µs
+2025/07/16 20:31:51 Started GET /api/projects
+2025/07/16 20:31:51 Completed GET /api/projects with status 401 in 186.692µs
+2025/07/16 20:31:51 Started GET /api/simulations
+2025/07/16 20:31:51 Completed GET /api/simulations with status 401 in 283.102µs
+2025/07/16 20:31:51 Started GET /api/projects
+2025/07/16 20:31:51 Completed GET /api/projects with status 200 in 294.779µs
+2025/07/16 20:31:51 Started GET /api/simulations
+2025/07/16 20:31:51 Completed GET /api/simulations with status 200 in 213.088µs
+2025/07/16 20:31:51 Started POST /api/auth/validate
+2025/07/16 20:31:51 Completed POST /api/auth/validate with status 200 in 162.756µs
+2025/07/16 20:31:51 Started POST /api/auth/validate
+2025/07/16 20:31:51 Completed POST /api/auth/validate with status 200 in 195.448µs
+2025/07/16 20:31:51 Started POST /api/auth/validate
+2025/07/16 20:31:51 Completed POST /api/auth/validate with status 200 in 619.122µs
+2025/07/16 20:31:51 Started POST /api/auth/validate
+2025/07/16 20:31:51 Completed POST /api/auth/validate with status 200 in 160.004µs
+2025/07/16 20:31:51 Started POST /api/auth/validate
+2025/07/16 20:31:51 Completed POST /api/auth/validate with status 200 in 134.316µs
+2025/07/16 20:31:51 Started POST /api/auth/validate
+2025/07/16 20:31:51 Completed POST /api/auth/validate with status 200 in 160.087µs
+2025/07/16 20:31:51 Started POST /api/auth/validate
+2025/07/16 20:31:51 Completed POST /api/auth/validate with status 200 in 143.198µs
+2025/07/16 20:31:51 Started POST /api/auth/validate
+2025/07/16 20:31:51 Completed POST /api/auth/validate with status 200 in 973.74µs
+2025/07/16 20:31:51 Started POST /api/auth/validate
+2025/07/16 20:31:51 Completed POST /api/auth/validate with status 200 in 206.29µs
+2025/07/16 20:31:51 Started POST /api/auth/validate
+2025/07/16 20:31:51 Completed POST /api/auth/validate with status 200 in 179.227µs
+2025/07/16 20:31:51 Started GET /api/auth/profile
+2025/07/16 20:31:51 Completed GET /api/auth/profile with status 200 in 543.853µs
+2025/07/16 20:31:51 Started GET /api/auth/profile
+2025/07/16 20:31:51 Completed GET /api/auth/profile with status 200 in 949.512µs
+2025/07/16 20:31:51 Started GET /api/auth/profile
+2025/07/16 20:31:51 Completed GET /api/auth/profile with status 200 in 631.34µs
+2025/07/16 20:31:51 Started GET /api/auth/profile
+2025/07/16 20:31:51 Completed GET /api/auth/profile with status 200 in 227.682µs
+2025/07/16 20:31:51 Started GET /api/auth/profile
+2025/07/16 20:31:51 Completed GET /api/auth/profile with status 200 in 332.934µs
+2025/07/16 21:05:32 Shutting down API Gateway...
+2025/07/16 21:05:32 Shutting down API Gateway...
+2025/07/16 21:05:32 Closing WebSocket hub...
+2025/07/16 21:05:32 WebSocket hub closed. Total connections served: 0
+2025/07/16 21:05:32 Closing Redis client...
+2025/07/16 21:05:32 Redis client closed
+2025/07/16 21:05:32 WebSocket hub shutting down...
+2025/07/16 21:05:32 Redis message processing stopped
+2025/07/16 21:05:32 API Gateway stopped
+2025/07/16 21:05:32 API Gateway stopped
+2025/07/16 21:05:32 Closing Redis client...
+2025/07/16 21:05:32 Error closing pubsub: redis: client is closed

@@ -1,0 +1,135 @@
+{
+  "id": "cache_server_default",
+  "type": "cache_server",
+  "name": "Cache Server", 
+  "description": "High-speed in-memory cache server for fast data retrieval",
+  
+  "required_engines": ["CPU", "Memory", "Network"],
+  
+  "engine_profiles": {
+    "CPU": "cache_cpu_profile",
+    "Memory": "cache_memory_profile",
+    "Network": "gigabit_ethernet"
+  },
+  
+  "complexity_levels": {
+    "CPU": 0,
+    "Memory": 2,
+    "Network": 1
+  },
+  
+  "decision_graph": {
+    "start_node": "network_input",
+    "end_nodes": ["network_output", "error_response"],
+    
+    "nodes": {
+      "network_input": {
+        "id": "network_input",
+        "type": "processing",
+        "engine": "Network", 
+        "operation": "receive_request",
+        "conditions": {
+          "default": "command_parser"
+        }
+      },
+      
+      "command_parser": {
+        "id": "command_parser",
+        "type": "processing",
+        "engine": "CPU",
+        "operation": "parse_command",
+        "conditions": {
+          "default": "operation_router"
+        }
+      },
+      
+      "operation_router": {
+        "id": "operation_router",
+        "type": "decision",
+        "engine": "CPU",
+        "operation": "route_operation",
+        "conditions": {
+          "read_operation": "cache_get",
+          "write_operation": "cache_set", 
+          "delete_operation": "cache_delete",
+          "default": "cache_get"
+        }
+      },
+      
+      "cache_get": {
+        "id": "cache_get",
+        "type": "processing",
+        "engine": "Memory",
+        "operation": "get_value",
+        "conditions": {
+          "default": "response_formatter"
+        }
+      },
+      
+      "cache_set": {
+        "id": "cache_set",
+        "type": "processing", 
+        "engine": "Memory",
+        "operation": "set_value",
+        "conditions": {
+          "default": "response_formatter"
+        }
+      },
+      
+      "cache_delete": {
+        "id": "cache_delete",
+        "type": "processing",
+        "engine": "Memory",
+        "operation": "delete_value",
+        "conditions": {
+          "default": "response_formatter"
+        }
+      },
+      
+      "response_formatter": {
+        "id": "response_formatter",
+        "type": "processing",
+        "engine": "CPU",
+        "operation": "format_response",
+        "conditions": {
+          "default": "network_output"
+        }
+      },
+      
+      "network_output": {
+        "id": "network_output",
+        "type": "terminal",
+        "engine": "Network",
+        "operation": "send_response",
+        "conditions": {}
+      },
+      
+      "error_response": {
+        "id": "error_response", 
+        "type": "terminal",
+        "engine": "Network",
+        "operation": "send_error",
+        "conditions": {}
+      }
+    }
+  },
+  
+  "health_thresholds": {
+    "cpu_warning": 0.5,
+    "cpu_critical": 0.8,
+    "memory_warning": 0.85,
+    "memory_critical": 0.95,
+    "latency_warning": "10ms",
+    "latency_critical": "50ms",
+    "error_rate_warning": 0.001,
+    "error_rate_critical": 0.01
+  },
+  
+  "resource_limits": {
+    "max_cpu_cores": 2,
+    "max_memory_mb": 32768,
+    "max_storage_iops": 0,
+    "max_network_mbps": 1000,
+    "max_operations_per_second": 10000
+  }
+}

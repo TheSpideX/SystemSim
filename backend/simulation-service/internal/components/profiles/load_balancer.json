@@ -1,0 +1,124 @@
+{
+  "id": "load_balancer_default",
+  "type": "load_balancer",
+  "name": "Load Balancer",
+  "description": "High-performance load balancer for distributing requests across multiple servers",
+  
+  "required_engines": ["CPU", "Network"],
+  
+  "engine_profiles": {
+    "CPU": "load_balancer_cpu_profile",
+    "Network": "10g_datacenter"
+  },
+  
+  "complexity_levels": {
+    "CPU": 0,
+    "Network": 2
+  },
+  
+  "decision_graph": {
+    "start_node": "network_input",
+    "end_nodes": ["network_output", "error_response"],
+    
+    "nodes": {
+      "network_input": {
+        "id": "network_input",
+        "type": "processing",
+        "engine": "Network",
+        "operation": "receive_request",
+        "conditions": {
+          "default": "request_analyzer"
+        }
+      },
+      
+      "request_analyzer": {
+        "id": "request_analyzer",
+        "type": "processing",
+        "engine": "CPU",
+        "operation": "analyze_request",
+        "conditions": {
+          "default": "load_balancer"
+        }
+      },
+      
+      "load_balancer": {
+        "id": "load_balancer",
+        "type": "decision",
+        "engine": "CPU",
+        "operation": "select_backend",
+        "conditions": {
+          "round_robin": "forward_request",
+          "least_connections": "forward_request",
+          "weighted_round_robin": "forward_request",
+          "health_check": "health_checker",
+          "default": "forward_request"
+        }
+      },
+      
+      "health_checker": {
+        "id": "health_checker",
+        "type": "processing",
+        "engine": "CPU",
+        "operation": "check_backend_health",
+        "conditions": {
+          "default": "forward_request"
+        }
+      },
+      
+      "forward_request": {
+        "id": "forward_request",
+        "type": "processing",
+        "engine": "Network",
+        "operation": "forward_to_backend",
+        "conditions": {
+          "default": "response_handler"
+        }
+      },
+      
+      "response_handler": {
+        "id": "response_handler",
+        "type": "processing",
+        "engine": "CPU",
+        "operation": "process_response",
+        "conditions": {
+          "default": "network_output"
+        }
+      },
+      
+      "network_output": {
+        "id": "network_output",
+        "type": "terminal",
+        "engine": "Network",
+        "operation": "send_response",
+        "conditions": {}
+      },
+      
+      "error_response": {
+        "id": "error_response",
+        "type": "terminal",
+        "engine": "Network",
+        "operation": "send_error",
+        "conditions": {}
+      }
+    }
+  },
+  
+  "health_thresholds": {
+    "cpu_warning": 0.4,
+    "cpu_critical": 0.7,
+    "memory_warning": 0.6,
+    "memory_critical": 0.8,
+    "latency_warning": "5ms",
+    "latency_critical": "20ms",
+    "error_rate_warning": 0.0001,
+    "error_rate_critical": 0.001
+  },
+  
+  "resource_limits": {
+    "max_cpu_cores": 2,
+    "max_memory_mb": 4096,
+    "max_storage_iops": 0,
+    "max_network_mbps": 10000,
+    "max_operations_per_second": 50000
+  }
+}

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WebSocket Test Client</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .status { padding: 10px; margin: 10px 0; border-radius: 5px; }
+        .connected { background-color: #d4edda; color: #155724; }
+        .disconnected { background-color: #f8d7da; color: #721c24; }
+        .messages { height: 300px; overflow-y: scroll; border: 1px solid #ccc; padding: 10px; margin: 10px 0; }
+        .message { margin: 5px 0; padding: 5px; background-color: #f8f9fa; border-radius: 3px; }
+        input, button { padding: 8px; margin: 5px; }
+        button { background-color: #007bff; color: white; border: none; border-radius: 3px; cursor: pointer; }
+        button:hover { background-color: #0056b3; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 API Gateway WebSocket Test</h1>
+        
+        <div id="status" class="status disconnected">
+            Status: Disconnected
+        </div>
+        
+        <div>
+            <input type="text" id="userIdInput" placeholder="User ID" value="test-user-123">
+            <button onclick="connect()">Connect</button>
+            <button onclick="disconnect()">Disconnect</button>
+        </div>
+        
+        <div>
+            <input type="text" id="channelInput" placeholder="Channel to subscribe" value="auth:events:login">
+            <button onclick="subscribe()">Subscribe</button>
+            <button onclick="unsubscribe()">Unsubscribe</button>
+        </div>
+        
+        <div>
+            <button onclick="ping()">Send Ping</button>
+            <button onclick="clearMessages()">Clear Messages</button>
+        </div>
+        
+        <div id="messages" class="messages">
+            <div class="message">WebSocket messages will appear here...</div>
+        </div>
+    </div>
+
+    <script>
+        let ws = null;
+        let userId = 'test-user-123';
+        
+        function updateStatus(message, connected) {
+            const status = document.getElementById('status');
+            status.textContent = 'Status: ' + message;
+            status.className = 'status ' + (connected ? 'connected' : 'disconnected');
+        }
+        
+        function addMessage(message, type = 'info') {
+            const messages = document.getElementById('messages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = 'message';
+            messageDiv.innerHTML = `<strong>[${new Date().toLocaleTimeString()}]</strong> ${message}`;
+            messages.appendChild(messageDiv);
+            messages.scrollTop = messages.scrollHeight;
+        }
+        
+        function connect() {
+            if (ws && ws.readyState === WebSocket.OPEN) {
+                addMessage('Already connected!', 'warning');
+                return;
+            }
+            
+            userId = document.getElementById('userIdInput').value || 'test-user-123';
+            const wsUrl = `wss://localhost:8000/ws?user_id=${userId}`;
+            
+            addMessage(`Connecting to ${wsUrl}...`);
+            
+            ws = new WebSocket(wsUrl);
+            
+            ws.onopen = function(event) {
+                updateStatus('Connected', true);
+                addMessage('✅ Connected to API Gateway WebSocket!', 'success');
+            };
+            
+            ws.onmessage = function(event) {
+                try {
+                    const data = JSON.parse(event.data);
+                    addMessage(`📨 Received: ${JSON.stringify(data, null, 2)}`, 'message');
+                } catch (e) {
+                    addMessage(`📨 Received (raw): ${event.data}`, 'message');
+                }
+            };
+            
+            ws.onclose = function(event) {
+                updateStatus('Disconnected', false);
+                addMessage(`❌ Connection closed: ${event.code} - ${event.reason}`, 'error');
+            };
+            
+            ws.onerror = function(error) {
+                updateStatus('Error', false);
+                addMessage(`🚨 WebSocket error: ${error}`, 'error');
+            };
+        }
+        
+        function disconnect() {
+            if (ws) {
+                ws.close();
+                ws = null;
+            }
+        }
+        
+        function subscribe() {
+            if (!ws || ws.readyState !== WebSocket.OPEN) {
+                addMessage('❌ Not connected!', 'error');
+                return;
+            }
+            
+            const channel = document.getElementById('channelInput').value;
+            if (!channel) {
+                addMessage('❌ Please enter a channel name!', 'error');
+                return;
+            }
+            
+            const message = {
+                type: 'subscribe',
+                channel: channel
+            };
+            
+            ws.send(JSON.stringify(message));
+            addMessage(`📡 Subscribing to channel: ${channel}`);
+        }
+        
+        function unsubscribe() {
+            if (!ws || ws.readyState !== WebSocket.OPEN) {
+                addMessage('❌ Not connected!', 'error');
+                return;
+            }
+            
+            const channel = document.getElementById('channelInput').value;
+            if (!channel) {
+                addMessage('❌ Please enter a channel name!', 'error');
+                return;
+            }
+            
+            const message = {
+                type: 'unsubscribe',
+                channel: channel
+            };
+            
+            ws.send(JSON.stringify(message));
+            addMessage(`📡 Unsubscribing from channel: ${channel}`);
+        }
+        
+        function ping() {
+            if (!ws || ws.readyState !== WebSocket.OPEN) {
+                addMessage('❌ Not connected!', 'error');
+                return;
+            }
+            
+            const message = {
+                type: 'ping',
+                timestamp: Date.now()
+            };
+            
+            ws.send(JSON.stringify(message));
+            addMessage('🏓 Ping sent');
+        }
+        
+        function clearMessages() {
+            const messages = document.getElementById('messages');
+            messages.innerHTML = '<div class="message">Messages cleared...</div>';
+        }
+        
+        // Auto-connect on page load
+        window.onload = function() {
+            addMessage('🌐 WebSocket Test Client Ready');
+            addMessage('💡 Click "Connect" to start testing the API Gateway WebSocket');
+        };
+    </script>
+</body>
+</html>

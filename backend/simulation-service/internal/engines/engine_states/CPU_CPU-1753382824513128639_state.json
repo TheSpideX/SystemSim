@@ -1,0 +1,165 @@
+{
+  "engine_id": "CPU-1753382824513128639",
+  "engine_type": 0,
+  "profile_name": "",
+  "current_tick": 12,
+  "total_operations": 0,
+  "failed_operations": 0,
+  "saved_at": "2025-07-25T00:17:04.528315355+05:30",
+  "architecture": "single_goroutine_sequential",
+  "is_running": true,
+  "is_paused": false,
+  "complexity_level": 1,
+  "input_queue_operations": [],
+  "pending_results": [],
+  "routing_table": {},
+  "processed_operations": 3,
+  "queued_operations": 3,
+  "engine_state": {
+    "active_cores": 0,
+    "advanced_prefetch_state": {
+      "hardware_prefetchers": 4,
+      "sequential_accuracy": 0.9,
+      "stride_accuracy": 0.85,
+      "pattern_accuracy": 0.75,
+      "prefetch_distance": 8,
+      "bandwidth_usage": 0.15,
+      "access_pattern_history": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1024
+      ]
+    },
+    "boost_state": {
+      "current_clock_ghz": 0,
+      "boost_active": false,
+      "boost_start_tick": 0,
+      "single_core_boost_ghz": 0,
+      "all_core_boost_ghz": 0,
+      "boost_duration_ticks": 0,
+      "thermal_dependent": false
+    },
+    "branch_prediction_state": {
+      "base_accuracy": 0.96,
+      "random_pattern_accuracy": 0.85,
+      "loop_pattern_accuracy": 0.98,
+      "call_return_accuracy": 0.99,
+      "misprediction_penalty": 0.15,
+      "pipeline_depth": 14,
+      "total_branches": 1,
+      "total_mispredictions": 0
+    },
+    "cache_state": {
+      "l1_hit_ratio": 0.3065,
+      "l2_hit_ratio": 0.20650000000000002,
+      "l3_hit_ratio": 0.10600000000000001,
+      "working_set_size": 1024,
+      "cache_warming": true,
+      "warmup_operations": 1,
+      "converged_hit_ratio": 0.7,
+      "access_pattern_history": [
+        1024,
+        1
+      ],
+      "l1_hit_ratio_target": 0.95,
+      "l2_hit_ratio_target": 0.85,
+      "l3_hit_ratio_target": 0.7,
+      "cache_line_size": 64,
+      "prefetch_efficiency": 0.85,
+      "l1_hit_multiplier": 1,
+      "l2_hit_multiplier": 1.2,
+      "l3_hit_multiplier": 2,
+      "memory_access_multiplier": 8
+    },
+    "completed_ops": 0,
+    "convergence_state": {
+      "models": {},
+      "operation_count": 0,
+      "data_processed": 0,
+      "start_tick": 0,
+      "converged_tick": -1
+    },
+    "core_count": 1,
+    "current_tick": 12,
+    "failed_ops": 0,
+    "health": {
+      "score": 1,
+      "utilization": 0,
+      "queue_utilization": 0.02,
+      "error_rate": 0,
+      "average_latency": 0,
+      "throughput_ops": 0,
+      "last_updated": 12
+    },
+    "hyperthreading": {
+      "enabled": false,
+      "threads_per_core": 1,
+      "efficiency_factor": 1,
+      "effective_cores": 1
+    },
+    "id": "CPU-1753382824513128639",
+    "memory_bandwidth_state": {
+      "total_bandwidth_gbps": 131,
+      "per_core_degradation": 0.03,
+      "contention_threshold": 8,
+      "severe_contention_probability": 0.15,
+      "severe_contention_penalty": 0.15,
+      "current_bandwidth_utilization": 0
+    },
+    "numa_state": {
+      "numa_nodes": 0,
+      "cross_socket_penalty": 0,
+      "local_memory_ratio": 0,
+      "memory_bandwidth_mbs": 0
+    },
+    "queue_capacity": 100,
+    "queue_length": 2,
+    "thermal_state": {
+      "current_temperature_c": 22.000000779999535,
+      "heat_accumulation": 0.00005849996523429776,
+      "throttle_active": false,
+      "throttle_factor": 1,
+      "cooling_capacity": 0,
+      "ambient_temperature_c": 22,
+      "last_thermal_update": 12,
+      "accumulated_work_heat": 0
+    },
+    "total_operations": 0,
+    "type": "CPU",
+    "vectorization_state": {
+      "supported_instructions": [
+        "SSE4.2",
+        "AVX2",
+        "AVX512"
+      ],
+      "vector_width": 512,
+      "simd_efficiency": 0.85,
+      "vectorization_ratio": 1,
+      "vector_operations_count": 1,
+      "scalar_operations_count": 0,
+      "average_speedup": 1.104,
+      "operation_vectorizability": {
+        "array_sum": 0.95,
+        "crypto_hash": 0.7,
+        "fft": 0.85,
+        "image_process": 0.85,
+        "matrix_multiply": 0.9,
+        "ml_inference": 0.8,
+        "vector_add": 0.95
+      }
+    }
+  }
+}

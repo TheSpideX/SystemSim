@@ -1,0 +1,46 @@
+2025/07/16 20:03:44 Starting API Gateway on port 8000
+2025/07/16 20:03:44 Connected to Redis at localhost:6379 with pool size 10
+2025/07/16 20:03:45 Warning: Failed to initialize gRPC clients: failed to create project service pool: failed to create connection 0: failed to connect to localhost:10000: context deadline exceeded
+2025/07/16 20:03:45 Continuing without backend services (API calls will return errors)
+2025/07/16 20:03:45 Starting WebSocket hub...
+2025/07/16 20:03:45 HTTP/2 server optimized for maximum throughput
+2025/07/16 20:03:45 API Gateway initialized with HTTP/2 + TLS
+2025/07/16 20:03:45 Starting API Gateway on port 8000 with HTTP/2
+2025/07/16 20:03:45 Subscribed to Redis channels: [auth:events:* project:events:* simulation:events:* simulation:data:*]
+2025/07/16 20:03:45 API Gateway starting with HTTP/2 + TLS on 0.0.0.0:8000
+2025/07/16 20:06:04 Started GET /health
+2025/07/16 20:06:04 Completed GET /health with status 0 in 36.68437ms
+2025/07/16 20:07:18 Started GET /health
+2025/07/16 20:07:18 Completed GET /health with status 0 in 968.969µs
+2025/07/16 20:08:22 Started GET /health
+2025/07/16 20:08:22 Completed GET /health with status 0 in 1.469838ms
+2025/07/16 20:10:58 Started GET /health
+2025/07/16 20:10:58 Completed GET /health with status 0 in 1.049303ms
+2025/07/16 20:12:35 Started GET /health
+2025/07/16 20:12:35 Completed GET /health with status 0 in 940.054µs
+2025/07/16 20:12:35 Started GET /health
+2025/07/16 20:12:35 Completed GET /health with status 0 in 198.521µs
+2025/07/16 20:12:35 Started GET /api/auth/health
+2025/07/16 20:12:35 Completed GET /api/auth/health with status 200 in 439.624µs
+2025/07/16 20:12:35 Started POST /api/auth/register
+2025/07/16 20:12:35 Completed POST /api/auth/register with status 404 in 114.192µs
+2025/07/16 20:12:35 Started POST /api/auth/register
+2025/07/16 20:12:35 Completed POST /api/auth/register with status 404 in 69.691µs
+2025/07/16 20:12:35 Started POST /api/auth/login
+2025/07/16 20:12:35 Completed POST /api/auth/login with status 404 in 63.268µs
+2025/07/16 20:12:35 Started GET /api/projects
+2025/07/16 20:12:35 Completed GET /api/projects with status 401 in 113.149µs
+2025/07/16 20:12:35 Started GET /api/simulations
+2025/07/16 20:12:35 Completed GET /api/simulations with status 401 in 125.243µs
+2025/07/16 20:16:01 Shutting down API Gateway...
+2025/07/16 20:16:01 Shutting down API Gateway...
+2025/07/16 20:16:01 Closing WebSocket hub...
+2025/07/16 20:16:01 WebSocket hub closed. Total connections served: 0
+2025/07/16 20:16:01 Closing Redis client...
+2025/07/16 20:16:01 Redis message processing stopped
+2025/07/16 20:16:01 WebSocket hub shutting down...
+2025/07/16 20:16:01 Redis client closed
+2025/07/16 20:16:01 API Gateway stopped
+2025/07/16 20:16:01 API Gateway stopped
+2025/07/16 20:16:01 Closing Redis client...
+2025/07/16 20:16:01 Error closing pubsub: redis: client is closed

@@ -1,0 +1,135 @@
+{
+  "id": "web_server_default",
+  "type": "web_server", 
+  "name": "Web Server",
+  "description": "High-performance web server for handling HTTP requests and serving content",
+  
+  "required_engines": ["CPU", "Memory", "Network"],
+  
+  "engine_profiles": {
+    "CPU": "web_server_cpu_profile",
+    "Memory": "web_server_memory_profile",
+    "Network": "gigabit_ethernet"
+  },
+  
+  "complexity_levels": {
+    "CPU": 1,
+    "Memory": 1, 
+    "Network": 1
+  },
+  
+  "decision_graph": {
+    "start_node": "network_input",
+    "end_nodes": ["network_output", "error_response"],
+    
+    "nodes": {
+      "network_input": {
+        "id": "network_input",
+        "type": "processing",
+        "engine": "Network",
+        "operation": "receive_request",
+        "conditions": {
+          "default": "request_parser"
+        }
+      },
+      
+      "request_parser": {
+        "id": "request_parser",
+        "type": "processing", 
+        "engine": "CPU",
+        "operation": "parse_http",
+        "conditions": {
+          "default": "route_handler"
+        }
+      },
+      
+      "route_handler": {
+        "id": "route_handler",
+        "type": "decision",
+        "engine": "CPU",
+        "operation": "route_request",
+        "conditions": {
+          "static_content": "static_handler",
+          "dynamic_content": "dynamic_handler",
+          "api_request": "api_handler",
+          "default": "dynamic_handler"
+        }
+      },
+      
+      "static_handler": {
+        "id": "static_handler",
+        "type": "processing",
+        "engine": "Memory",
+        "operation": "serve_static",
+        "conditions": {
+          "default": "response_builder"
+        }
+      },
+      
+      "dynamic_handler": {
+        "id": "dynamic_handler", 
+        "type": "processing",
+        "engine": "CPU",
+        "operation": "generate_content",
+        "conditions": {
+          "default": "response_builder"
+        }
+      },
+      
+      "api_handler": {
+        "id": "api_handler",
+        "type": "processing",
+        "engine": "CPU", 
+        "operation": "process_api",
+        "conditions": {
+          "default": "response_builder"
+        }
+      },
+      
+      "response_builder": {
+        "id": "response_builder",
+        "type": "processing",
+        "engine": "CPU",
+        "operation": "build_response",
+        "conditions": {
+          "default": "network_output"
+        }
+      },
+      
+      "network_output": {
+        "id": "network_output",
+        "type": "terminal",
+        "engine": "Network",
+        "operation": "send_response", 
+        "conditions": {}
+      },
+      
+      "error_response": {
+        "id": "error_response",
+        "type": "terminal",
+        "engine": "Network",
+        "operation": "send_error",
+        "conditions": {}
+      }
+    }
+  },
+  
+  "health_thresholds": {
+    "cpu_warning": 0.6,
+    "cpu_critical": 0.85,
+    "memory_warning": 0.7,
+    "memory_critical": 0.9,
+    "latency_warning": "50ms",
+    "latency_critical": "200ms", 
+    "error_rate_warning": 0.005,
+    "error_rate_critical": 0.02
+  },
+  
+  "resource_limits": {
+    "max_cpu_cores": 4,
+    "max_memory_mb": 8192,
+    "max_storage_iops": 0,
+    "max_network_mbps": 1000,
+    "max_operations_per_second": 2000
+  }
+}

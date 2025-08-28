@@ -1,0 +1,43 @@
+2025/07/16 22:16:12 Starting API Gateway on port 8000
+2025/07/16 22:16:12 Connected to Redis at localhost:6379 with pool size 10
+2025/07/16 22:16:12 Created dynamic gRPC pool for auth-service: 5 initial connections (min: 5, max: 20)
+2025/07/16 22:16:12 ✅ Auth service pool: 5 connections to localhost:9000
+2025/07/16 22:16:12 Starting dynamic scaler for auth-service (interval: 30s)
+2025/07/16 22:16:13 Warning: Failed to create project service pool: failed to create initial connection 0: failed to connect to localhost:10000: context deadline exceeded
+2025/07/16 22:16:14 Warning: Failed to create simulation service pool: failed to create initial connection 0: failed to connect to localhost:11000: context deadline exceeded
+2025/07/16 22:16:14 🎉 gRPC client pool initialized with 5 total connections
+2025/07/16 22:16:14 ⚠️  Some services unavailable: [project service: failed to create initial connection 0: failed to connect to localhost:10000: context deadline exceeded simulation service: failed to create initial connection 0: failed to connect to localhost:11000: context deadline exceeded]
+2025/07/16 22:16:14 Starting WebSocket hub...
+2025/07/16 22:16:14 HTTP/2 server optimized for maximum throughput
+2025/07/16 22:16:14 API Gateway initialized with HTTP/2 + TLS
+2025/07/16 22:16:14 Starting API Gateway on port 8000 with HTTP/2
+2025/07/16 22:16:14 Subscribed to Redis channels: [auth:events:* project:events:* simulation:events:* simulation:data:*]
+2025/07/16 22:16:14 API Gateway starting with HTTP/2 + TLS on 0.0.0.0:8000
+2025/07/16 22:16:42 Dynamic scaler tick for auth-service
+2025/07/16 22:16:42 Scaling check for auth-service: connections=5, active=0, utilization=0.00
+2025/07/16 22:16:47 Started POST /api/auth/login
+2025/07/16 22:16:47 Making HTTP/2 request to auth service: POST https://localhost:9001/api/v1/auth/login
+2025/07/16 22:16:48 Auth service response: 200 200 OK
+2025/07/16 22:16:48 Completed POST /api/auth/login with status 200 in 274.623406ms
+2025/07/16 22:16:48 Started POST /api/auth/validate
+2025/07/16 22:16:48 GetConnection for auth-service: active=1, total=1
+2025/07/16 22:16:48 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 22:16:48 ReleaseConnection for auth-service: active=0
+2025/07/16 22:16:48 Completed POST /api/auth/validate with status 200 in 3.063162ms
+2025/07/16 22:17:12 Dynamic scaler tick for auth-service
+2025/07/16 22:17:12 Scaling check for auth-service: connections=5, active=0, utilization=0.00
+2025/07/16 22:17:42 Dynamic scaler tick for auth-service
+2025/07/16 22:17:42 Scaling check for auth-service: connections=5, active=0, utilization=0.00
+2025/07/16 22:18:10 Shutting down API Gateway...
+2025/07/16 22:18:10 Shutting down API Gateway...
+2025/07/16 22:18:10 Closing WebSocket hub...
+2025/07/16 22:18:10 WebSocket hub closed. Total connections served: 0
+2025/07/16 22:18:10 WebSocket hub shutting down...
+2025/07/16 22:18:10 All gRPC connection pools closed
+2025/07/16 22:18:10 Closing Redis client...
+2025/07/16 22:18:10 Redis client closed
+2025/07/16 22:18:10 API Gateway stopped
+2025/07/16 22:18:10 API Gateway stopped
+2025/07/16 22:18:10 All gRPC connection pools closed
+2025/07/16 22:18:10 Closing Redis client...
+2025/07/16 22:18:10 Error closing pubsub: redis: client is closed

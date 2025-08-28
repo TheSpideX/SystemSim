@@ -1,0 +1,105 @@
+{
+  "name": "hbm2_server_memory",
+  "description": "High-Bandwidth Memory 2 Server Configuration",
+  "type": 1,
+  "version": "1.0",
+  "created_by": "Augment Agent",
+  "created_at": "2025-01-22T00:00:00Z",
+  
+  "baseline_performance": {
+    "capacity_gb": 64,
+    "frequency_mhz": 1600,
+    "cas_latency": 14,
+    "channels": 8,
+    "bandwidth_gbps": 819.2,
+    "access_time": 8.75,
+    "frequency_normalization_baseline": 1600.0
+  },
+
+  "technology_specs": {
+    "memory_type": "HBM2",
+    "queue_processing": {
+      "max_ops_per_tick": 8,
+      "base_complexity_factor": 1.02,
+      "avg_operation_duration_ms": 0.3
+    }
+  },
+  
+  "engine_specific": {
+    "ddr_timings": {
+      "trcd": 14,
+      "trp": 14,
+      "tras": 28,
+      "trefi": 3900,
+      "bank_groups": 16,
+      "banks_per_group": 8,
+      "burst_size_bytes": 32.0,
+      "additional_burst_latency_ns": 1.0
+    },
+    
+    "numa_configuration": {
+      "socket_count": 4,
+      "cross_socket_penalty": 1.8,
+      "inter_socket_latency_ns": 200.0,
+      "local_access_ratio": 0.6
+    },
+    
+    "bandwidth_characteristics": {
+      "peak_bandwidth_gbps": 819.2,
+      "sustained_bandwidth_gbps": 750.0,
+      "saturation_threshold": 0.70,
+      "degradation_curve": "exponential"
+    },
+    
+    "access_patterns": {
+      "sequential_hit_rate": 0.95,
+      "random_hit_rate": 0.40,
+      "stride_hit_rate": 0.75,
+      "row_buffer_size_kb": 32
+    },
+    
+    "realistic_factors": {
+      "refresh_overhead": 0.01,
+      "bank_conflict_probability": 0.05,
+      "bank_conflict_multiplier": 0.3,
+      "queue_depth_impact": {
+        "light_load": 1.0,
+        "medium_load": 1.1,
+        "heavy_load": 1.4
+      }
+    }
+  },
+  
+  "performance_variance": {
+    "base_variance": 0.02,
+    "load_multiplier": 1.05,
+    "scale_reduction": 0.95
+  },
+  
+  "health_thresholds": {
+    "utilization_warning": 0.70,
+    "utilization_critical": 0.85,
+    "temperature_warning": 75.0,
+    "temperature_critical": 85.0,
+    "error_rate_warning": 0.0001,
+    "error_rate_critical": 0.001
+  },
+  
+  "convergence_models": {
+    "row_buffer_hits": {
+      "convergence_point": 0.85,
+      "base_variance": 0.02,
+      "min_operations": 200
+    },
+    "bandwidth_utilization": {
+      "convergence_point": 0.90,
+      "base_variance": 0.03,
+      "min_operations": 300
+    },
+    "numa_locality": {
+      "convergence_point": 0.60,
+      "base_variance": 0.08,
+      "min_operations": 600
+    }
+  }
+}

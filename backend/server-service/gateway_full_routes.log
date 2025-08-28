@@ -1,0 +1,32 @@
+2025/07/16 20:19:19 Starting API Gateway on port 8000
+2025/07/16 20:19:19 Connected to Redis at localhost:6379 with pool size 10
+2025/07/16 20:19:20 Warning: Failed to initialize gRPC clients: failed to create project service pool: failed to create connection 0: failed to connect to localhost:10000: context deadline exceeded
+2025/07/16 20:19:20 Continuing without backend services (API calls will return errors)
+2025/07/16 20:19:20 Starting WebSocket hub...
+2025/07/16 20:19:20 HTTP/2 server optimized for maximum throughput
+2025/07/16 20:19:20 API Gateway initialized with HTTP/2 + TLS
+2025/07/16 20:19:20 Starting API Gateway on port 8000 with HTTP/2
+2025/07/16 20:19:20 Subscribed to Redis channels: [auth:events:* project:events:* simulation:events:* simulation:data:*]
+2025/07/16 20:19:20 API Gateway starting with HTTP/2 + TLS on 0.0.0.0:8000
+2025/07/16 20:23:56 Started GET /health
+2025/07/16 20:23:56 Completed GET /health with status 0 in 4.819414ms
+2025/07/16 20:23:56 Started POST /api/auth/register
+2025/07/16 20:23:56 Auth service request failed: Post "https://localhost:9001/api/v1/auth/register": remote error: tls: bad certificate
+[ERROR] 2025/07/16 20:23:56 handler.go:136: Error: service_unavailable_error | Code: auth_service_unavailable | Message: Auth service is not available | Path: /api/auth/register | Method: POST | RequestID:  | Caller: /home/satid/Desktop/system/backend/server-service/internal/gateway/gateway.go:569
+2025/07/16 20:23:56 Completed POST /api/auth/register with status 503 in 18.02801ms
+2025/07/16 20:24:06 Started POST /api/auth/register
+2025/07/16 20:24:06 Auth service request failed: Post "https://localhost:9001/api/v1/auth/register": remote error: tls: bad certificate
+[ERROR] 2025/07/16 20:24:06 handler.go:136: Error: service_unavailable_error | Code: auth_service_unavailable | Message: Auth service is not available | Path: /api/auth/register | Method: POST | RequestID:  | Caller: /home/satid/Desktop/system/backend/server-service/internal/gateway/gateway.go:569
+2025/07/16 20:24:06 Completed POST /api/auth/register with status 503 in 5.960774ms
+2025/07/16 20:25:54 Shutting down API Gateway...
+2025/07/16 20:25:54 Shutting down API Gateway...
+2025/07/16 20:25:54 Closing WebSocket hub...
+2025/07/16 20:25:54 WebSocket hub closed. Total connections served: 0
+2025/07/16 20:25:54 Closing Redis client...
+2025/07/16 20:25:54 WebSocket hub shutting down...
+2025/07/16 20:25:54 Redis message processing stopped
+2025/07/16 20:25:54 Redis client closed
+2025/07/16 20:25:54 API Gateway stopped
+2025/07/16 20:25:54 API Gateway stopped
+2025/07/16 20:25:54 Closing Redis client...
+2025/07/16 20:25:54 Error closing pubsub: redis: client is closed

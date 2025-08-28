@@ -1,0 +1,1191 @@
+2025/07/16 21:27:08 Starting API Gateway on port 8000
+2025/07/16 21:27:08 Connected to Redis at localhost:6379 with pool size 10
+2025/07/16 21:27:08 Created dynamic gRPC pool for auth-service: 5 initial connections (min: 5, max: 20)
+2025/07/16 21:27:08 ✅ Auth service pool: 5 connections to localhost:9000
+2025/07/16 21:27:09 Warning: Failed to create project service pool: failed to create initial connection 0: failed to connect to localhost:10000: context deadline exceeded
+2025/07/16 21:27:10 Warning: Failed to create simulation service pool: failed to create initial connection 0: failed to connect to localhost:11000: context deadline exceeded
+2025/07/16 21:27:10 🎉 gRPC client pool initialized with 5 total connections
+2025/07/16 21:27:10 ⚠️  Some services unavailable: [project service: failed to create initial connection 0: failed to connect to localhost:10000: context deadline exceeded simulation service: failed to create initial connection 0: failed to connect to localhost:11000: context deadline exceeded]
+2025/07/16 21:27:10 HTTP/2 server optimized for maximum throughput
+2025/07/16 21:27:10 API Gateway initialized with HTTP/2 + TLS
+2025/07/16 21:27:10 Starting WebSocket hub...
+2025/07/16 21:27:10 Starting API Gateway on port 8000 with HTTP/2
+2025/07/16 21:27:10 Subscribed to Redis channels: [auth:events:* project:events:* simulation:events:* simulation:data:*]
+2025/07/16 21:27:10 API Gateway starting with HTTP/2 + TLS on 0.0.0.0:8000
+2025/07/16 21:27:53 Started POST /api/auth/validate
+2025/07/16 21:27:53 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:27:53 Completed POST /api/auth/validate with status 200 in 3.665442ms
+2025/07/16 21:28:20 Started POST /api/auth/login
+2025/07/16 21:28:20 Making HTTP/2 request to auth service: POST https://localhost:9001/api/v1/auth/login
+2025/07/16 21:28:21 Auth service response: 200 200 OK
+2025/07/16 21:28:21 Completed POST /api/auth/login with status 200 in 265.144489ms
+2025/07/16 21:28:21 Started POST /api/auth/validate
+2025/07/16 21:28:21 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:28:21 Completed POST /api/auth/validate with status 200 in 1.715803ms
+2025/07/16 21:29:04 Started POST /api/auth/login
+2025/07/16 21:29:04 Making HTTP/2 request to auth service: POST https://localhost:9001/api/v1/auth/login
+2025/07/16 21:29:04 Auth service response: 200 200 OK
+2025/07/16 21:29:04 Completed POST /api/auth/login with status 200 in 340.978247ms
+2025/07/16 21:29:04 Started GET /api/auth/profile
+2025/07/16 21:29:04 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:04 Making REAL gRPC GetUserContext call to auth service
+2025/07/16 21:29:04 Completed GET /api/auth/profile with status 200 in 2.630299ms
+2025/07/16 21:29:04 Started GET /api/auth/permissions
+2025/07/16 21:29:04 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:04 Making REAL gRPC GetUserPermissions call to auth service
+2025/07/16 21:29:04 Completed GET /api/auth/permissions with status 200 in 2.285747ms
+2025/07/16 21:29:22 Started GET /health
+2025/07/16 21:29:22 Completed GET /health with status 0 in 344.907µs
+2025/07/16 21:29:22 Started POST /api/auth/login
+2025/07/16 21:29:22 Making HTTP/2 request to auth service: POST https://localhost:9001/api/v1/auth/login
+2025/07/16 21:29:22 Auth service response: 200 200 OK
+2025/07/16 21:29:22 Completed POST /api/auth/login with status 200 in 251.254594ms
+2025/07/16 21:29:22 Started GET /health
+2025/07/16 21:29:22 Completed GET /health with status 0 in 160.15µs
+2025/07/16 21:29:22 Started POST /api/auth/validate
+2025/07/16 21:29:22 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:22 Completed POST /api/auth/validate with status 200 in 948.515µs
+2025/07/16 21:29:22 Started GET /api/auth/profile
+2025/07/16 21:29:22 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:22 Making REAL gRPC GetUserContext call to auth service
+2025/07/16 21:29:22 Completed GET /api/auth/profile with status 200 in 1.630323ms
+2025/07/16 21:29:22 Started GET /api/auth/permissions
+2025/07/16 21:29:22 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:22 Making REAL gRPC GetUserPermissions call to auth service
+2025/07/16 21:29:22 Completed GET /api/auth/permissions with status 200 in 2.214787ms
+2025/07/16 21:29:22 Started GET /health
+2025/07/16 21:29:22 Completed GET /health with status 0 in 107.018µs
+2025/07/16 21:29:22 Started GET /health
+2025/07/16 21:29:22 Started POST /api/auth/validate
+2025/07/16 21:29:22 Started POST /api/auth/validate
+2025/07/16 21:29:22 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:22 Completed GET /health with status 0 in 243.771µs
+2025/07/16 21:29:22 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:22 Completed POST /api/auth/validate with status 200 in 1.093485ms
+2025/07/16 21:29:22 Completed POST /api/auth/validate with status 200 in 3.717198ms
+2025/07/16 21:29:22 Started POST /api/auth/validate
+2025/07/16 21:29:22 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:22 Completed POST /api/auth/validate with status 200 in 1.619354ms
+2025/07/16 21:29:22 Started POST /api/auth/validate
+2025/07/16 21:29:22 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:22 Completed POST /api/auth/validate with status 200 in 1.024044ms
+2025/07/16 21:29:22 Started POST /api/auth/validate
+2025/07/16 21:29:22 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:22 Completed POST /api/auth/validate with status 200 in 733.355µs
+2025/07/16 21:29:22 Started POST /api/auth/validate
+2025/07/16 21:29:22 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:22 Completed POST /api/auth/validate with status 200 in 1.131187ms
+2025/07/16 21:29:22 Started POST /api/auth/validate
+2025/07/16 21:29:22 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:22 Started POST /api/auth/validate
+2025/07/16 21:29:22 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:22 Completed POST /api/auth/validate with status 200 in 1.153208ms
+2025/07/16 21:29:22 Completed POST /api/auth/validate with status 200 in 800.376µs
+2025/07/16 21:29:22 Started POST /api/auth/validate
+2025/07/16 21:29:22 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:22 Completed POST /api/auth/validate with status 200 in 883.788µs
+2025/07/16 21:29:22 Started POST /api/auth/validate
+2025/07/16 21:29:22 Started POST /api/auth/validate
+2025/07/16 21:29:22 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:22 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:22 Completed POST /api/auth/validate with status 200 in 1.604256ms
+2025/07/16 21:29:22 Completed POST /api/auth/validate with status 200 in 1.883852ms
+2025/07/16 21:29:22 Started POST /api/auth/validate
+2025/07/16 21:29:22 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:22 Completed POST /api/auth/validate with status 200 in 749.037µs
+2025/07/16 21:29:23 Started POST /api/auth/validate
+2025/07/16 21:29:23 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:23 Started POST /api/auth/validate
+2025/07/16 21:29:23 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:23 Completed POST /api/auth/validate with status 200 in 2.304351ms
+2025/07/16 21:29:23 Completed POST /api/auth/validate with status 200 in 1.605268ms
+2025/07/16 21:29:23 Started POST /api/auth/validate
+2025/07/16 21:29:23 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:23 Completed POST /api/auth/validate with status 200 in 1.641843ms
+2025/07/16 21:29:23 Started POST /api/auth/validate
+2025/07/16 21:29:23 Started POST /api/auth/validate
+2025/07/16 21:29:23 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:23 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:23 Completed POST /api/auth/validate with status 200 in 779.864µs
+2025/07/16 21:29:23 Completed POST /api/auth/validate with status 200 in 858.768µs
+2025/07/16 21:29:23 Started POST /api/auth/validate
+2025/07/16 21:29:23 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:23 Completed POST /api/auth/validate with status 200 in 626.435µs
+2025/07/16 21:29:23 Started POST /api/auth/validate
+2025/07/16 21:29:23 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:23 Completed POST /api/auth/validate with status 200 in 1.026751ms
+2025/07/16 21:29:23 Started POST /api/auth/validate
+2025/07/16 21:29:23 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:23 Started POST /api/auth/validate
+2025/07/16 21:29:23 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:23 Completed POST /api/auth/validate with status 200 in 1.074544ms
+2025/07/16 21:29:23 Completed POST /api/auth/validate with status 200 in 758.511µs
+2025/07/16 21:29:23 Started POST /api/auth/validate
+2025/07/16 21:29:23 Started POST /api/auth/validate
+2025/07/16 21:29:23 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:23 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:23 Completed POST /api/auth/validate with status 200 in 1.951286ms
+2025/07/16 21:29:23 Completed POST /api/auth/validate with status 200 in 2.507533ms
+2025/07/16 21:29:23 Started POST /api/auth/validate
+2025/07/16 21:29:23 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:23 Completed POST /api/auth/validate with status 200 in 798.63µs
+2025/07/16 21:29:23 Started POST /api/auth/validate
+2025/07/16 21:29:23 Started POST /api/auth/validate
+2025/07/16 21:29:23 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:23 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:23 Completed POST /api/auth/validate with status 200 in 1.270261ms
+2025/07/16 21:29:23 Completed POST /api/auth/validate with status 200 in 1.514271ms
+2025/07/16 21:29:23 Started POST /api/auth/validate
+2025/07/16 21:29:23 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:23 Completed POST /api/auth/validate with status 200 in 1.21617ms
+2025/07/16 21:29:23 Started POST /api/auth/validate
+2025/07/16 21:29:23 Started POST /api/auth/validate
+2025/07/16 21:29:23 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:23 Started POST /api/auth/validate
+2025/07/16 21:29:23 Completed POST /api/auth/validate with status 200 in 1.827342ms
+2025/07/16 21:29:23 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:23 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:23 Completed POST /api/auth/validate with status 200 in 2.724602ms
+2025/07/16 21:29:23 Completed POST /api/auth/validate with status 200 in 2.553033ms
+2025/07/16 21:29:23 Started POST /api/auth/validate
+2025/07/16 21:29:23 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:23 Completed POST /api/auth/validate with status 200 in 1.163707ms
+2025/07/16 21:29:23 Started POST /api/auth/validate
+2025/07/16 21:29:23 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:23 Started POST /api/auth/validate
+2025/07/16 21:29:23 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:23 Completed POST /api/auth/validate with status 200 in 1.57791ms
+2025/07/16 21:29:23 Completed POST /api/auth/validate with status 200 in 1.382027ms
+2025/07/16 21:29:23 Started POST /api/auth/validate
+2025/07/16 21:29:23 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:23 Started POST /api/auth/validate
+2025/07/16 21:29:23 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:23 Completed POST /api/auth/validate with status 200 in 1.623409ms
+2025/07/16 21:29:23 Completed POST /api/auth/validate with status 200 in 900.805µs
+2025/07/16 21:29:23 Started POST /api/auth/validate
+2025/07/16 21:29:23 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:23 Completed POST /api/auth/validate with status 200 in 1.093853ms
+2025/07/16 21:29:23 Started POST /api/auth/validate
+2025/07/16 21:29:23 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:23 Completed POST /api/auth/validate with status 200 in 1.035342ms
+2025/07/16 21:29:23 Started POST /api/auth/validate
+2025/07/16 21:29:23 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:23 Started POST /api/auth/validate
+2025/07/16 21:29:23 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:23 Completed POST /api/auth/validate with status 200 in 1.158619ms
+2025/07/16 21:29:23 Completed POST /api/auth/validate with status 200 in 1.047186ms
+2025/07/16 21:29:24 Started POST /api/auth/validate
+2025/07/16 21:29:24 Started POST /api/auth/validate
+2025/07/16 21:29:24 Started POST /api/auth/validate
+2025/07/16 21:29:24 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:24 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:24 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:24 Completed POST /api/auth/validate with status 200 in 1.133464ms
+2025/07/16 21:29:24 Completed POST /api/auth/validate with status 200 in 1.397355ms
+2025/07/16 21:29:24 Completed POST /api/auth/validate with status 200 in 5.702725ms
+2025/07/16 21:29:24 Started POST /api/auth/validate
+2025/07/16 21:29:24 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:24 Started POST /api/auth/validate
+2025/07/16 21:29:24 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:24 Completed POST /api/auth/validate with status 200 in 1.339556ms
+2025/07/16 21:29:24 Completed POST /api/auth/validate with status 200 in 1.047349ms
+2025/07/16 21:29:24 Started POST /api/auth/validate
+2025/07/16 21:29:24 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:24 Completed POST /api/auth/validate with status 200 in 1.757995ms
+2025/07/16 21:29:24 Started POST /api/auth/validate
+2025/07/16 21:29:24 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:24 Completed POST /api/auth/validate with status 200 in 1.494605ms
+2025/07/16 21:29:24 Started POST /api/auth/validate
+2025/07/16 21:29:24 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:24 Started POST /api/auth/validate
+2025/07/16 21:29:24 Completed POST /api/auth/validate with status 200 in 1.094556ms
+2025/07/16 21:29:24 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:24 Completed POST /api/auth/validate with status 200 in 970.492µs
+2025/07/16 21:29:24 Started POST /api/auth/validate
+2025/07/16 21:29:24 Started POST /api/auth/validate
+2025/07/16 21:29:24 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:24 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:24 Started POST /api/auth/validate
+2025/07/16 21:29:24 Completed POST /api/auth/validate with status 200 in 2.202831ms
+2025/07/16 21:29:24 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:24 Completed POST /api/auth/validate with status 200 in 1.854243ms
+2025/07/16 21:29:24 Completed POST /api/auth/validate with status 200 in 929.207µs
+2025/07/16 21:29:24 Started POST /api/auth/validate
+2025/07/16 21:29:24 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:24 Completed POST /api/auth/validate with status 200 in 1.70103ms
+2025/07/16 21:29:24 Started POST /api/auth/validate
+2025/07/16 21:29:24 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:24 Completed POST /api/auth/validate with status 200 in 1.685225ms
+2025/07/16 21:29:24 Started POST /api/auth/validate
+2025/07/16 21:29:24 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:24 Completed POST /api/auth/validate with status 200 in 2.218178ms
+2025/07/16 21:29:24 Started POST /api/auth/validate
+2025/07/16 21:29:24 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:24 Completed POST /api/auth/validate with status 200 in 1.085173ms
+2025/07/16 21:29:24 Started POST /api/auth/validate
+2025/07/16 21:29:24 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:24 Completed POST /api/auth/validate with status 200 in 870.157µs
+2025/07/16 21:29:24 Started POST /api/auth/validate
+2025/07/16 21:29:24 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:24 Completed POST /api/auth/validate with status 200 in 1.134132ms
+2025/07/16 21:29:24 Started POST /api/auth/validate
+2025/07/16 21:29:24 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:24 Completed POST /api/auth/validate with status 200 in 1.234174ms
+2025/07/16 21:29:24 Started POST /api/auth/validate
+2025/07/16 21:29:24 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:24 Completed POST /api/auth/validate with status 200 in 1.166033ms
+2025/07/16 21:29:24 Started POST /api/auth/validate
+2025/07/16 21:29:24 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:24 Completed POST /api/auth/validate with status 200 in 1.072578ms
+2025/07/16 21:29:24 Started POST /api/auth/validate
+2025/07/16 21:29:24 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:24 Completed POST /api/auth/validate with status 200 in 1.203357ms
+2025/07/16 21:29:24 Started POST /api/auth/validate
+2025/07/16 21:29:24 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:24 Completed POST /api/auth/validate with status 200 in 1.021702ms
+2025/07/16 21:29:24 Started POST /api/auth/validate
+2025/07/16 21:29:24 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:24 Completed POST /api/auth/validate with status 200 in 1.009192ms
+2025/07/16 21:29:25 Started POST /api/auth/validate
+2025/07/16 21:29:25 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:25 Started POST /api/auth/validate
+2025/07/16 21:29:25 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:25 Started POST /api/auth/validate
+2025/07/16 21:29:25 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:25 Completed POST /api/auth/validate with status 200 in 1.706046ms
+2025/07/16 21:29:25 Completed POST /api/auth/validate with status 200 in 1.96538ms
+2025/07/16 21:29:25 Completed POST /api/auth/validate with status 200 in 1.518936ms
+2025/07/16 21:29:25 Started POST /api/auth/validate
+2025/07/16 21:29:25 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:25 Started POST /api/auth/validate
+2025/07/16 21:29:25 Started POST /api/auth/validate
+2025/07/16 21:29:25 Completed POST /api/auth/validate with status 200 in 2.290393ms
+2025/07/16 21:29:25 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:25 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:25 Completed POST /api/auth/validate with status 200 in 2.127428ms
+2025/07/16 21:29:25 Completed POST /api/auth/validate with status 200 in 1.84645ms
+2025/07/16 21:29:25 Started POST /api/auth/validate
+2025/07/16 21:29:25 Started POST /api/auth/validate
+2025/07/16 21:29:25 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:25 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:25 Completed POST /api/auth/validate with status 200 in 1.273154ms
+2025/07/16 21:29:25 Completed POST /api/auth/validate with status 200 in 1.398964ms
+2025/07/16 21:29:25 Started POST /api/auth/validate
+2025/07/16 21:29:25 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:25 Completed POST /api/auth/validate with status 200 in 2.000742ms
+2025/07/16 21:29:25 Started POST /api/auth/validate
+2025/07/16 21:29:25 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:25 Completed POST /api/auth/validate with status 200 in 1.461014ms
+2025/07/16 21:29:25 Started POST /api/auth/validate
+2025/07/16 21:29:25 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:25 Started POST /api/auth/validate
+2025/07/16 21:29:25 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:25 Completed POST /api/auth/validate with status 200 in 1.341292ms
+2025/07/16 21:29:25 Completed POST /api/auth/validate with status 200 in 1.847327ms
+2025/07/16 21:29:25 Started POST /api/auth/validate
+2025/07/16 21:29:25 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:25 Completed POST /api/auth/validate with status 200 in 1.309517ms
+2025/07/16 21:29:25 Started POST /api/auth/validate
+2025/07/16 21:29:25 Started POST /api/auth/validate
+2025/07/16 21:29:25 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:25 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:25 Completed POST /api/auth/validate with status 200 in 1.159729ms
+2025/07/16 21:29:25 Completed POST /api/auth/validate with status 200 in 1.963129ms
+2025/07/16 21:29:25 Started GET /health
+2025/07/16 21:29:25 Completed GET /health with status 0 in 203.498µs
+2025/07/16 21:29:25 Started POST /api/auth/validate
+2025/07/16 21:29:25 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:25 Started POST /api/auth/validate
+2025/07/16 21:29:25 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:25 Completed POST /api/auth/validate with status 200 in 1.243422ms
+2025/07/16 21:29:25 Completed POST /api/auth/validate with status 200 in 819.163µs
+2025/07/16 21:29:25 Started POST /api/auth/validate
+2025/07/16 21:29:25 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:25 Completed POST /api/auth/validate with status 200 in 1.859337ms
+2025/07/16 21:29:25 Started POST /api/auth/validate
+2025/07/16 21:29:25 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:25 Completed POST /api/auth/validate with status 200 in 1.500088ms
+2025/07/16 21:29:25 Started POST /api/auth/validate
+2025/07/16 21:29:25 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:25 Completed POST /api/auth/validate with status 200 in 1.229786ms
+2025/07/16 21:29:25 Started POST /api/auth/validate
+2025/07/16 21:29:25 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:25 Completed POST /api/auth/validate with status 200 in 1.52469ms
+2025/07/16 21:29:25 Started POST /api/auth/validate
+2025/07/16 21:29:25 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:25 Started POST /api/auth/validate
+2025/07/16 21:29:25 Completed POST /api/auth/validate with status 200 in 2.177177ms
+2025/07/16 21:29:25 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:25 Completed POST /api/auth/validate with status 200 in 1.083459ms
+2025/07/16 21:29:25 Started POST /api/auth/validate
+2025/07/16 21:29:25 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:25 Completed POST /api/auth/validate with status 200 in 1.475276ms
+2025/07/16 21:29:25 Started POST /api/auth/validate
+2025/07/16 21:29:25 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:25 Completed POST /api/auth/validate with status 200 in 1.040382ms
+2025/07/16 21:29:25 Started POST /api/auth/validate
+2025/07/16 21:29:25 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:25 Started POST /api/auth/validate
+2025/07/16 21:29:25 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:25 Completed POST /api/auth/validate with status 200 in 812.156µs
+2025/07/16 21:29:25 Completed POST /api/auth/validate with status 200 in 741.516µs
+2025/07/16 21:29:26 Started POST /api/auth/validate
+2025/07/16 21:29:26 Started POST /api/auth/validate
+2025/07/16 21:29:26 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:26 Completed POST /api/auth/validate with status 200 in 2.94305ms
+2025/07/16 21:29:26 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:26 Started POST /api/auth/validate
+2025/07/16 21:29:26 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:26 Completed POST /api/auth/validate with status 200 in 4.62826ms
+2025/07/16 21:29:26 Completed POST /api/auth/validate with status 200 in 1.559863ms
+2025/07/16 21:29:26 Started POST /api/auth/validate
+2025/07/16 21:29:26 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:26 Completed POST /api/auth/validate with status 200 in 1.392527ms
+2025/07/16 21:29:26 Started POST /api/auth/validate
+2025/07/16 21:29:26 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:26 Completed POST /api/auth/validate with status 200 in 1.15472ms
+2025/07/16 21:29:26 Started POST /api/auth/validate
+2025/07/16 21:29:26 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:26 Completed POST /api/auth/validate with status 200 in 1.374013ms
+2025/07/16 21:29:26 Started POST /api/auth/validate
+2025/07/16 21:29:26 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:26 Completed POST /api/auth/validate with status 200 in 1.577419ms
+2025/07/16 21:29:26 Started POST /api/auth/validate
+2025/07/16 21:29:26 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:26 Started POST /api/auth/validate
+2025/07/16 21:29:26 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:26 Completed POST /api/auth/validate with status 200 in 1.81285ms
+2025/07/16 21:29:26 Completed POST /api/auth/validate with status 200 in 1.928981ms
+2025/07/16 21:29:26 Started POST /api/auth/validate
+2025/07/16 21:29:26 Started POST /api/auth/validate
+2025/07/16 21:29:26 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:26 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:26 Completed POST /api/auth/validate with status 200 in 2.215992ms
+2025/07/16 21:29:26 Completed POST /api/auth/validate with status 200 in 2.662544ms
+2025/07/16 21:29:26 Started POST /api/auth/validate
+2025/07/16 21:29:26 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:26 Completed POST /api/auth/validate with status 200 in 1.075116ms
+2025/07/16 21:29:26 Started POST /api/auth/validate
+2025/07/16 21:29:26 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:26 Completed POST /api/auth/validate with status 200 in 1.52075ms
+2025/07/16 21:29:26 Started POST /api/auth/validate
+2025/07/16 21:29:26 Started POST /api/auth/validate
+2025/07/16 21:29:26 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:26 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:26 Completed POST /api/auth/validate with status 200 in 1.858968ms
+2025/07/16 21:29:26 Completed POST /api/auth/validate with status 200 in 3.188655ms
+2025/07/16 21:29:26 Started POST /api/auth/validate
+2025/07/16 21:29:26 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:26 Completed POST /api/auth/validate with status 200 in 1.954542ms
+2025/07/16 21:29:26 Started POST /api/auth/validate
+2025/07/16 21:29:26 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:26 Started POST /api/auth/validate
+2025/07/16 21:29:26 Completed POST /api/auth/validate with status 200 in 1.592347ms
+2025/07/16 21:29:26 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:26 Completed POST /api/auth/validate with status 200 in 1.740294ms
+2025/07/16 21:29:26 Started POST /api/auth/validate
+2025/07/16 21:29:26 Started POST /api/auth/validate
+2025/07/16 21:29:26 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:26 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:26 Completed POST /api/auth/validate with status 200 in 2.268783ms
+2025/07/16 21:29:26 Started POST /api/auth/validate
+2025/07/16 21:29:26 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:26 Completed POST /api/auth/validate with status 200 in 2.579188ms
+2025/07/16 21:29:26 Completed POST /api/auth/validate with status 200 in 1.287696ms
+2025/07/16 21:29:26 Started POST /api/auth/validate
+2025/07/16 21:29:26 Started POST /api/auth/validate
+2025/07/16 21:29:26 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:26 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:26 Completed POST /api/auth/validate with status 200 in 2.305978ms
+2025/07/16 21:29:26 Completed POST /api/auth/validate with status 200 in 2.142894ms
+2025/07/16 21:29:26 Started POST /api/auth/validate
+2025/07/16 21:29:26 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:26 Completed POST /api/auth/validate with status 200 in 1.09484ms
+2025/07/16 21:29:27 Started POST /api/auth/validate
+2025/07/16 21:29:27 Started POST /api/auth/validate
+2025/07/16 21:29:27 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:27 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:27 Completed POST /api/auth/validate with status 200 in 1.87449ms
+2025/07/16 21:29:27 Completed POST /api/auth/validate with status 200 in 2.208566ms
+2025/07/16 21:29:27 Started POST /api/auth/validate
+2025/07/16 21:29:27 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:27 Completed POST /api/auth/validate with status 200 in 1.112351ms
+2025/07/16 21:29:27 Started POST /api/auth/validate
+2025/07/16 21:29:27 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:27 Completed POST /api/auth/validate with status 200 in 849.451µs
+2025/07/16 21:29:27 Started POST /api/auth/validate
+2025/07/16 21:29:27 Started POST /api/auth/validate
+2025/07/16 21:29:27 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:27 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:27 Completed POST /api/auth/validate with status 200 in 963.201µs
+2025/07/16 21:29:27 Completed POST /api/auth/validate with status 200 in 1.087584ms
+2025/07/16 21:29:27 Started POST /api/auth/validate
+2025/07/16 21:29:27 Started POST /api/auth/validate
+2025/07/16 21:29:27 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:27 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:27 Started POST /api/auth/validate
+2025/07/16 21:29:27 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:27 Completed POST /api/auth/validate with status 200 in 1.928112ms
+2025/07/16 21:29:27 Completed POST /api/auth/validate with status 200 in 2.439484ms
+2025/07/16 21:29:27 Completed POST /api/auth/validate with status 200 in 2.343163ms
+2025/07/16 21:29:27 Started POST /api/auth/validate
+2025/07/16 21:29:27 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:27 Completed POST /api/auth/validate with status 200 in 1.546334ms
+2025/07/16 21:29:27 Started POST /api/auth/validate
+2025/07/16 21:29:27 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:27 Started POST /api/auth/validate
+2025/07/16 21:29:27 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:27 Completed POST /api/auth/validate with status 200 in 1.379295ms
+2025/07/16 21:29:27 Completed POST /api/auth/validate with status 200 in 1.204169ms
+2025/07/16 21:29:27 Started POST /api/auth/validate
+2025/07/16 21:29:27 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:27 Started POST /api/auth/validate
+2025/07/16 21:29:27 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:27 Completed POST /api/auth/validate with status 200 in 2.840359ms
+2025/07/16 21:29:27 Completed POST /api/auth/validate with status 200 in 4.915744ms
+2025/07/16 21:29:27 Started POST /api/auth/validate
+2025/07/16 21:29:27 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:27 Completed POST /api/auth/validate with status 200 in 1.06465ms
+2025/07/16 21:29:27 Started POST /api/auth/validate
+2025/07/16 21:29:27 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:27 Started POST /api/auth/validate
+2025/07/16 21:29:27 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:27 Completed POST /api/auth/validate with status 200 in 1.241737ms
+2025/07/16 21:29:27 Completed POST /api/auth/validate with status 200 in 1.064566ms
+2025/07/16 21:29:27 Started POST /api/auth/validate
+2025/07/16 21:29:27 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:27 Completed POST /api/auth/validate with status 200 in 1.365244ms
+2025/07/16 21:29:27 Started POST /api/auth/validate
+2025/07/16 21:29:27 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:27 Started POST /api/auth/validate
+2025/07/16 21:29:27 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:27 Completed POST /api/auth/validate with status 200 in 733.867µs
+2025/07/16 21:29:27 Completed POST /api/auth/validate with status 200 in 1.279264ms
+2025/07/16 21:29:27 Started POST /api/auth/validate
+2025/07/16 21:29:27 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:27 Completed POST /api/auth/validate with status 200 in 796.788µs
+2025/07/16 21:29:27 Started POST /api/auth/validate
+2025/07/16 21:29:27 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:27 Started POST /api/auth/validate
+2025/07/16 21:29:27 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:27 Completed POST /api/auth/validate with status 200 in 2.187051ms
+2025/07/16 21:29:27 Started POST /api/auth/validate
+2025/07/16 21:29:27 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:27 Completed POST /api/auth/validate with status 200 in 1.482871ms
+2025/07/16 21:29:27 Completed POST /api/auth/validate with status 200 in 1.764742ms
+2025/07/16 21:29:28 Started POST /api/auth/validate
+2025/07/16 21:29:28 Started POST /api/auth/validate
+2025/07/16 21:29:28 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:28 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:28 Started POST /api/auth/validate
+2025/07/16 21:29:28 Completed POST /api/auth/validate with status 200 in 1.638588ms
+2025/07/16 21:29:28 Completed POST /api/auth/validate with status 200 in 1.625288ms
+2025/07/16 21:29:28 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:28 Completed POST /api/auth/validate with status 200 in 1.970984ms
+2025/07/16 21:29:28 Started POST /api/auth/validate
+2025/07/16 21:29:28 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:28 Started POST /api/auth/validate
+2025/07/16 21:29:28 Completed POST /api/auth/validate with status 200 in 2.163784ms
+2025/07/16 21:29:28 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:28 Completed POST /api/auth/validate with status 200 in 1.336922ms
+2025/07/16 21:29:28 Started POST /api/auth/validate
+2025/07/16 21:29:28 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:28 Completed POST /api/auth/validate with status 200 in 1.361981ms
+2025/07/16 21:29:28 Started POST /api/auth/validate
+2025/07/16 21:29:28 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:28 Completed POST /api/auth/validate with status 200 in 1.269ms
+2025/07/16 21:29:28 Started POST /api/auth/validate
+2025/07/16 21:29:28 Started POST /api/auth/validate
+2025/07/16 21:29:28 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:28 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:28 Completed POST /api/auth/validate with status 200 in 1.94801ms
+2025/07/16 21:29:28 Completed POST /api/auth/validate with status 200 in 2.214318ms
+2025/07/16 21:29:28 Started POST /api/auth/validate
+2025/07/16 21:29:28 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:28 Started POST /api/auth/validate
+2025/07/16 21:29:28 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:28 Completed POST /api/auth/validate with status 200 in 1.283718ms
+2025/07/16 21:29:28 Completed POST /api/auth/validate with status 200 in 1.207958ms
+2025/07/16 21:29:28 Started POST /api/auth/validate
+2025/07/16 21:29:28 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:28 Completed POST /api/auth/validate with status 200 in 923.804µs
+2025/07/16 21:29:28 Started POST /api/auth/validate
+2025/07/16 21:29:28 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:28 Started POST /api/auth/validate
+2025/07/16 21:29:28 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:28 Completed POST /api/auth/validate with status 200 in 1.897267ms
+2025/07/16 21:29:28 Completed POST /api/auth/validate with status 200 in 1.348972ms
+2025/07/16 21:29:28 Started POST /api/auth/validate
+2025/07/16 21:29:28 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:28 Completed POST /api/auth/validate with status 200 in 980.592µs
+2025/07/16 21:29:28 Started POST /api/auth/validate
+2025/07/16 21:29:28 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:28 Started POST /api/auth/validate
+2025/07/16 21:29:28 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:28 Started GET /health
+2025/07/16 21:29:28 Completed GET /health with status 0 in 192.966µs
+2025/07/16 21:29:28 Completed POST /api/auth/validate with status 200 in 2.021185ms
+2025/07/16 21:29:28 Started POST /api/auth/validate
+2025/07/16 21:29:28 Completed POST /api/auth/validate with status 200 in 2.744601ms
+2025/07/16 21:29:28 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:28 Completed POST /api/auth/validate with status 200 in 1.160842ms
+2025/07/16 21:29:28 Started POST /api/auth/validate
+2025/07/16 21:29:28 Started POST /api/auth/validate
+2025/07/16 21:29:28 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:28 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:28 Started POST /api/auth/validate
+2025/07/16 21:29:28 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:28 Completed POST /api/auth/validate with status 200 in 1.631041ms
+2025/07/16 21:29:28 Completed POST /api/auth/validate with status 200 in 1.885383ms
+2025/07/16 21:29:28 Completed POST /api/auth/validate with status 200 in 1.423273ms
+2025/07/16 21:29:28 Started POST /api/auth/validate
+2025/07/16 21:29:28 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:28 Started POST /api/auth/validate
+2025/07/16 21:29:28 Completed POST /api/auth/validate with status 200 in 1.129862ms
+2025/07/16 21:29:28 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:28 Started POST /api/auth/validate
+2025/07/16 21:29:28 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:28 Completed POST /api/auth/validate with status 200 in 880.94µs
+2025/07/16 21:29:28 Completed POST /api/auth/validate with status 200 in 2.201559ms
+2025/07/16 21:29:28 Started POST /api/auth/validate
+2025/07/16 21:29:28 Started POST /api/auth/validate
+2025/07/16 21:29:28 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:28 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:28 Started POST /api/auth/validate
+2025/07/16 21:29:28 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:28 Completed POST /api/auth/validate with status 200 in 1.608067ms
+2025/07/16 21:29:28 Completed POST /api/auth/validate with status 200 in 1.913319ms
+2025/07/16 21:29:28 Completed POST /api/auth/validate with status 200 in 2.321517ms
+2025/07/16 21:29:29 Started POST /api/auth/validate
+2025/07/16 21:29:29 Started POST /api/auth/validate
+2025/07/16 21:29:29 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:29 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:29 Started POST /api/auth/validate
+2025/07/16 21:29:29 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:29 Completed POST /api/auth/validate with status 200 in 1.486011ms
+2025/07/16 21:29:29 Completed POST /api/auth/validate with status 200 in 993.857µs
+2025/07/16 21:29:29 Completed POST /api/auth/validate with status 200 in 1.822105ms
+2025/07/16 21:29:29 Started POST /api/auth/validate
+2025/07/16 21:29:29 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:29 Started POST /api/auth/validate
+2025/07/16 21:29:29 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:29 Completed POST /api/auth/validate with status 200 in 1.614887ms
+2025/07/16 21:29:29 Completed POST /api/auth/validate with status 200 in 1.2017ms
+2025/07/16 21:29:29 Started POST /api/auth/validate
+2025/07/16 21:29:29 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:29 Completed POST /api/auth/validate with status 200 in 941.323µs
+2025/07/16 21:29:29 Started POST /api/auth/validate
+2025/07/16 21:29:29 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:29 Started POST /api/auth/validate
+2025/07/16 21:29:29 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:29 Completed POST /api/auth/validate with status 200 in 2.190763ms
+2025/07/16 21:29:29 Started POST /api/auth/validate
+2025/07/16 21:29:29 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:29 Completed POST /api/auth/validate with status 200 in 1.50886ms
+2025/07/16 21:29:29 Completed POST /api/auth/validate with status 200 in 1.141578ms
+2025/07/16 21:29:29 Started POST /api/auth/validate
+2025/07/16 21:29:29 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:29 Completed POST /api/auth/validate with status 200 in 2.498005ms
+2025/07/16 21:29:29 Started POST /api/auth/validate
+2025/07/16 21:29:29 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:29 Started POST /api/auth/validate
+2025/07/16 21:29:29 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:29 Completed POST /api/auth/validate with status 200 in 1.184565ms
+2025/07/16 21:29:29 Completed POST /api/auth/validate with status 200 in 1.087876ms
+2025/07/16 21:29:29 Started POST /api/auth/validate
+2025/07/16 21:29:29 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:29 Completed POST /api/auth/validate with status 200 in 1.876516ms
+2025/07/16 21:29:29 Started POST /api/auth/validate
+2025/07/16 21:29:29 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:29 Started POST /api/auth/validate
+2025/07/16 21:29:29 Completed POST /api/auth/validate with status 200 in 1.326115ms
+2025/07/16 21:29:29 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:29 Completed POST /api/auth/validate with status 200 in 1.07812ms
+2025/07/16 21:29:29 Started POST /api/auth/validate
+2025/07/16 21:29:29 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:29 Started POST /api/auth/validate
+2025/07/16 21:29:29 Started POST /api/auth/validate
+2025/07/16 21:29:29 Completed POST /api/auth/validate with status 200 in 1.352007ms
+2025/07/16 21:29:29 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:29 Completed POST /api/auth/validate with status 200 in 1.326115ms
+2025/07/16 21:29:29 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:29 Completed POST /api/auth/validate with status 200 in 1.411087ms
+2025/07/16 21:29:29 Started POST /api/auth/validate
+2025/07/16 21:29:29 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:29 Started POST /api/auth/validate
+2025/07/16 21:29:29 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:29 Completed POST /api/auth/validate with status 200 in 2.321639ms
+2025/07/16 21:29:29 Completed POST /api/auth/validate with status 200 in 1.594207ms
+2025/07/16 21:29:29 Started POST /api/auth/validate
+2025/07/16 21:29:29 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:29 Completed POST /api/auth/validate with status 200 in 3.038191ms
+2025/07/16 21:29:29 Started POST /api/auth/validate
+2025/07/16 21:29:29 Started POST /api/auth/validate
+2025/07/16 21:29:29 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:29 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:29 Completed POST /api/auth/validate with status 200 in 1.43527ms
+2025/07/16 21:29:29 Completed POST /api/auth/validate with status 200 in 1.254485ms
+2025/07/16 21:29:29 Started POST /api/auth/validate
+2025/07/16 21:29:29 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:29 Completed POST /api/auth/validate with status 200 in 1.408919ms
+2025/07/16 21:29:30 Started POST /api/auth/validate
+2025/07/16 21:29:30 Started POST /api/auth/validate
+2025/07/16 21:29:30 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:30 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:30 Completed POST /api/auth/validate with status 200 in 1.460817ms
+2025/07/16 21:29:30 Completed POST /api/auth/validate with status 200 in 1.556668ms
+2025/07/16 21:29:30 Started POST /api/auth/validate
+2025/07/16 21:29:30 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:30 Completed POST /api/auth/validate with status 200 in 1.485707ms
+2025/07/16 21:29:30 Started POST /api/auth/validate
+2025/07/16 21:29:30 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:30 Started POST /api/auth/validate
+2025/07/16 21:29:30 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:30 Completed POST /api/auth/validate with status 200 in 1.417499ms
+2025/07/16 21:29:30 Completed POST /api/auth/validate with status 200 in 1.178769ms
+2025/07/16 21:29:30 Started POST /api/auth/validate
+2025/07/16 21:29:30 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:30 Completed POST /api/auth/validate with status 200 in 1.116355ms
+2025/07/16 21:29:30 Started POST /api/auth/validate
+2025/07/16 21:29:30 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:30 Completed POST /api/auth/validate with status 200 in 2.386847ms
+2025/07/16 21:29:30 Started POST /api/auth/validate
+2025/07/16 21:29:30 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:30 Completed POST /api/auth/validate with status 200 in 1.042809ms
+2025/07/16 21:29:30 Started POST /api/auth/validate
+2025/07/16 21:29:30 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:30 Completed POST /api/auth/validate with status 200 in 1.118689ms
+2025/07/16 21:29:30 Started POST /api/auth/validate
+2025/07/16 21:29:30 Started POST /api/auth/validate
+2025/07/16 21:29:30 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:30 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:30 Completed POST /api/auth/validate with status 200 in 2.266647ms
+2025/07/16 21:29:30 Completed POST /api/auth/validate with status 200 in 2.436043ms
+2025/07/16 21:29:30 Started POST /api/auth/validate
+2025/07/16 21:29:30 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:30 Completed POST /api/auth/validate with status 200 in 1.337491ms
+2025/07/16 21:29:30 Started POST /api/auth/validate
+2025/07/16 21:29:30 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:30 Started POST /api/auth/validate
+2025/07/16 21:29:30 Completed POST /api/auth/validate with status 200 in 1.63259ms
+2025/07/16 21:29:30 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:30 Started POST /api/auth/validate
+2025/07/16 21:29:30 Completed POST /api/auth/validate with status 200 in 1.913179ms
+2025/07/16 21:29:30 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:30 Completed POST /api/auth/validate with status 200 in 2.247677ms
+2025/07/16 21:29:30 Started POST /api/auth/validate
+2025/07/16 21:29:30 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:30 Started POST /api/auth/validate
+2025/07/16 21:29:30 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:30 Completed POST /api/auth/validate with status 200 in 963.386µs
+2025/07/16 21:29:30 Started POST /api/auth/validate
+2025/07/16 21:29:30 Completed POST /api/auth/validate with status 200 in 762.637µs
+2025/07/16 21:29:30 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:30 Completed POST /api/auth/validate with status 200 in 1.107516ms
+2025/07/16 21:29:30 Started POST /api/auth/validate
+2025/07/16 21:29:30 Started POST /api/auth/validate
+2025/07/16 21:29:30 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:30 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:30 Started POST /api/auth/validate
+2025/07/16 21:29:30 Completed POST /api/auth/validate with status 200 in 1.264446ms
+2025/07/16 21:29:30 Completed POST /api/auth/validate with status 200 in 1.66707ms
+2025/07/16 21:29:30 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:30 Completed POST /api/auth/validate with status 200 in 1.431674ms
+2025/07/16 21:29:30 Started POST /api/auth/validate
+2025/07/16 21:29:30 Started POST /api/auth/validate
+2025/07/16 21:29:30 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:30 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:30 Completed POST /api/auth/validate with status 200 in 937.452µs
+2025/07/16 21:29:30 Completed POST /api/auth/validate with status 200 in 1.271951ms
+2025/07/16 21:29:30 Started POST /api/auth/validate
+2025/07/16 21:29:30 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:30 Completed POST /api/auth/validate with status 200 in 1.492045ms
+2025/07/16 21:29:30 Started POST /api/auth/validate
+2025/07/16 21:29:30 Started POST /api/auth/validate
+2025/07/16 21:29:30 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:30 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:30 Completed POST /api/auth/validate with status 200 in 1.3121ms
+2025/07/16 21:29:30 Completed POST /api/auth/validate with status 200 in 1.25815ms
+2025/07/16 21:29:30 Started POST /api/auth/validate
+2025/07/16 21:29:30 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:30 Completed POST /api/auth/validate with status 200 in 1.490461ms
+2025/07/16 21:29:31 Started POST /api/auth/validate
+2025/07/16 21:29:31 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:31 Started POST /api/auth/validate
+2025/07/16 21:29:31 Started POST /api/auth/validate
+2025/07/16 21:29:31 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:31 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:31 Completed POST /api/auth/validate with status 200 in 2.180393ms
+2025/07/16 21:29:31 Completed POST /api/auth/validate with status 200 in 1.225505ms
+2025/07/16 21:29:31 Completed POST /api/auth/validate with status 200 in 1.308552ms
+2025/07/16 21:29:31 Started POST /api/auth/validate
+2025/07/16 21:29:31 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:31 Completed POST /api/auth/validate with status 200 in 1.870421ms
+2025/07/16 21:29:31 Started POST /api/auth/validate
+2025/07/16 21:29:31 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:31 Started POST /api/auth/validate
+2025/07/16 21:29:31 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:31 Completed POST /api/auth/validate with status 200 in 1.087924ms
+2025/07/16 21:29:31 Completed POST /api/auth/validate with status 200 in 950.302µs
+2025/07/16 21:29:31 Started POST /api/auth/validate
+2025/07/16 21:29:31 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:31 Completed POST /api/auth/validate with status 200 in 1.675808ms
+2025/07/16 21:29:31 Started POST /api/auth/validate
+2025/07/16 21:29:31 Started POST /api/auth/validate
+2025/07/16 21:29:31 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:31 Completed POST /api/auth/validate with status 200 in 1.90886ms
+2025/07/16 21:29:31 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:31 Completed POST /api/auth/validate with status 200 in 2.053278ms
+2025/07/16 21:29:31 Started POST /api/auth/validate
+2025/07/16 21:29:31 Started POST /api/auth/validate
+2025/07/16 21:29:31 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:31 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:31 Completed POST /api/auth/validate with status 200 in 1.9902ms
+2025/07/16 21:29:31 Completed POST /api/auth/validate with status 200 in 1.968061ms
+2025/07/16 21:29:31 Started POST /api/auth/validate
+2025/07/16 21:29:31 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:31 Completed POST /api/auth/validate with status 200 in 1.628905ms
+2025/07/16 21:29:31 Started POST /api/auth/validate
+2025/07/16 21:29:31 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:31 Completed POST /api/auth/validate with status 200 in 1.796545ms
+2025/07/16 21:29:31 Started POST /api/auth/validate
+2025/07/16 21:29:31 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:31 Started POST /api/auth/validate
+2025/07/16 21:29:31 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:31 Completed POST /api/auth/validate with status 200 in 1.341738ms
+2025/07/16 21:29:31 Completed POST /api/auth/validate with status 200 in 1.405817ms
+2025/07/16 21:29:31 Started GET /health
+2025/07/16 21:29:31 Completed GET /health with status 0 in 124.906µs
+2025/07/16 21:29:31 Started POST /api/auth/validate
+2025/07/16 21:29:31 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:31 Started POST /api/auth/validate
+2025/07/16 21:29:31 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:31 Completed POST /api/auth/validate with status 200 in 1.363835ms
+2025/07/16 21:29:31 Completed POST /api/auth/validate with status 200 in 935.085µs
+2025/07/16 21:29:31 Started POST /api/auth/validate
+2025/07/16 21:29:31 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:31 Completed POST /api/auth/validate with status 200 in 926.247µs
+2025/07/16 21:29:31 Started POST /api/auth/validate
+2025/07/16 21:29:31 Started POST /api/auth/validate
+2025/07/16 21:29:31 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:31 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:31 Started POST /api/auth/validate
+2025/07/16 21:29:31 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:31 Completed POST /api/auth/validate with status 200 in 1.123904ms
+2025/07/16 21:29:31 Completed POST /api/auth/validate with status 200 in 1.029974ms
+2025/07/16 21:29:31 Completed POST /api/auth/validate with status 200 in 961.809µs
+2025/07/16 21:29:31 Started POST /api/auth/validate
+2025/07/16 21:29:31 Started POST /api/auth/validate
+2025/07/16 21:29:31 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:31 Started POST /api/auth/validate
+2025/07/16 21:29:31 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:31 Completed POST /api/auth/validate with status 200 in 3.001412ms
+2025/07/16 21:29:31 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:31 Completed POST /api/auth/validate with status 200 in 2.140412ms
+2025/07/16 21:29:31 Completed POST /api/auth/validate with status 200 in 4.68314ms
+2025/07/16 21:29:32 Started POST /api/auth/validate
+2025/07/16 21:29:32 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:32 Completed POST /api/auth/validate with status 200 in 1.959032ms
+2025/07/16 21:29:32 Started POST /api/auth/validate
+2025/07/16 21:29:32 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:32 Started POST /api/auth/validate
+2025/07/16 21:29:32 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:32 Completed POST /api/auth/validate with status 200 in 1.726779ms
+2025/07/16 21:29:32 Completed POST /api/auth/validate with status 200 in 1.79711ms
+2025/07/16 21:29:32 Started POST /api/auth/validate
+2025/07/16 21:29:32 Started POST /api/auth/validate
+2025/07/16 21:29:32 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:32 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:32 Started POST /api/auth/validate
+2025/07/16 21:29:32 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:32 Completed POST /api/auth/validate with status 200 in 2.169355ms
+2025/07/16 21:29:32 Completed POST /api/auth/validate with status 200 in 2.141048ms
+2025/07/16 21:29:32 Completed POST /api/auth/validate with status 200 in 2.515878ms
+2025/07/16 21:29:32 Started POST /api/auth/validate
+2025/07/16 21:29:32 Started POST /api/auth/validate
+2025/07/16 21:29:32 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:32 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:32 Completed POST /api/auth/validate with status 200 in 1.54693ms
+2025/07/16 21:29:32 Completed POST /api/auth/validate with status 200 in 1.650362ms
+2025/07/16 21:29:32 Started POST /api/auth/validate
+2025/07/16 21:29:32 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:32 Completed POST /api/auth/validate with status 200 in 2.084058ms
+2025/07/16 21:29:32 Started POST /api/auth/validate
+2025/07/16 21:29:32 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:32 Completed POST /api/auth/validate with status 200 in 1.386009ms
+2025/07/16 21:29:32 Started POST /api/auth/validate
+2025/07/16 21:29:32 Started POST /api/auth/validate
+2025/07/16 21:29:32 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:32 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:32 Completed POST /api/auth/validate with status 200 in 1.860561ms
+2025/07/16 21:29:32 Completed POST /api/auth/validate with status 200 in 2.387015ms
+2025/07/16 21:29:32 Started POST /api/auth/validate
+2025/07/16 21:29:32 Started POST /api/auth/validate
+2025/07/16 21:29:32 Started POST /api/auth/validate
+2025/07/16 21:29:32 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:32 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:32 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:32 Completed POST /api/auth/validate with status 200 in 1.715981ms
+2025/07/16 21:29:32 Completed POST /api/auth/validate with status 200 in 1.920011ms
+2025/07/16 21:29:32 Completed POST /api/auth/validate with status 200 in 2.921225ms
+2025/07/16 21:29:32 Started POST /api/auth/validate
+2025/07/16 21:29:32 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:32 Completed POST /api/auth/validate with status 200 in 1.501155ms
+2025/07/16 21:29:32 Started POST /api/auth/validate
+2025/07/16 21:29:32 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:32 Started POST /api/auth/validate
+2025/07/16 21:29:32 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:32 Completed POST /api/auth/validate with status 200 in 1.284662ms
+2025/07/16 21:29:32 Completed POST /api/auth/validate with status 200 in 1.238303ms
+2025/07/16 21:29:32 Started POST /api/auth/validate
+2025/07/16 21:29:32 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:32 Completed POST /api/auth/validate with status 200 in 2.274287ms
+2025/07/16 21:29:32 Started POST /api/auth/validate
+2025/07/16 21:29:32 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:32 Started POST /api/auth/validate
+2025/07/16 21:29:32 Completed POST /api/auth/validate with status 200 in 1.069836ms
+2025/07/16 21:29:32 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:32 Completed POST /api/auth/validate with status 200 in 1.301046ms
+2025/07/16 21:29:32 Started POST /api/auth/validate
+2025/07/16 21:29:32 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:32 Completed POST /api/auth/validate with status 200 in 1.93285ms
+2025/07/16 21:29:32 Started POST /api/auth/validate
+2025/07/16 21:29:32 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:32 Started POST /api/auth/validate
+2025/07/16 21:29:32 Completed POST /api/auth/validate with status 200 in 2.012352ms
+2025/07/16 21:29:32 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:32 Completed POST /api/auth/validate with status 200 in 2.457137ms
+2025/07/16 21:29:33 Started POST /api/auth/validate
+2025/07/16 21:29:33 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:33 Started POST /api/auth/validate
+2025/07/16 21:29:33 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:33 Completed POST /api/auth/validate with status 200 in 1.240514ms
+2025/07/16 21:29:33 Completed POST /api/auth/validate with status 200 in 829.427µs
+2025/07/16 21:29:33 Started POST /api/auth/validate
+2025/07/16 21:29:33 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:33 Completed POST /api/auth/validate with status 200 in 699.819µs
+2025/07/16 21:29:33 Started POST /api/auth/validate
+2025/07/16 21:29:33 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:33 Completed POST /api/auth/validate with status 200 in 2.500955ms
+2025/07/16 21:29:33 Started POST /api/auth/validate
+2025/07/16 21:29:33 Started POST /api/auth/validate
+2025/07/16 21:29:33 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:33 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:33 Completed POST /api/auth/validate with status 200 in 1.521033ms
+2025/07/16 21:29:33 Completed POST /api/auth/validate with status 200 in 1.956049ms
+2025/07/16 21:29:33 Started POST /api/auth/validate
+2025/07/16 21:29:33 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:33 Completed POST /api/auth/validate with status 200 in 1.239097ms
+2025/07/16 21:29:33 Started POST /api/auth/validate
+2025/07/16 21:29:33 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:33 Completed POST /api/auth/validate with status 200 in 1.584733ms
+2025/07/16 21:29:33 Started POST /api/auth/validate
+2025/07/16 21:29:33 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:33 Completed POST /api/auth/validate with status 200 in 984.549µs
+2025/07/16 21:29:33 Started POST /api/auth/validate
+2025/07/16 21:29:33 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:33 Completed POST /api/auth/validate with status 200 in 1.387631ms
+2025/07/16 21:29:33 Started POST /api/auth/validate
+2025/07/16 21:29:33 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:33 Completed POST /api/auth/validate with status 200 in 1.197034ms
+2025/07/16 21:29:33 Started POST /api/auth/validate
+2025/07/16 21:29:33 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:33 Completed POST /api/auth/validate with status 200 in 1.498522ms
+2025/07/16 21:29:33 Started POST /api/auth/validate
+2025/07/16 21:29:33 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:33 Completed POST /api/auth/validate with status 200 in 1.425442ms
+2025/07/16 21:29:33 Started POST /api/auth/validate
+2025/07/16 21:29:33 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:33 Completed POST /api/auth/validate with status 200 in 1.118117ms
+2025/07/16 21:29:33 Started POST /api/auth/validate
+2025/07/16 21:29:33 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:33 Completed POST /api/auth/validate with status 200 in 1.290456ms
+2025/07/16 21:29:33 Started POST /api/auth/validate
+2025/07/16 21:29:33 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:33 Completed POST /api/auth/validate with status 200 in 1.350696ms
+2025/07/16 21:29:33 Started POST /api/auth/validate
+2025/07/16 21:29:33 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:33 Completed POST /api/auth/validate with status 200 in 1.227882ms
+2025/07/16 21:29:33 Started POST /api/auth/validate
+2025/07/16 21:29:33 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:33 Completed POST /api/auth/validate with status 200 in 1.050041ms
+2025/07/16 21:29:33 Started POST /api/auth/validate
+2025/07/16 21:29:33 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:33 Completed POST /api/auth/validate with status 200 in 2.369471ms
+2025/07/16 21:29:33 Started POST /api/auth/validate
+2025/07/16 21:29:33 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:33 Completed POST /api/auth/validate with status 200 in 1.066174ms
+2025/07/16 21:29:33 Started POST /api/auth/validate
+2025/07/16 21:29:33 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:33 Completed POST /api/auth/validate with status 200 in 1.059754ms
+2025/07/16 21:29:33 Started POST /api/auth/validate
+2025/07/16 21:29:33 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:33 Completed POST /api/auth/validate with status 200 in 964.58µs
+2025/07/16 21:29:33 Started POST /api/auth/validate
+2025/07/16 21:29:33 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:33 Completed POST /api/auth/validate with status 200 in 763.31µs
+2025/07/16 21:29:33 Started POST /api/auth/validate
+2025/07/16 21:29:33 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:33 Completed POST /api/auth/validate with status 200 in 962.912µs
+2025/07/16 21:29:33 Started POST /api/auth/validate
+2025/07/16 21:29:33 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:33 Completed POST /api/auth/validate with status 200 in 1.663064ms
+2025/07/16 21:29:33 Started POST /api/auth/validate
+2025/07/16 21:29:33 Started POST /api/auth/validate
+2025/07/16 21:29:33 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:33 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:34 Completed POST /api/auth/validate with status 200 in 1.476927ms
+2025/07/16 21:29:34 Completed POST /api/auth/validate with status 200 in 2.138643ms
+2025/07/16 21:29:34 Started POST /api/auth/validate
+2025/07/16 21:29:34 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:34 Started POST /api/auth/validate
+2025/07/16 21:29:34 Completed POST /api/auth/validate with status 200 in 1.321263ms
+2025/07/16 21:29:34 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:34 Completed POST /api/auth/validate with status 200 in 937.328µs
+2025/07/16 21:29:34 Started POST /api/auth/validate
+2025/07/16 21:29:34 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:34 Completed POST /api/auth/validate with status 200 in 841.532µs
+2025/07/16 21:29:34 Started POST /api/auth/validate
+2025/07/16 21:29:34 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:34 Started POST /api/auth/validate
+2025/07/16 21:29:34 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:34 Completed POST /api/auth/validate with status 200 in 862.75µs
+2025/07/16 21:29:34 Completed POST /api/auth/validate with status 200 in 635.348µs
+2025/07/16 21:29:34 Started POST /api/auth/validate
+2025/07/16 21:29:34 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:34 Completed POST /api/auth/validate with status 200 in 633.64µs
+2025/07/16 21:29:34 Started POST /api/auth/validate
+2025/07/16 21:29:34 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:34 Completed POST /api/auth/validate with status 200 in 1.339814ms
+2025/07/16 21:29:34 Started POST /api/auth/validate
+2025/07/16 21:29:34 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:34 Completed POST /api/auth/validate with status 200 in 1.611696ms
+2025/07/16 21:29:34 Started POST /api/auth/validate
+2025/07/16 21:29:34 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:34 Completed POST /api/auth/validate with status 200 in 636.433µs
+2025/07/16 21:29:34 Started POST /api/auth/validate
+2025/07/16 21:29:34 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:34 Completed POST /api/auth/validate with status 200 in 963.049µs
+2025/07/16 21:29:34 Started POST /api/auth/validate
+2025/07/16 21:29:34 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:34 Completed POST /api/auth/validate with status 200 in 857.706µs
+2025/07/16 21:29:34 Started POST /api/auth/validate
+2025/07/16 21:29:34 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:34 Completed POST /api/auth/validate with status 200 in 610.253µs
+2025/07/16 21:29:34 Started POST /api/auth/validate
+2025/07/16 21:29:34 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:34 Started POST /api/auth/validate
+2025/07/16 21:29:34 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:34 Completed POST /api/auth/validate with status 200 in 616.048µs
+2025/07/16 21:29:34 Completed POST /api/auth/validate with status 200 in 1.148722ms
+2025/07/16 21:29:34 Started POST /api/auth/validate
+2025/07/16 21:29:34 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:34 Completed POST /api/auth/validate with status 200 in 870.796µs
+2025/07/16 21:29:34 Started GET /health
+2025/07/16 21:29:34 Completed GET /health with status 0 in 112.512µs
+2025/07/16 21:29:34 Started POST /api/auth/validate
+2025/07/16 21:29:34 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:34 Completed POST /api/auth/validate with status 200 in 1.959572ms
+2025/07/16 21:29:34 Started POST /api/auth/validate
+2025/07/16 21:29:34 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:34 Completed POST /api/auth/validate with status 200 in 786.922µs
+2025/07/16 21:29:34 Started POST /api/auth/validate
+2025/07/16 21:29:34 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:34 Completed POST /api/auth/validate with status 200 in 696.253µs
+2025/07/16 21:29:34 Started POST /api/auth/validate
+2025/07/16 21:29:34 Started POST /api/auth/validate
+2025/07/16 21:29:34 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:34 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:34 Completed POST /api/auth/validate with status 200 in 1.782861ms
+2025/07/16 21:29:34 Completed POST /api/auth/validate with status 200 in 1.365118ms
+2025/07/16 21:29:34 Started POST /api/auth/validate
+2025/07/16 21:29:34 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:34 Completed POST /api/auth/validate with status 200 in 676.411µs
+2025/07/16 21:29:34 Started POST /api/auth/validate
+2025/07/16 21:29:34 Started POST /api/auth/validate
+2025/07/16 21:29:34 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:34 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:34 Completed POST /api/auth/validate with status 200 in 1.407639ms
+2025/07/16 21:29:34 Completed POST /api/auth/validate with status 200 in 913.441µs
+2025/07/16 21:29:34 Started POST /api/auth/validate
+2025/07/16 21:29:34 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:34 Completed POST /api/auth/validate with status 200 in 719.598µs
+2025/07/16 21:29:35 Started POST /api/auth/validate
+2025/07/16 21:29:35 Started POST /api/auth/validate
+2025/07/16 21:29:35 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:35 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:35 Started POST /api/auth/validate
+2025/07/16 21:29:35 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:35 Completed POST /api/auth/validate with status 200 in 1.81667ms
+2025/07/16 21:29:35 Completed POST /api/auth/validate with status 200 in 1.936977ms
+2025/07/16 21:29:35 Completed POST /api/auth/validate with status 200 in 913.775µs
+2025/07/16 21:29:35 Started POST /api/auth/validate
+2025/07/16 21:29:35 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:35 Completed POST /api/auth/validate with status 200 in 1.404761ms
+2025/07/16 21:29:35 Started POST /api/auth/validate
+2025/07/16 21:29:35 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:35 Started POST /api/auth/validate
+2025/07/16 21:29:35 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:35 Completed POST /api/auth/validate with status 200 in 2.24064ms
+2025/07/16 21:29:35 Completed POST /api/auth/validate with status 200 in 1.690473ms
+2025/07/16 21:29:35 Started POST /api/auth/validate
+2025/07/16 21:29:35 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:35 Started POST /api/auth/validate
+2025/07/16 21:29:35 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:35 Completed POST /api/auth/validate with status 200 in 1.423603ms
+2025/07/16 21:29:35 Completed POST /api/auth/validate with status 200 in 958.517µs
+2025/07/16 21:29:35 Started POST /api/auth/validate
+2025/07/16 21:29:35 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:35 Completed POST /api/auth/validate with status 200 in 1.608645ms
+2025/07/16 21:29:35 Started POST /api/auth/validate
+2025/07/16 21:29:35 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:35 Completed POST /api/auth/validate with status 200 in 1.29517ms
+2025/07/16 21:29:35 Started POST /api/auth/validate
+2025/07/16 21:29:35 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:35 Completed POST /api/auth/validate with status 200 in 942.677µs
+2025/07/16 21:29:35 Started POST /api/auth/validate
+2025/07/16 21:29:35 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:35 Completed POST /api/auth/validate with status 200 in 1.481504ms
+2025/07/16 21:29:35 Started POST /api/auth/validate
+2025/07/16 21:29:35 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:35 Completed POST /api/auth/validate with status 200 in 1.438026ms
+2025/07/16 21:29:35 Started POST /api/auth/validate
+2025/07/16 21:29:35 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:35 Completed POST /api/auth/validate with status 200 in 979.944µs
+2025/07/16 21:29:35 Started POST /api/auth/validate
+2025/07/16 21:29:35 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:35 Completed POST /api/auth/validate with status 200 in 1.888438ms
+2025/07/16 21:29:35 Started POST /api/auth/validate
+2025/07/16 21:29:35 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:35 Completed POST /api/auth/validate with status 200 in 1.833205ms
+2025/07/16 21:29:35 Started POST /api/auth/validate
+2025/07/16 21:29:35 Started POST /api/auth/validate
+2025/07/16 21:29:35 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:35 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:35 Completed POST /api/auth/validate with status 200 in 2.339559ms
+2025/07/16 21:29:35 Completed POST /api/auth/validate with status 200 in 2.28641ms
+2025/07/16 21:29:35 Started POST /api/auth/validate
+2025/07/16 21:29:35 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:35 Completed POST /api/auth/validate with status 200 in 1.152188ms
+2025/07/16 21:29:35 Started POST /api/auth/validate
+2025/07/16 21:29:35 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:35 Completed POST /api/auth/validate with status 200 in 663.592µs
+2025/07/16 21:29:35 Started POST /api/auth/validate
+2025/07/16 21:29:35 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:35 Completed POST /api/auth/validate with status 200 in 591.768µs
+2025/07/16 21:29:35 Started POST /api/auth/validate
+2025/07/16 21:29:35 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:35 Completed POST /api/auth/validate with status 200 in 1.326434ms
+2025/07/16 21:29:35 Started POST /api/auth/validate
+2025/07/16 21:29:35 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:35 Started POST /api/auth/validate
+2025/07/16 21:29:35 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:35 Completed POST /api/auth/validate with status 200 in 1.088368ms
+2025/07/16 21:29:35 Completed POST /api/auth/validate with status 200 in 1.179159ms
+2025/07/16 21:29:35 Started POST /api/auth/validate
+2025/07/16 21:29:35 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:35 Started POST /api/auth/validate
+2025/07/16 21:29:35 Started POST /api/auth/validate
+2025/07/16 21:29:35 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:35 Completed POST /api/auth/validate with status 200 in 2.129922ms
+2025/07/16 21:29:35 Completed POST /api/auth/validate with status 200 in 1.266531ms
+2025/07/16 21:29:35 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:35 Completed POST /api/auth/validate with status 200 in 1.504681ms
+2025/07/16 21:29:36 Started POST /api/auth/validate
+2025/07/16 21:29:36 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:36 Started POST /api/auth/validate
+2025/07/16 21:29:36 Started POST /api/auth/validate
+2025/07/16 21:29:36 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:36 Completed POST /api/auth/validate with status 200 in 1.888382ms
+2025/07/16 21:29:36 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:36 Completed POST /api/auth/validate with status 200 in 1.886381ms
+2025/07/16 21:29:36 Completed POST /api/auth/validate with status 200 in 2.151159ms
+2025/07/16 21:29:36 Started POST /api/auth/validate
+2025/07/16 21:29:36 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:36 Completed POST /api/auth/validate with status 200 in 1.506178ms
+2025/07/16 21:29:36 Started POST /api/auth/validate
+2025/07/16 21:29:36 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:36 Started POST /api/auth/validate
+2025/07/16 21:29:36 Completed POST /api/auth/validate with status 200 in 1.253155ms
+2025/07/16 21:29:36 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:36 Completed POST /api/auth/validate with status 200 in 1.246194ms
+2025/07/16 21:29:36 Started POST /api/auth/validate
+2025/07/16 21:29:36 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:36 Completed POST /api/auth/validate with status 200 in 1.220975ms
+2025/07/16 21:29:36 Started POST /api/auth/validate
+2025/07/16 21:29:36 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:36 Started POST /api/auth/validate
+2025/07/16 21:29:36 Completed POST /api/auth/validate with status 200 in 1.235856ms
+2025/07/16 21:29:36 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:36 Completed POST /api/auth/validate with status 200 in 1.024309ms
+2025/07/16 21:29:36 Started POST /api/auth/validate
+2025/07/16 21:29:36 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:36 Completed POST /api/auth/validate with status 200 in 2.588595ms
+2025/07/16 21:29:36 Started POST /api/auth/validate
+2025/07/16 21:29:36 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:36 Started POST /api/auth/validate
+2025/07/16 21:29:36 Completed POST /api/auth/validate with status 200 in 1.281375ms
+2025/07/16 21:29:36 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:36 Completed POST /api/auth/validate with status 200 in 1.376498ms
+2025/07/16 21:29:36 Started POST /api/auth/validate
+2025/07/16 21:29:36 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:36 Completed POST /api/auth/validate with status 200 in 1.73811ms
+2025/07/16 21:29:36 Started POST /api/auth/validate
+2025/07/16 21:29:36 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:36 Started POST /api/auth/validate
+2025/07/16 21:29:36 Completed POST /api/auth/validate with status 200 in 2.59789ms
+2025/07/16 21:29:36 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:36 Completed POST /api/auth/validate with status 200 in 2.504976ms
+2025/07/16 21:29:36 Started POST /api/auth/validate
+2025/07/16 21:29:36 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:36 Completed POST /api/auth/validate with status 200 in 993.92µs
+2025/07/16 21:29:36 Started POST /api/auth/validate
+2025/07/16 21:29:36 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:36 Started POST /api/auth/validate
+2025/07/16 21:29:36 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:36 Completed POST /api/auth/validate with status 200 in 720.138µs
+2025/07/16 21:29:36 Completed POST /api/auth/validate with status 200 in 750.025µs
+2025/07/16 21:29:36 Started POST /api/auth/validate
+2025/07/16 21:29:36 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:36 Completed POST /api/auth/validate with status 200 in 1.071578ms
+2025/07/16 21:29:36 Started POST /api/auth/validate
+2025/07/16 21:29:36 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:36 Completed POST /api/auth/validate with status 200 in 825.265µs
+2025/07/16 21:29:36 Started POST /api/auth/validate
+2025/07/16 21:29:36 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:36 Completed POST /api/auth/validate with status 200 in 766.991µs
+2025/07/16 21:29:36 Started POST /api/auth/validate
+2025/07/16 21:29:36 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:36 Completed POST /api/auth/validate with status 200 in 1.387754ms
+2025/07/16 21:29:36 Started POST /api/auth/validate
+2025/07/16 21:29:36 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:36 Started POST /api/auth/validate
+2025/07/16 21:29:36 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:36 Completed POST /api/auth/validate with status 200 in 1.025434ms
+2025/07/16 21:29:36 Completed POST /api/auth/validate with status 200 in 554.026µs
+2025/07/16 21:29:37 Started POST /api/auth/validate
+2025/07/16 21:29:37 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:37 Completed POST /api/auth/validate with status 200 in 1.368747ms
+2025/07/16 21:29:37 Started POST /api/auth/validate
+2025/07/16 21:29:37 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:37 Started POST /api/auth/validate
+2025/07/16 21:29:37 Completed POST /api/auth/validate with status 200 in 1.530562ms
+2025/07/16 21:29:37 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 21:29:37 Completed POST /api/auth/validate with status 200 in 1.69275ms
+2025/07/16 21:29:46 Started GET /health
+2025/07/16 21:29:46 Completed GET /health with status 0 in 132.898µs
+2025/07/16 21:29:55 Started GET /health
+2025/07/16 21:29:55 Completed GET /health with status 0 in 128.834µs
+2025/07/16 21:31:24 Shutting down API Gateway...
+2025/07/16 21:31:24 Shutting down API Gateway...
+2025/07/16 21:31:24 Closing WebSocket hub...
+2025/07/16 21:31:24 WebSocket hub closed. Total connections served: 0
+2025/07/16 21:31:24 WebSocket hub shutting down...
+2025/07/16 21:31:24 All gRPC connection pools closed
+2025/07/16 21:31:24 Closing Redis client...
+2025/07/16 21:31:24 Redis client closed
+2025/07/16 21:31:24 API Gateway stopped
+2025/07/16 21:31:24 API Gateway stopped
+2025/07/16 21:31:24 All gRPC connection pools closed
+2025/07/16 21:31:24 Closing Redis client...
+2025/07/16 21:31:24 Error closing pubsub: redis: client is closed

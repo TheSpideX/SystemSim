@@ -1,0 +1,119 @@
+{
+  "name": "10 Gigabit Datacenter Network",
+  "description": "High-performance 10 Gbps datacenter network with low latency",
+  "type": 4,
+  "baseline_performance": {
+    "bandwidth_mbps": 10000,
+    "base_latency_ms": 0.05,
+    "max_connections": 50000,
+    "protocol": "TCP",
+    "network_type": "Datacenter",
+    "geographic_distance_km": 0.01,
+    "packet_loss_rate": 0.00001,
+    "jitter_ms": 0.005
+  },
+  "engine_specific": {
+    "bandwidth_characteristics": {
+      "theoretical_max_mbps": 10000,
+      "practical_max_mbps": 9500,
+      "burst_capacity_mb": 100,
+      "congestion_threshold": 0.85,
+      "severe_congestion_threshold": 0.98
+    },
+    "latency_characteristics": {
+      "base_latency_ms": 0.05,
+      "switch_latency_ms": 0.002,
+      "propagation_delay_per_km": 0.005,
+      "processing_delay_ms": 0.01,
+      "queuing_delay_max_ms": 0.5
+    },
+    "connection_management": {
+      "tcp_handshake_rtt_multiplier": 1.5,
+      "connection_pool_size": 5000,
+      "connection_timeout_ms": 60000,
+      "keep_alive_interval_ms": 7200000,
+      "connection_reuse_probability": 0.95
+    },
+    "protocol_overhead": {
+      "tcp_header_bytes": 20,
+      "ip_header_bytes": 20,
+      "ethernet_header_bytes": 18,
+      "efficiency_factor": 0.97,
+      "mtu_bytes": 9000
+    },
+    "quality_characteristics": {
+      "packet_loss_base_rate": 0.00001,
+      "bit_error_rate": 1e-15,
+      "jitter_variance_ms": 0.005,
+      "reliability_factor": 0.99999
+    },
+    "geographic_modeling": {
+      "speed_of_light_mps": 299792458,
+      "fiber_optic_factor": 0.67,
+      "routing_overhead_factor": 1.05,
+      "typical_distance_km": 0.01
+    },
+    "congestion_behavior": {
+      "congestion_window_initial": 32,
+      "congestion_window_max": 1048576,
+      "slow_start_threshold": 65535,
+      "congestion_avoidance_increment": 1,
+      "fast_recovery_enabled": true
+    },
+    "security_overhead": {
+      "tls_handshake_ms": 1.0,
+      "encryption_cpu_overhead": 0.02,
+      "certificate_validation_ms": 0.5,
+      "session_reuse_probability": 0.9
+    },
+    "compression_settings": {
+      "compression_ratio": 0.75,
+      "compression_cpu_overhead": 0.02,
+      "min_size_for_compression": 2048,
+      "compression_algorithm": "lz4"
+    },
+    "qos_configuration": {
+      "priority_levels": 8,
+      "high_priority_bandwidth_reserve": 0.3,
+      "low_priority_max_bandwidth": 0.2,
+      "dscp_marking_enabled": true
+    }
+  },
+  "workload_profiles": {
+    "microservices": {
+      "typical_request_size": 1024,
+      "typical_response_size": 8192,
+      "connection_reuse_rate": 0.98,
+      "burst_factor": 1.5
+    },
+    "database_replication": {
+      "typical_request_size": 4096,
+      "typical_response_size": 65536,
+      "connection_reuse_rate": 0.99,
+      "burst_factor": 3.0
+    },
+    "storage_traffic": {
+      "typical_request_size": 8192,
+      "typical_response_size": 1048576,
+      "connection_reuse_rate": 0.8,
+      "burst_factor": 5.0
+    }
+  },
+  "convergence_models": {
+    "bandwidth_utilization": {
+      "convergence_point": 0.8,
+      "variance_range": 0.05,
+      "convergence_rate": 0.98
+    },
+    "latency_distribution": {
+      "convergence_point": 0.055,
+      "variance_range": 0.01,
+      "convergence_rate": 0.99
+    },
+    "connection_patterns": {
+      "convergence_point": 0.95,
+      "variance_range": 0.02,
+      "convergence_rate": 0.97
+    }
+  }
+}

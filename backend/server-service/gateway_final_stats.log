@@ -1,0 +1,326 @@
+2025/07/16 21:33:30 Starting API Gateway on port 8000
+2025/07/16 21:33:30 Connected to Redis at localhost:6379 with pool size 10
+2025/07/16 21:33:30 Created dynamic gRPC pool for auth-service: 5 initial connections (min: 5, max: 20)
+2025/07/16 21:33:30 ✅ Auth service pool: 5 connections to localhost:9000
+2025/07/16 21:33:31 Warning: Failed to create project service pool: failed to create initial connection 0: failed to connect to localhost:10000: context deadline exceeded
+2025/07/16 21:33:32 Warning: Failed to create simulation service pool: failed to create initial connection 0: failed to connect to localhost:11000: context deadline exceeded
+2025/07/16 21:33:32 🎉 gRPC client pool initialized with 5 total connections
+2025/07/16 21:33:32 ⚠️  Some services unavailable: [project service: failed to create initial connection 0: failed to connect to localhost:10000: context deadline exceeded simulation service: failed to create initial connection 0: failed to connect to localhost:11000: context deadline exceeded]
+2025/07/16 21:33:32 Starting WebSocket hub...
+2025/07/16 21:33:32 HTTP/2 server optimized for maximum throughput
+2025/07/16 21:33:32 API Gateway initialized with HTTP/2 + TLS
+2025/07/16 21:33:32 Starting API Gateway on port 8000 with HTTP/2
+2025/07/16 21:33:32 Subscribed to Redis channels: [auth:events:* project:events:* simulation:events:* simulation:data:*]
+2025/07/16 21:33:32 API Gateway starting with HTTP/2 + TLS on 0.0.0.0:8000
+2025/07/16 21:33:45 Started GET /grpc/stats
+2025/07/16 21:33:45 Completed GET /grpc/stats with status 200 in 137.865µs
+2025/07/16 22:04:37 Started GET /health
+2025/07/16 22:04:37 Completed GET /health with status 0 in 3.436828ms
+2025/07/16 22:04:37 Started GET /grpc/stats
+2025/07/16 22:04:37 Completed GET /grpc/stats with status 200 in 115.155µs
+2025/07/16 22:04:37 Started GET /grpc/stats
+2025/07/16 22:04:37 Completed GET /grpc/stats with status 200 in 91.125µs
+2025/07/16 22:04:37 Started POST /api/auth/register
+2025/07/16 22:04:37 Making HTTP/2 request to auth service: POST https://localhost:9001/api/v1/auth/register
+2025/07/16 22:04:37 Auth service response: 201 201 Created
+2025/07/16 22:04:37 Completed POST /api/auth/register with status 201 in 338.476691ms
+2025/07/16 22:04:37 Started POST /api/auth/login
+2025/07/16 22:04:37 Making HTTP/2 request to auth service: POST https://localhost:9001/api/v1/auth/login
+2025/07/16 22:04:38 Auth service response: 200 200 OK
+2025/07/16 22:04:38 Completed POST /api/auth/login with status 200 in 279.498223ms
+2025/07/16 22:04:38 Started POST /api/auth/validate
+2025/07/16 22:04:38 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 22:04:38 Completed POST /api/auth/validate with status 200 in 3.668594ms
+2025/07/16 22:04:38 Started GET /api/auth/profile
+2025/07/16 22:04:38 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 22:04:38 Making REAL gRPC GetUserContext call to auth service
+2025/07/16 22:04:38 Completed GET /api/auth/profile with status 200 in 7.127994ms
+2025/07/16 22:04:38 Started GET /api/auth/permissions
+2025/07/16 22:04:38 Making REAL gRPC ValidateToken call to auth service
+2025/07/16 22:04:38 Making REAL gRPC GetUserPermissions call to auth service
+2025/07/16 22:04:38 Completed GET /api/auth/permissions with status 200 in 3.442699ms
+2025/07/16 22:04:38 Started GET /grpc/stats
+2025/07/16 22:04:38 Completed GET /grpc/stats with status 200 in 64.096µs
+2025/07/16 22:04:38 Started POST /api/auth/validate
+[ERROR] 2025/07/16 22:04:38 handler.go:136: Error: authentication_error | Code: missing_token | Message: Authorization header with Bearer token required | Path: /api/auth/validate | Method: POST | RequestID:  | Caller: /home/satid/Desktop/system/backend/server-service/internal/gateway/gateway.go:353
+2025/07/16 22:04:38 Completed POST /api/auth/validate with status 401 in 266.835µs
+2025/07/16 22:04:38 Started POST /api/auth/validate
+[ERROR] 2025/07/16 22:04:38 handler.go:136: Error: authentication_error | Code: missing_token | Message: Authorization header with Bearer token required | Path: /api/auth/validate | Method: POST | RequestID:  | Caller: /home/satid/Desktop/system/backend/server-service/internal/gateway/gateway.go:353
+2025/07/16 22:04:38 Completed POST /api/auth/validate with status 401 in 199.199µs
+2025/07/16 22:04:38 Started POST /api/auth/validate
+[ERROR] 2025/07/16 22:04:38 handler.go:136: Error: authentication_error | Code: missing_token | Message: Authorization header with Bearer token required | Path: /api/auth/validate | Method: POST | RequestID:  | Caller: /home/satid/Desktop/system/backend/server-service/internal/gateway/gateway.go:353
+2025/07/16 22:04:38 Completed POST /api/auth/validate with status 401 in 3.929182ms
+2025/07/16 22:04:38 Started GET /grpc/stats
+2025/07/16 22:04:38 Completed GET /grpc/stats with status 200 in 289.074µs
+2025/07/16 22:04:40 Started GET /grpc/stats
+2025/07/16 22:04:40 Completed GET /grpc/stats with status 200 in 198.908µs
+2025/07/16 22:04:42 Started GET /grpc/stats
+2025/07/16 22:04:42 Completed GET /grpc/stats with status 200 in 767.102µs
+2025/07/16 22:04:44 Started GET /grpc/stats
+2025/07/16 22:04:44 Completed GET /grpc/stats with status 200 in 1.246961ms
+2025/07/16 22:04:46 Started GET /grpc/stats
+2025/07/16 22:04:46 Completed GET /grpc/stats with status 200 in 183.706µs
+2025/07/16 22:04:48 Started GET /grpc/stats
+2025/07/16 22:04:48 Completed GET /grpc/stats with status 200 in 138.601µs
+2025/07/16 22:04:50 Started GET /grpc/stats
+2025/07/16 22:04:50 Completed GET /grpc/stats with status 200 in 184.414µs
+2025/07/16 22:04:52 Started GET /grpc/stats
+2025/07/16 22:04:52 Completed GET /grpc/stats with status 200 in 150.013µs
+2025/07/16 22:04:53 Started POST /api/auth/validate
+[ERROR] 2025/07/16 22:04:53 handler.go:136: Error: authentication_error | Code: missing_token | Message: Authorization header with Bearer token required | Path: /api/auth/validate | Method: POST | RequestID:  | Caller: /home/satid/Desktop/system/backend/server-service/internal/gateway/gateway.go:353
+2025/07/16 22:04:53 Completed POST /api/auth/validate with status 401 in 1.14846ms
+2025/07/16 22:04:53 Started POST /api/auth/validate
+[ERROR] 2025/07/16 22:04:53 handler.go:136: Error: authentication_error | Code: missing_token | Message: Authorization header with Bearer token required | Path: /api/auth/validate | Method: POST | RequestID:  | Caller: /home/satid/Desktop/system/backend/server-service/internal/gateway/gateway.go:353
+2025/07/16 22:04:53 Started POST /api/auth/validate
+2025/07/16 22:04:53 Completed POST /api/auth/validate with status 401 in 1.503626ms
+[ERROR] 2025/07/16 22:04:53 handler.go:136: Error: authentication_error | Code: missing_token | Message: Authorization header with Bearer token required | Path: /api/auth/validate | Method: POST | RequestID:  | Caller: /home/satid/Desktop/system/backend/server-service/internal/gateway/gateway.go:353
+2025/07/16 22:04:53 Completed POST /api/auth/validate with status 401 in 807.079µs
+2025/07/16 22:04:54 Started GET /grpc/stats
+2025/07/16 22:04:54 Completed GET /grpc/stats with status 200 in 625.664µs
+2025/07/16 22:04:56 Started GET /grpc/stats
+2025/07/16 22:04:56 Completed GET /grpc/stats with status 200 in 433.837µs
+2025/07/16 22:05:08 Started GET /grpc/stats
+2025/07/16 22:05:08 Completed GET /grpc/stats with status 200 in 500.345µs
+2025/07/16 22:05:13 Started GET /grpc/stats
+2025/07/16 22:05:13 Completed GET /grpc/stats with status 200 in 410.762µs
+2025/07/16 22:05:13 Started POST /api/auth/validate
+[ERROR] 2025/07/16 22:05:13 handler.go:136: Error: authentication_error | Code: missing_token | Message: Authorization header with Bearer token required | Path: /api/auth/validate | Method: POST | RequestID:  | Caller: /home/satid/Desktop/system/backend/server-service/internal/gateway/gateway.go:353
+2025/07/16 22:05:13 Completed POST /api/auth/validate with status 401 in 998.439µs
+2025/07/16 22:05:13 Started POST /api/auth/validate
+[ERROR] 2025/07/16 22:05:13 handler.go:136: Error: authentication_error | Code: missing_token | Message: Authorization header with Bearer token required | Path: /api/auth/validate | Method: POST | RequestID:  | Caller: /home/satid/Desktop/system/backend/server-service/internal/gateway/gateway.go:353
+2025/07/16 22:05:13 Completed POST /api/auth/validate with status 401 in 560.648µs
+2025/07/16 22:05:13 Started POST /api/auth/validate
+[ERROR] 2025/07/16 22:05:13 handler.go:136: Error: authentication_error | Code: missing_token | Message: Authorization header with Bearer token required | Path: /api/auth/validate | Method: POST | RequestID:  | Caller: /home/satid/Desktop/system/backend/server-service/internal/gateway/gateway.go:353
+2025/07/16 22:05:13 Completed POST /api/auth/validate with status 401 in 331.092µs
+2025/07/16 22:05:13 Started POST /api/auth/validate
+[ERROR] 2025/07/16 22:05:13 handler.go:136: Error: authentication_error | Code: missing_token | Message: Authorization header with Bearer token required | Path: /api/auth/validate | Method: POST | RequestID:  | Caller: /home/satid/Desktop/system/backend/server-service/internal/gateway/gateway.go:353
+2025/07/16 22:05:13 Completed POST /api/auth/validate with status 401 in 289.945µs
+2025/07/16 22:05:13 Started POST /api/auth/validate
+[ERROR] 2025/07/16 22:05:13 handler.go:136: Error: authentication_error | Code: missing_token | Message: Authorization header with Bearer token required | Path: /api/auth/validate | Method: POST | RequestID:  | Caller: /home/satid/Desktop/system/backend/server-service/internal/gateway/gateway.go:353
+2025/07/16 22:05:13 Completed POST /api/auth/validate with status 401 in 5.099476ms
+2025/07/16 22:05:13 Started POST /api/auth/validate
+[ERROR] 2025/07/16 22:05:13 handler.go:136: Error: authentication_error | Code: missing_token | Message: Authorization header with Bearer token required | Path: /api/auth/validate | Method: POST | RequestID:  | Caller: /home/satid/Desktop/system/backend/server-service/internal/gateway/gateway.go:353
+2025/07/16 22:05:13 Completed POST /api/auth/validate with status 401 in 187.368µs
+2025/07/16 22:05:13 Started POST /api/auth/validate
+[ERROR] 2025/07/16 22:05:13 handler.go:136: Error: authentication_error | Code: missing_token | Message: Authorization header with Bearer token required | Path: /api/auth/validate | Method: POST | RequestID:  | Caller: /home/satid/Desktop/system/backend/server-service/internal/gateway/gateway.go:353
+2025/07/16 22:05:13 Completed POST /api/auth/validate with status 401 in 428.67µs
+2025/07/16 22:05:13 Started POST /api/auth/validate
+[ERROR] 2025/07/16 22:05:13 handler.go:136: Error: authentication_error | Code: missing_token | Message: Authorization header with Bearer token required | Path: /api/auth/validate | Method: POST | RequestID:  | Caller: /home/satid/Desktop/system/backend/server-service/internal/gateway/gateway.go:353
+2025/07/16 22:05:13 Completed POST /api/auth/validate with status 401 in 260.167µs
+2025/07/16 22:05:13 Started POST /api/auth/validate
+2025/07/16 22:05:13 Started POST /api/auth/validate
+[ERROR] 2025/07/16 22:05:13 handler.go:136: Error: authentication_error | Code: missing_token | Message: Authorization header with Bearer token required | Path: /api/auth/validate | Method: POST | RequestID:  | Caller: /home/satid/Desktop/system/backend/server-service/internal/gateway/gateway.go:353
+2025/07/16 22:05:13 Completed POST /api/auth/validate with status 401 in 1.207713ms
+2025/07/16 22:05:13 Started POST /api/auth/validate
+[ERROR] 2025/07/16 22:05:13 handler.go:136: Error: authentication_error | Code: missing_token | Message: Authorization header with Bearer token required | Path: /api/auth/validate | Method: POST | RequestID:  | Caller: /home/satid/Desktop/system/backend/server-service/internal/gateway/gateway.go:353
+2025/07/16 22:05:13 Completed POST /api/auth/validate with status 401 in 1.38467ms
+[ERROR] 2025/07/16 22:05:13 handler.go:136: Error: authentication_error | Code: missing_token | Message: Authorization header with Bearer token required | Path: /api/auth/validate | Method: POST | RequestID:  | Caller: /home/satid/Desktop/system/backend/server-service/internal/gateway/gateway.go:353
+2025/07/16 22:05:13 Completed POST /api/auth/validate with status 401 in 279.95µs
+2025/07/16 22:05:13 Started POST /api/auth/validate
+[ERROR] 2025/07/16 22:05:13 handler.go:136: Error: authentication_error | Code: missing_token | Message: Authorization header with Bearer token required | Path: /api/auth/validate | Method: POST | RequestID:  | Caller: /home/satid/Desktop/system/backend/server-service/internal/gateway/gateway.go:353
+2025/07/16 22:05:13 Completed POST /api/auth/validate with status 401 in 181.246µs
+2025/07/16 22:05:13 Started POST /api/auth/validate
+[ERROR] 2025/07/16 22:05:13 handler.go:136: Error: authentication_error | Code: missing_token | Message: Authorization header with Bearer token required | Path: /api/auth/validate | Method: POST | RequestID:  | Caller: /home/satid/Desktop/system/backend/server-service/internal/gateway/gateway.go:353
+2025/07/16 22:05:13 Completed POST /api/auth/validate with status 401 in 197.905µs
+2025/07/16 22:05:13 Started POST /api/auth/validate
+2025/07/16 22:05:13 Started POST /api/auth/validate
+[ERROR] 2025/07/16 22:05:13 handler.go:136: Error: authentication_error | Code: missing_token | Message: Authorization header with Bearer token required | Path: /api/auth/validate | Method: POST | RequestID:  | Caller: /home/satid/Desktop/system/backend/server-service/internal/gateway/gateway.go:353
+2025/07/16 22:05:13 Completed POST /api/auth/validate with status 401 in 1.123212ms
+[ERROR] 2025/07/16 22:05:13 handler.go:136: Error: authentication_error | Code: missing_token | Message: Authorization header with Bearer token required | Path: /api/auth/validate | Method: POST | RequestID:  | Caller: /home/satid/Desktop/system/backend/server-service/internal/gateway/gateway.go:353
+2025/07/16 22:05:13 Completed POST /api/auth/validate with status 401 in 1.252692ms
+2025/07/16 22:05:13 Started POST /api/auth/validate
+[ERROR] 2025/07/16 22:05:13 handler.go:136: Error: authentication_error | Code: missing_token | Message: Authorization header with Bearer token required | Path: /api/auth/validate | Method: POST | RequestID:  | Caller: /home/satid/Desktop/system/backend/server-service/internal/gateway/gateway.go:353
+2025/07/16 22:05:13 Completed POST /api/auth/validate with status 401 in 245.591µs
+2025/07/16 22:05:13 Started GET /grpc/stats
+2025/07/16 22:05:13 Completed GET /grpc/stats with status 200 in 95.246µs
+2025/07/16 22:05:13 Started POST /api/auth/validate
+[ERROR] 2025/07/16 22:05:13 handler.go:136: Error: authentication_error | Code: missing_token | Message: Authorization header with Bearer token required | Path: /api/auth/validate | Method: POST | RequestID:  | Caller: /home/satid/Desktop/system/backend/server-service/internal/gateway/gateway.go:353
+2025/07/16 22:05:13 Completed POST /api/auth/validate with status 401 in 268.955µs
+2025/07/16 22:05:13 Started POST /api/auth/validate
+[ERROR] 2025/07/16 22:05:13 handler.go:136: Error: authentication_error | Code: missing_token | Message: Authorization header with Bearer token required | Path: /api/auth/validate | Method: POST | RequestID:  | Caller: /home/satid/Desktop/system/backend/server-service/internal/gateway/gateway.go:353
+2025/07/16 22:05:13 Completed POST /api/auth/validate with status 401 in 342.878µs
+2025/07/16 22:05:13 Started POST /api/auth/validate
+[ERROR] 2025/07/16 22:05:13 handler.go:136: Error: authentication_error | Code: missing_token | Message: Authorization header with Bearer token required | Path: /api/auth/validate | Method: POST | RequestID:  | Caller: /home/satid/Desktop/system/backend/server-service/internal/gateway/gateway.go:353
+2025/07/16 22:05:13 Completed POST /api/auth/validate with status 401 in 639.278µs
+2025/07/16 22:05:13 Started POST /api/auth/validate
+[ERROR] 2025/07/16 22:05:13 handler.go:136: Error: authentication_error | Code: missing_token | Message: Authorization header with Bearer token required | Path: /api/auth/validate | Method: POST | RequestID:  | Caller: /home/satid/Desktop/system/backend/server-service/internal/gateway/gateway.go:353
+2025/07/16 22:05:13 Completed POST /api/auth/validate with status 401 in 196.447µs
+2025/07/16 22:05:15 Started GET /grpc/stats
+2025/07/16 22:05:15 Completed GET /grpc/stats with status 200 in 180.663µs
+2025/07/16 22:05:17 Started GET /grpc/stats
+2025/07/16 22:05:17 Completed GET /grpc/stats with status 200 in 120.442µs
+2025/07/16 22:05:19 Started GET /grpc/stats
+2025/07/16 22:05:19 Completed GET /grpc/stats with status 200 in 589.758µs
+2025/07/16 22:05:21 Started GET /grpc/stats
+2025/07/16 22:05:21 Completed GET /grpc/stats with status 200 in 173.125µs
+2025/07/16 22:05:23 Started GET /grpc/stats
+2025/07/16 22:05:23 Completed GET /grpc/stats with status 200 in 308.726µs
+2025/07/16 22:05:25 Started GET /grpc/stats
+2025/07/16 22:05:25 Completed GET /grpc/stats with status 200 in 136.601µs
+2025/07/16 22:05:27 Started GET /grpc/stats
+2025/07/16 22:05:27 Completed GET /grpc/stats with status 200 in 161.579µs
+2025/07/16 22:05:28 Started POST /api/auth/validate
+[ERROR] 2025/07/16 22:05:28 handler.go:136: Error: authentication_error | Code: missing_token | Message: Authorization header with Bearer token required | Path: /api/auth/validate | Method: POST | RequestID:  | Caller: /home/satid/Desktop/system/backend/server-service/internal/gateway/gateway.go:353
+2025/07/16 22:05:28 Completed POST /api/auth/validate with status 401 in 513.099µs
+2025/07/16 22:05:28 Started POST /api/auth/validate
+[ERROR] 2025/07/16 22:05:28 handler.go:136: Error: authentication_error | Code: missing_token | Message: Authorization header with Bearer token required | Path: /api/auth/validate | Method: POST | RequestID:  | Caller: /home/satid/Desktop/system/backend/server-service/internal/gateway/gateway.go:353
+2025/07/16 22:05:28 Completed POST /api/auth/validate with status 401 in 363.616µs
+2025/07/16 22:05:28 Started POST /api/auth/validate
+2025/07/16 22:05:28 Started POST /api/auth/validate
+2025/07/16 22:05:28 Started POST /api/auth/validate
+[ERROR] 2025/07/16 22:05:28 handler.go:136: Error: authentication_error | Code: missing_token | Message: Authorization header with Bearer token required | Path: /api/auth/validate | Method: POST | RequestID:  | Caller: /home/satid/Desktop/system/backend/server-service/internal/gateway/gateway.go:353
+2025/07/16 22:05:28 Completed POST /api/auth/validate with status 401 in 3.229869ms
+[ERROR] 2025/07/16 22:05:28 handler.go:136: Error: authentication_error | Code: missing_token | Message: Authorization header with Bearer token required | Path: /api/auth/validate | Method: POST | RequestID:  | Caller: /home/satid/Desktop/system/backend/server-service/internal/gateway/gateway.go:353
+2025/07/16 22:05:28 Completed POST /api/auth/validate with status 401 in 796.425µs
+[ERROR] 2025/07/16 22:05:28 handler.go:136: Error: authentication_error | Code: missing_token | Message: Authorization header with Bearer token required | Path: /api/auth/validate | Method: POST | RequestID:  | Caller: /home/satid/Desktop/system/backend/server-service/internal/gateway/gateway.go:353
+2025/07/16 22:05:28 Completed POST /api/auth/validate with status 401 in 4.578891ms
+2025/07/16 22:05:28 Started POST /api/auth/validate
+[ERROR] 2025/07/16 22:05:28 handler.go:136: Error: authentication_error | Code: missing_token | Message: Authorization header with Bearer token required | Path: /api/auth/validate | Method: POST | RequestID:  | Caller: /home/satid/Desktop/system/backend/server-service/internal/gateway/gateway.go:353
+2025/07/16 22:05:28 Completed POST /api/auth/validate with status 401 in 269.896µs
+2025/07/16 22:05:28 Started POST /api/auth/validate
+[ERROR] 2025/07/16 22:05:28 handler.go:136: Error: authentication_error | Code: missing_token | Message: Authorization header with Bearer token required | Path: /api/auth/validate | Method: POST | RequestID:  | Caller: /home/satid/Desktop/system/backend/server-service/internal/gateway/gateway.go:353
+2025/07/16 22:05:28 Completed POST /api/auth/validate with status 401 in 469.805µs
+2025/07/16 22:05:28 Started POST /api/auth/validate
+[ERROR] 2025/07/16 22:05:28 handler.go:136: Error: authentication_error | Code: missing_token | Message: Authorization header with Bearer token required | Path: /api/auth/validate | Method: POST | RequestID:  | Caller: /home/satid/Desktop/system/backend/server-service/internal/gateway/gateway.go:353
+2025/07/16 22:05:28 Completed POST /api/auth/validate with status 401 in 239.365µs
+2025/07/16 22:05:28 Started POST /api/auth/validate
+2025/07/16 22:05:28 Started POST /api/auth/validate
+[ERROR] 2025/07/16 22:05:28 handler.go:136: Error: authentication_error | Code: missing_token | Message: Authorization header with Bearer token required | Path: /api/auth/validate | Method: POST | RequestID:  | Caller: /home/satid/Desktop/system/backend/server-service/internal/gateway/gateway.go:353
+2025/07/16 22:05:28 Completed POST /api/auth/validate with status 401 in 164.916µs
+[ERROR] 2025/07/16 22:05:28 handler.go:136: Error: authentication_error | Code: missing_token | Message: Authorization header with Bearer token required | Path: /api/auth/validate | Method: POST | RequestID:  | Caller: /home/satid/Desktop/system/backend/server-service/internal/gateway/gateway.go:353
+2025/07/16 22:05:28 Completed POST /api/auth/validate with status 401 in 553.931µs
+2025/07/16 22:05:28 Started POST /api/auth/validate
+[ERROR] 2025/07/16 22:05:28 handler.go:136: Error: authentication_error | Code: missing_token | Message: Authorization header with Bearer token required | Path: /api/auth/validate | Method: POST | RequestID:  | Caller: /home/satid/Desktop/system/backend/server-service/internal/gateway/gateway.go:353
+2025/07/16 22:05:28 Completed POST /api/auth/validate with status 401 in 634.387µs
+2025/07/16 22:05:28 Started POST /api/auth/validate
+[ERROR] 2025/07/16 22:05:28 handler.go:136: Error: authentication_error | Code: missing_token | Message: Authorization header with Bearer token required | Path: /api/auth/validate | Method: POST | RequestID:  | Caller: /home/satid/Desktop/system/backend/server-service/internal/gateway/gateway.go:353
+2025/07/16 22:05:28 Completed POST /api/auth/validate with status 401 in 193.069µs
+2025/07/16 22:05:28 Started POST /api/auth/validate
+[ERROR] 2025/07/16 22:05:28 handler.go:136: Error: authentication_error | Code: missing_token | Message: Authorization header with Bearer token required | Path: /api/auth/validate | Method: POST | RequestID:  | Caller: /home/satid/Desktop/system/backend/server-service/internal/gateway/gateway.go:353
+2025/07/16 22:05:28 Completed POST /api/auth/validate with status 401 in 306.308µs
+2025/07/16 22:05:28 Started POST /api/auth/validate
+[ERROR] 2025/07/16 22:05:28 handler.go:136: Error: authentication_error | Code: missing_token | Message: Authorization header with Bearer token required | Path: /api/auth/validate | Method: POST | RequestID:  | Caller: /home/satid/Desktop/system/backend/server-service/internal/gateway/gateway.go:353
+2025/07/16 22:05:28 Completed POST /api/auth/validate with status 401 in 279.364µs
+2025/07/16 22:05:28 Started POST /api/auth/validate
+[ERROR] 2025/07/16 22:05:28 handler.go:136: Error: authentication_error | Code: missing_token | Message: Authorization header with Bearer token required | Path: /api/auth/validate | Method: POST | RequestID:  | Caller: /home/satid/Desktop/system/backend/server-service/internal/gateway/gateway.go:353
+2025/07/16 22:05:28 Completed POST /api/auth/validate with status 401 in 384.594µs
+2025/07/16 22:05:28 Started POST /api/auth/validate
+[ERROR] 2025/07/16 22:05:28 handler.go:136: Error: authentication_error | Code: missing_token | Message: Authorization header with Bearer token required | Path: /api/auth/validate | Method: POST | RequestID:  | Caller: /home/satid/Desktop/system/backend/server-service/internal/gateway/gateway.go:353
+2025/07/16 22:05:28 Completed POST /api/auth/validate with status 401 in 871.125µs
+2025/07/16 22:05:28 Started POST /api/auth/validate
+[ERROR] 2025/07/16 22:05:28 handler.go:136: Error: authentication_error | Code: missing_token | Message: Authorization header with Bearer token required | Path: /api/auth/validate | Method: POST | RequestID:  | Caller: /home/satid/Desktop/system/backend/server-service/internal/gateway/gateway.go:353
+2025/07/16 22:05:28 Completed POST /api/auth/validate with status 401 in 811.732µs
+2025/07/16 22:05:28 Started POST /api/auth/validate
+[ERROR] 2025/07/16 22:05:28 handler.go:136: Error: authentication_error | Code: missing_token | Message: Authorization header with Bearer token required | Path: /api/auth/validate | Method: POST | RequestID:  | Caller: /home/satid/Desktop/system/backend/server-service/internal/gateway/gateway.go:353
+2025/07/16 22:05:28 Completed POST /api/auth/validate with status 401 in 188.773µs
+2025/07/16 22:05:28 Started POST /api/auth/validate
+[ERROR] 2025/07/16 22:05:28 handler.go:136: Error: authentication_error | Code: missing_token | Message: Authorization header with Bearer token required | Path: /api/auth/validate | Method: POST | RequestID:  | Caller: /home/satid/Desktop/system/backend/server-service/internal/gateway/gateway.go:353
+2025/07/16 22:05:28 Completed POST /api/auth/validate with status 401 in 173.174µs
+2025/07/16 22:05:28 Started POST /api/auth/validate
+[ERROR] 2025/07/16 22:05:28 handler.go:136: Error: authentication_error | Code: missing_token | Message: Authorization header with Bearer token required | Path: /api/auth/validate | Method: POST | RequestID:  | Caller: /home/satid/Desktop/system/backend/server-service/internal/gateway/gateway.go:353
+2025/07/16 22:05:28 Completed POST /api/auth/validate with status 401 in 263.265µs
+2025/07/16 22:05:29 Started GET /grpc/stats
+2025/07/16 22:05:29 Completed GET /grpc/stats with status 200 in 254.458µs
+2025/07/16 22:05:32 Started GET /grpc/stats
+2025/07/16 22:05:32 Completed GET /grpc/stats with status 200 in 327.511µs
+2025/07/16 22:05:34 Started GET /grpc/stats
+2025/07/16 22:05:34 Completed GET /grpc/stats with status 200 in 165.022µs
+2025/07/16 22:05:36 Started GET /grpc/stats
+2025/07/16 22:05:36 Completed GET /grpc/stats with status 200 in 187.701µs
+2025/07/16 22:05:38 Started GET /grpc/stats
+2025/07/16 22:05:38 Completed GET /grpc/stats with status 200 in 536.813µs
+2025/07/16 22:05:40 Started GET /grpc/stats
+2025/07/16 22:05:40 Completed GET /grpc/stats with status 200 in 216.21µs
+2025/07/16 22:05:42 Started GET /grpc/stats
+2025/07/16 22:05:42 Completed GET /grpc/stats with status 200 in 295.095µs
+2025/07/16 22:05:43 Started POST /api/auth/validate
+[ERROR] 2025/07/16 22:05:43 handler.go:136: Error: authentication_error | Code: missing_token | Message: Authorization header with Bearer token required | Path: /api/auth/validate | Method: POST | RequestID:  | Caller: /home/satid/Desktop/system/backend/server-service/internal/gateway/gateway.go:353
+2025/07/16 22:05:43 Completed POST /api/auth/validate with status 401 in 1.005902ms
+2025/07/16 22:05:43 Started POST /api/auth/validate
+[ERROR] 2025/07/16 22:05:43 handler.go:136: Error: authentication_error | Code: missing_token | Message: Authorization header with Bearer token required | Path: /api/auth/validate | Method: POST | RequestID:  | Caller: /home/satid/Desktop/system/backend/server-service/internal/gateway/gateway.go:353
+2025/07/16 22:05:43 Completed POST /api/auth/validate with status 401 in 976.546µs
+2025/07/16 22:05:43 Started POST /api/auth/validate
+2025/07/16 22:05:43 Started POST /api/auth/validate
+[ERROR] 2025/07/16 22:05:43 handler.go:136: Error: authentication_error | Code: missing_token | Message: Authorization header with Bearer token required | Path: /api/auth/validate | Method: POST | RequestID:  | Caller: /home/satid/Desktop/system/backend/server-service/internal/gateway/gateway.go:353
+2025/07/16 22:05:43 Completed POST /api/auth/validate with status 401 in 670.698µs
+[ERROR] 2025/07/16 22:05:43 handler.go:136: Error: authentication_error | Code: missing_token | Message: Authorization header with Bearer token required | Path: /api/auth/validate | Method: POST | RequestID:  | Caller: /home/satid/Desktop/system/backend/server-service/internal/gateway/gateway.go:353
+2025/07/16 22:05:43 Completed POST /api/auth/validate with status 401 in 501.366µs
+2025/07/16 22:05:43 Started POST /api/auth/validate
+[ERROR] 2025/07/16 22:05:43 handler.go:136: Error: authentication_error | Code: missing_token | Message: Authorization header with Bearer token required | Path: /api/auth/validate | Method: POST | RequestID:  | Caller: /home/satid/Desktop/system/backend/server-service/internal/gateway/gateway.go:353
+2025/07/16 22:05:43 Completed POST /api/auth/validate with status 401 in 320.484µs
+2025/07/16 22:05:43 Started POST /api/auth/validate
+[ERROR] 2025/07/16 22:05:43 handler.go:136: Error: authentication_error | Code: missing_token | Message: Authorization header with Bearer token required | Path: /api/auth/validate | Method: POST | RequestID:  | Caller: /home/satid/Desktop/system/backend/server-service/internal/gateway/gateway.go:353
+2025/07/16 22:05:43 Completed POST /api/auth/validate with status 401 in 264.36µs
+2025/07/16 22:05:43 Started POST /api/auth/validate
+[ERROR] 2025/07/16 22:05:43 handler.go:136: Error: authentication_error | Code: missing_token | Message: Authorization header with Bearer token required | Path: /api/auth/validate | Method: POST | RequestID:  | Caller: /home/satid/Desktop/system/backend/server-service/internal/gateway/gateway.go:353
+2025/07/16 22:05:43 Completed POST /api/auth/validate with status 401 in 1.137664ms
+2025/07/16 22:05:43 Started POST /api/auth/validate
+[ERROR] 2025/07/16 22:05:43 handler.go:136: Error: authentication_error | Code: missing_token | Message: Authorization header with Bearer token required | Path: /api/auth/validate | Method: POST | RequestID:  | Caller: /home/satid/Desktop/system/backend/server-service/internal/gateway/gateway.go:353
+2025/07/16 22:05:43 Completed POST /api/auth/validate with status 401 in 363.891µs
+2025/07/16 22:05:43 Started POST /api/auth/validate
+[ERROR] 2025/07/16 22:05:43 handler.go:136: Error: authentication_error | Code: missing_token | Message: Authorization header with Bearer token required | Path: /api/auth/validate | Method: POST | RequestID:  | Caller: /home/satid/Desktop/system/backend/server-service/internal/gateway/gateway.go:353
+2025/07/16 22:05:43 Completed POST /api/auth/validate with status 401 in 446.952µs
+2025/07/16 22:05:43 Started POST /api/auth/validate
+[ERROR] 2025/07/16 22:05:43 handler.go:136: Error: authentication_error | Code: missing_token | Message: Authorization header with Bearer token required | Path: /api/auth/validate | Method: POST | RequestID:  | Caller: /home/satid/Desktop/system/backend/server-service/internal/gateway/gateway.go:353
+2025/07/16 22:05:43 Completed POST /api/auth/validate with status 401 in 296.842µs
+2025/07/16 22:05:43 Started POST /api/auth/validate
+[ERROR] 2025/07/16 22:05:43 handler.go:136: Error: authentication_error | Code: missing_token | Message: Authorization header with Bearer token required | Path: /api/auth/validate | Method: POST | RequestID:  | Caller: /home/satid/Desktop/system/backend/server-service/internal/gateway/gateway.go:353
+2025/07/16 22:05:43 Completed POST /api/auth/validate with status 401 in 425.686µs
+2025/07/16 22:05:43 Started POST /api/auth/validate
+[ERROR] 2025/07/16 22:05:43 handler.go:136: Error: authentication_error | Code: missing_token | Message: Authorization header with Bearer token required | Path: /api/auth/validate | Method: POST | RequestID:  | Caller: /home/satid/Desktop/system/backend/server-service/internal/gateway/gateway.go:353
+2025/07/16 22:05:43 Completed POST /api/auth/validate with status 401 in 249.057µs
+2025/07/16 22:05:43 Started POST /api/auth/validate
+[ERROR] 2025/07/16 22:05:43 handler.go:136: Error: authentication_error | Code: missing_token | Message: Authorization header with Bearer token required | Path: /api/auth/validate | Method: POST | RequestID:  | Caller: /home/satid/Desktop/system/backend/server-service/internal/gateway/gateway.go:353
+2025/07/16 22:05:43 Completed POST /api/auth/validate with status 401 in 1.709624ms
+2025/07/16 22:05:44 Started POST /api/auth/validate
+[ERROR] 2025/07/16 22:05:44 handler.go:136: Error: authentication_error | Code: missing_token | Message: Authorization header with Bearer token required | Path: /api/auth/validate | Method: POST | RequestID:  | Caller: /home/satid/Desktop/system/backend/server-service/internal/gateway/gateway.go:353
+2025/07/16 22:05:44 Completed POST /api/auth/validate with status 401 in 400.001µs
+2025/07/16 22:05:44 Started POST /api/auth/validate
+[ERROR] 2025/07/16 22:05:44 handler.go:136: Error: authentication_error | Code: missing_token | Message: Authorization header with Bearer token required | Path: /api/auth/validate | Method: POST | RequestID:  | Caller: /home/satid/Desktop/system/backend/server-service/internal/gateway/gateway.go:353
+2025/07/16 22:05:44 Completed POST /api/auth/validate with status 401 in 188.718µs
+2025/07/16 22:05:44 Started POST /api/auth/validate
+[ERROR] 2025/07/16 22:05:44 handler.go:136: Error: authentication_error | Code: missing_token | Message: Authorization header with Bearer token required | Path: /api/auth/validate | Method: POST | RequestID:  | Caller: /home/satid/Desktop/system/backend/server-service/internal/gateway/gateway.go:353
+2025/07/16 22:05:44 Completed POST /api/auth/validate with status 401 in 180.545µs
+2025/07/16 22:05:44 Started POST /api/auth/validate
+[ERROR] 2025/07/16 22:05:44 handler.go:136: Error: authentication_error | Code: missing_token | Message: Authorization header with Bearer token required | Path: /api/auth/validate | Method: POST | RequestID:  | Caller: /home/satid/Desktop/system/backend/server-service/internal/gateway/gateway.go:353
+2025/07/16 22:05:44 Completed POST /api/auth/validate with status 401 in 706.004µs
+2025/07/16 22:05:44 Started POST /api/auth/validate
+[ERROR] 2025/07/16 22:05:44 handler.go:136: Error: authentication_error | Code: missing_token | Message: Authorization header with Bearer token required | Path: /api/auth/validate | Method: POST | RequestID:  | Caller: /home/satid/Desktop/system/backend/server-service/internal/gateway/gateway.go:353
+2025/07/16 22:05:44 Completed POST /api/auth/validate with status 401 in 389.069µs
+2025/07/16 22:05:44 Started POST /api/auth/validate
+[ERROR] 2025/07/16 22:05:44 handler.go:136: Error: authentication_error | Code: missing_token | Message: Authorization header with Bearer token required | Path: /api/auth/validate | Method: POST | RequestID:  | Caller: /home/satid/Desktop/system/backend/server-service/internal/gateway/gateway.go:353
+2025/07/16 22:05:44 Completed POST /api/auth/validate with status 401 in 175.584µs
+2025/07/16 22:05:44 Started POST /api/auth/validate
+[ERROR] 2025/07/16 22:05:44 handler.go:136: Error: authentication_error | Code: missing_token | Message: Authorization header with Bearer token required | Path: /api/auth/validate | Method: POST | RequestID:  | Caller: /home/satid/Desktop/system/backend/server-service/internal/gateway/gateway.go:353
+2025/07/16 22:05:44 Completed POST /api/auth/validate with status 401 in 1.23088ms
+2025/07/16 22:05:44 Started GET /grpc/stats
+2025/07/16 22:05:44 Completed GET /grpc/stats with status 200 in 158.738µs
+2025/07/16 22:05:46 Started GET /grpc/stats
+2025/07/16 22:05:46 Completed GET /grpc/stats with status 200 in 175.87µs
+2025/07/16 22:05:48 Started GET /grpc/stats
+2025/07/16 22:05:48 Completed GET /grpc/stats with status 200 in 177.49µs
+2025/07/16 22:05:50 Started GET /grpc/stats
+2025/07/16 22:05:50 Completed GET /grpc/stats with status 200 in 186.866µs
+2025/07/16 22:05:52 Started GET /grpc/stats
+2025/07/16 22:05:52 Completed GET /grpc/stats with status 200 in 245.229µs
+2025/07/16 22:05:54 Started GET /grpc/stats
+2025/07/16 22:05:54 Completed GET /grpc/stats with status 200 in 295.001µs
+2025/07/16 22:05:56 Started GET /grpc/stats
+2025/07/16 22:05:56 Completed GET /grpc/stats with status 200 in 254.304µs
+2025/07/16 22:05:59 Started GET /grpc/stats
+2025/07/16 22:05:59 Completed GET /grpc/stats with status 200 in 82.875µs
+2025/07/16 22:06:04 Started GET /grpc/stats
+2025/07/16 22:06:04 Completed GET /grpc/stats with status 200 in 520.729µs
+2025/07/16 22:07:37 Shutting down API Gateway...
+2025/07/16 22:07:37 Shutting down API Gateway...
+2025/07/16 22:07:37 Closing WebSocket hub...
+2025/07/16 22:07:37 WebSocket hub closed. Total connections served: 0
+2025/07/16 22:07:37 WebSocket hub shutting down...
+2025/07/16 22:07:37 All gRPC connection pools closed
+2025/07/16 22:07:37 Closing Redis client...
+2025/07/16 22:07:37 Redis client closed
+2025/07/16 22:07:37 API Gateway stopped
+2025/07/16 22:07:37 API Gateway stopped
+2025/07/16 22:07:37 All gRPC connection pools closed
+2025/07/16 22:07:37 Closing Redis client...
+2025/07/16 22:07:37 Error closing pubsub: redis: client is closed

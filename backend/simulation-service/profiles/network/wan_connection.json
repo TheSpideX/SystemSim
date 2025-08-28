@@ -1,0 +1,119 @@
+{
+  "name": "WAN Internet Connection",
+  "description": "Wide Area Network connection with typical internet latency and characteristics",
+  "type": 4,
+  "baseline_performance": {
+    "bandwidth_mbps": 100,
+    "base_latency_ms": 50,
+    "max_connections": 1000,
+    "protocol": "TCP",
+    "network_type": "WAN",
+    "geographic_distance_km": 2000,
+    "packet_loss_rate": 0.001,
+    "jitter_ms": 5.0
+  },
+  "engine_specific": {
+    "bandwidth_characteristics": {
+      "theoretical_max_mbps": 100,
+      "practical_max_mbps": 85,
+      "burst_capacity_mb": 5,
+      "congestion_threshold": 0.7,
+      "severe_congestion_threshold": 0.9
+    },
+    "latency_characteristics": {
+      "base_latency_ms": 50,
+      "switch_latency_ms": 0.5,
+      "propagation_delay_per_km": 0.005,
+      "processing_delay_ms": 2.0,
+      "queuing_delay_max_ms": 100.0
+    },
+    "connection_management": {
+      "tcp_handshake_rtt_multiplier": 1.5,
+      "connection_pool_size": 100,
+      "connection_timeout_ms": 120000,
+      "keep_alive_interval_ms": 7200000,
+      "connection_reuse_probability": 0.6
+    },
+    "protocol_overhead": {
+      "tcp_header_bytes": 20,
+      "ip_header_bytes": 20,
+      "ethernet_header_bytes": 18,
+      "efficiency_factor": 0.85,
+      "mtu_bytes": 1500
+    },
+    "quality_characteristics": {
+      "packet_loss_base_rate": 0.001,
+      "bit_error_rate": 1e-9,
+      "jitter_variance_ms": 5.0,
+      "reliability_factor": 0.995
+    },
+    "geographic_modeling": {
+      "speed_of_light_mps": 299792458,
+      "fiber_optic_factor": 0.67,
+      "routing_overhead_factor": 1.8,
+      "typical_distance_km": 2000
+    },
+    "congestion_behavior": {
+      "congestion_window_initial": 4,
+      "congestion_window_max": 32768,
+      "slow_start_threshold": 16384,
+      "congestion_avoidance_increment": 1,
+      "fast_recovery_enabled": true
+    },
+    "security_overhead": {
+      "tls_handshake_ms": 150.0,
+      "encryption_cpu_overhead": 0.08,
+      "certificate_validation_ms": 50.0,
+      "session_reuse_probability": 0.7
+    },
+    "compression_settings": {
+      "compression_ratio": 0.6,
+      "compression_cpu_overhead": 0.05,
+      "min_size_for_compression": 512,
+      "compression_algorithm": "gzip"
+    },
+    "qos_configuration": {
+      "priority_levels": 4,
+      "high_priority_bandwidth_reserve": 0.1,
+      "low_priority_max_bandwidth": 0.5,
+      "dscp_marking_enabled": false
+    }
+  },
+  "workload_profiles": {
+    "web_browsing": {
+      "typical_request_size": 1024,
+      "typical_response_size": 32768,
+      "connection_reuse_rate": 0.7,
+      "burst_factor": 1.1
+    },
+    "api_calls": {
+      "typical_request_size": 2048,
+      "typical_response_size": 8192,
+      "connection_reuse_rate": 0.8,
+      "burst_factor": 0.9
+    },
+    "file_download": {
+      "typical_request_size": 512,
+      "typical_response_size": 10485760,
+      "connection_reuse_rate": 0.5,
+      "burst_factor": 1.5
+    }
+  },
+  "convergence_models": {
+    "bandwidth_utilization": {
+      "convergence_point": 0.6,
+      "variance_range": 0.2,
+      "convergence_rate": 0.85
+    },
+    "latency_distribution": {
+      "convergence_point": 55.0,
+      "variance_range": 10.0,
+      "convergence_rate": 0.9
+    },
+    "connection_patterns": {
+      "convergence_point": 0.65,
+      "variance_range": 0.15,
+      "convergence_rate": 0.8
+    }
+  }
+}

@@ -1,0 +1,152 @@
+syntax = "proto3";
+
+package auth;
+
+option go_package = "github.com/systemsim/auth-service/api/proto/auth";
+
+// AuthService provides authentication and authorization services for the mesh
+service AuthService {
+  // Token validation for other services
+  rpc ValidateToken(ValidateTokenRequest) returns (ValidateTokenResponse);
+  
+  // Get user context with permissions
+  rpc GetUserContext(GetUserContextRequest) returns (GetUserContextResponse);
+  
+  // Check specific permissions
+  rpc CheckPermission(CheckPermissionRequest) returns (CheckPermissionResponse);
+  
+  // Validate user session
+  rpc ValidateSession(ValidateSessionRequest) returns (ValidateSessionResponse);
+  
+  // Get user roles and permissions
+  rpc GetUserPermissions(GetUserPermissionsRequest) returns (GetUserPermissionsResponse);
+  
+  // Health check
+  rpc HealthCheck(HealthCheckRequest) returns (HealthCheckResponse);
+}
+
+// ValidateToken - Token validation messages
+message ValidateTokenRequest {
+  string token = 1;
+  string calling_service = 2;
+  string request_id = 3;
+}
+
+message ValidateTokenResponse {
+  bool valid = 1;
+  string user_id = 2;
+  string email = 3;
+  bool is_admin = 4;
+  string session_id = 5;
+  repeated string permissions = 6;
+  int64 expires_at = 7;
+  string error_message = 8;
+}
+
+// GetUserContext - User context retrieval messages
+message GetUserContextRequest {
+  string user_id = 1;
+  string calling_service = 2;
+  string request_id = 3;
+}
+
+message GetUserContextResponse {
+  string user_id = 1;
+  string email = 2;
+  string first_name = 3;
+  string last_name = 4;
+  string company = 5;
+  repeated string roles = 6;
+  repeated string permissions = 7;
+  bool is_active = 8;
+  bool is_admin = 9;
+  int64 last_login = 10;
+  string last_login_ip = 11;
+  bool email_verified = 12;
+  string error_message = 13;
+}
+
+// CheckPermission - Permission checking messages
+message CheckPermissionRequest {
+  string user_id = 1;
+  string permission = 2;
+  string resource_id = 3;
+  string calling_service = 4;
+  string request_id = 5;
+}
+
+message CheckPermissionResponse {
+  bool allowed = 1;
+  string reason = 2;
+  string user_id = 3;
+  string permission = 4;
+  string resource_id = 5;
+  string error_message = 6;
+}
+
+// ValidateSession - Session validation messages
+message ValidateSessionRequest {
+  string session_id = 1;
+  string user_id = 2;
+  string calling_service = 3;
+  string request_id = 4;
+}
+
+message ValidateSessionResponse {
+  bool valid = 1;
+  string session_id = 2;
+  string user_id = 3;
+  bool is_active = 4;
+  int64 expires_at = 5;
+  int64 last_used_at = 6;
+  string device_info = 7;
+  string ip_address = 8;
+  string error_message = 9;
+}
+
+// GetUserPermissions - User permissions retrieval messages
+message GetUserPermissionsRequest {
+  string user_id = 1;
+  string calling_service = 2;
+  string request_id = 3;
+  bool include_roles = 4;
+}
+
+message GetUserPermissionsResponse {
+  string user_id = 1;
+  repeated string permissions = 2;
+  repeated UserRole roles = 3;
+  bool is_admin = 4;
+  string error_message = 5;
+}
+
+message UserRole {
+  string role_id = 1;
+  string role_name = 2;
+  string description = 3;
+  bool is_system = 4;
+  repeated string permissions = 5;
+}
+
+// HealthCheck - Health check messages
+message HealthCheckRequest {
+  string calling_service = 1;
+  string request_id = 2;
+}
+
+message HealthCheckResponse {
+  bool healthy = 1;
+  string status = 2;
+  string version = 3;
+  int64 timestamp = 4;
+  HealthDetails details = 5;
+}
+
+message HealthDetails {
+  bool database_healthy = 1;
+  bool redis_healthy = 2;
+  int32 active_sessions = 3;
+  int32 total_users = 4;
+  double response_time_ms = 5;
+  string uptime = 6;
+}

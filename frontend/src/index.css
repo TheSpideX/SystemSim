@@ -1,0 +1,504 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Theme variables */
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Eraser.io Style Color Scheme - High Contrast Dark */
+:root {
+  /* Base Colors - Eraser.io Style */
+  --color-black: #000000;
+  --color-dark-bg: #1a1a1a;        /* Very dark background like eraser.io */
+  --color-panel-bg: #2a2a2a;       /* Slightly lighter for panels */
+  --color-element-bg: #333333;     /* Element backgrounds */
+  --color-hover: #404040;          /* Hover states */
+  --color-selected: #4a4a4a;       /* Selected states */
+  --color-border: #404040;         /* Borders */
+  --color-white: #ffffff;          /* Pure white for text/icons */
+  --color-light-grey: #e0e0e0;     /* Light grey for secondary text */
+  --color-medium-grey: #b0b0b0;    /* Medium grey for tertiary text */
+
+  /* Semantic Colors */
+  --color-primary: var(--color-white);
+  --color-secondary: var(--color-light-grey);
+  --color-tertiary: var(--color-medium-grey);
+
+  /* Background Colors - Eraser.io Style */
+  --bg-primary: var(--color-dark-bg);      /* Main canvas background */
+  --bg-secondary: var(--color-panel-bg);   /* Panels and toolbars */
+  --bg-tertiary: var(--color-element-bg);  /* Elements and cards */
+  --bg-hover: var(--color-hover);          /* Hover states */
+  --bg-selected: var(--color-selected);    /* Selected states */
+
+  /* Text Colors */
+  --text-primary: var(--color-white);      /* Primary text - pure white */
+  --text-secondary: var(--color-light-grey); /* Secondary text */
+  --text-tertiary: var(--color-medium-grey); /* Tertiary text */
+
+  /* Border Colors */
+  --border-primary: var(--color-border);   /* Primary borders */
+  --border-secondary: var(--color-element-bg); /* Secondary borders */
+
+  /* Status Colors */
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+  --color-info: #3b82f6;
+
+  /* Component Specific - Eraser.io Style */
+  --toast-bg: var(--bg-secondary);
+  --toast-color: var(--text-primary);
+  --toast-border: var(--border-primary);
+
+  --panel-bg: var(--bg-secondary);          /* Panels slightly lighter than canvas */
+  --panel-border: var(--border-primary);
+  --panel-text: var(--text-primary);
+  --panel-text-secondary: var(--text-secondary);
+
+  --button-bg: transparent;                 /* Transparent buttons like eraser.io */
+  --button-hover: var(--bg-hover);
+  --button-selected: var(--bg-selected);
+  --button-text: var(--text-primary);
+
+  --input-bg: var(--bg-tertiary);
+  --input-border: var(--border-primary);
+  --input-text: var(--text-primary);
+
+  --canvas-bg: var(--bg-primary);           /* Very dark canvas background */
+  --canvas-grid: var(--color-border);      /* Subtle grid lines */
+
+  --toolbar-bg: var(--bg-secondary);       /* Toolbar background */
+  --toolbar-border: var(--border-primary);
+  --toolbar-button-bg: transparent;        /* Transparent by default */
+  --toolbar-button-hover: var(--bg-hover);
+  --toolbar-button-selected: #6b7280;      /* Light grey for selected state like eraser.io */
+  --toolbar-button-text: var(--text-primary);
+
+  --node-bg: var(--bg-tertiary);           /* Node backgrounds */
+  --node-border: var(--border-primary);
+  --node-border-selected: var(--color-white);
+  --node-text: var(--text-primary);
+  --node-text-secondary: var(--text-secondary);
+  --node-icon-bg: var(--bg-hover);
+}
+
+/* Force dark theme for all elements */
+.dark {
+  /* Inherit all root variables */
+}
+
+/* Override any light theme attempts */
+.light {
+  /* Force dark theme variables */
+  --toast-bg: var(--bg-secondary);
+  --toast-color: var(--text-primary);
+  --toast-border: var(--border-primary);
+
+  --panel-bg: var(--bg-primary);
+  --panel-border: var(--border-primary);
+  --panel-text: var(--text-primary);
+  --panel-text-secondary: var(--text-secondary);
+
+  --button-bg: var(--bg-secondary);
+  --button-hover: var(--bg-hover);
+  --button-text: var(--text-primary);
+
+  --input-bg: var(--bg-secondary);
+  --input-border: var(--border-primary);
+  --input-text: var(--text-primary);
+
+  --canvas-bg: var(--bg-primary);
+  --canvas-grid: var(--color-grey-600);
+}
+
+/* Override any light theme attempts - Force dark theme */
+.light {
+  --toast-bg: var(--bg-secondary);
+  --toast-color: var(--text-primary);
+  --toast-border: var(--border-primary);
+
+  --panel-bg: var(--bg-primary);
+  --panel-border: var(--border-primary);
+  --panel-text: var(--text-primary);
+  --panel-text-secondary: var(--text-secondary);
+
+  --button-bg: var(--bg-secondary);
+  --button-hover: var(--bg-hover);
+  --button-text: var(--text-primary);
+
+  --input-bg: var(--bg-secondary);
+  --input-border: var(--border-primary);
+  --input-text: var(--text-primary);
+
+  --canvas-bg: var(--bg-primary);
+  --canvas-grid: var(--color-grey-600);
+}
+
+/* Utility Classes for Consistent Styling */
+.bg-app-primary { background-color: var(--bg-primary) !important; }
+.bg-app-secondary { background-color: var(--bg-secondary) !important; }
+.bg-app-tertiary { background-color: var(--bg-tertiary) !important; }
+.bg-app-hover { background-color: var(--bg-hover) !important; }
+.bg-app-selected { background-color: var(--bg-selected) !important; }
+
+.text-app-primary { color: var(--text-primary) !important; }
+.text-app-secondary { color: var(--text-secondary) !important; }
+.text-app-tertiary { color: var(--text-tertiary) !important; }
+
+.border-app-primary { border-color: var(--border-primary) !important; }
+.border-app-secondary { border-color: var(--border-secondary) !important; }
+
+/* Override Tailwind classes with Eraser.io style colors */
+.bg-gray-900 { background-color: var(--bg-primary) !important; }    /* Very dark background */
+.bg-gray-800 { background-color: var(--bg-primary) !important; }    /* Canvas background */
+.bg-gray-700 { background-color: var(--bg-secondary) !important; }  /* Panel background */
+.bg-gray-600 { background-color: var(--bg-tertiary) !important; }   /* Element background */
+.bg-gray-500 { background-color: var(--bg-selected) !important; }   /* Selected state */
+.bg-gray-400 { background-color: #6b7280 !important; }              /* Light grey for selected toolbar items */
+
+.border-gray-800 { border-color: var(--border-secondary) !important; }
+.border-gray-700 { border-color: var(--border-primary) !important; }
+.border-gray-600 { border-color: var(--border-primary) !important; }
+.border-gray-500 { border-color: var(--border-secondary) !important; }
+
+.text-white { color: var(--text-primary) !important; }              /* Pure white text */
+.text-gray-100 { color: var(--text-primary) !important; }           /* Pure white text */
+.text-gray-200 { color: var(--text-secondary) !important; }         /* Light grey text */
+.text-gray-300 { color: var(--text-secondary) !important; }         /* Light grey text */
+.text-gray-400 { color: var(--text-tertiary) !important; }          /* Medium grey text */
+
+/* Hover states */
+.hover\:bg-gray-700:hover { background-color: var(--bg-hover) !important; }
+.hover\:bg-gray-600:hover { background-color: var(--bg-hover) !important; }
+.hover\:bg-gray-500:hover { background-color: var(--bg-selected) !important; }
+
+/* Eraser.io Style Component Overrides */
+.toolbar-button {
+  background-color: var(--toolbar-button-bg) !important;
+  color: var(--toolbar-button-text) !important;
+  border-color: transparent !important;
+  border-radius: 6px !important;
+}
+
+.toolbar-button:hover {
+  background-color: var(--toolbar-button-hover) !important;
+  color: var(--text-primary) !important;
+}
+
+.toolbar-button.selected,
+.toolbar-button[data-selected="true"] {
+  background-color: var(--toolbar-button-selected) !important;
+  color: var(--text-primary) !important;
+}
+
+/* High specificity toolbar button styling - Eraser.io style */
+.bg-gray-400,
+button.bg-gray-400,
+motion-button.bg-gray-400,
+[class*="bg-gray-400"] {
+  background-color: #6b7280 !important;
+  color: #ffffff !important;
+  border: 1px solid #9ca3af !important;
+  box-shadow: 0 0 0 1px rgba(156, 163, 175, 0.3) !important;
+}
+
+/* Force white icons in selected toolbar buttons */
+.bg-gray-400 svg,
+.bg-gray-400 .lucide,
+button.bg-gray-400 svg,
+button.bg-gray-400 .lucide,
+[class*="bg-gray-400"] svg,
+[class*="bg-gray-400"] .lucide {
+  color: #ffffff !important;
+  fill: none !important;
+  stroke: #ffffff !important;
+  stroke-width: 2 !important;
+}
+
+/* Override any Tailwind text color classes */
+.bg-gray-400.text-white,
+button.bg-gray-400.text-white,
+.text-white.bg-gray-400 {
+  color: #ffffff !important;
+}
+
+/* Specific override for motion buttons */
+motion-button[class*="bg-gray-400"],
+.motion-button[class*="bg-gray-400"] {
+  background-color: #6b7280 !important;
+  color: #ffffff !important;
+}
+
+/* Custom toolbar button selected state - Eraser.io style */
+.toolbar-btn-selected {
+  background-color: #6b7280 !important;
+  color: #ffffff !important;
+  border: 2px solid #9ca3af !important;
+  box-shadow: 0 0 0 2px rgba(156, 163, 175, 0.5) !important;
+  border-radius: 8px !important;
+  padding: 8px !important;
+  transition: all 0.2s ease !important;
+  position: relative !important;
+}
+
+/* Add a visible indicator for debugging */
+.toolbar-btn-selected::before {
+  content: '' !important;
+  position: absolute !important;
+  top: -2px !important;
+  left: -2px !important;
+  right: -2px !important;
+  bottom: -2px !important;
+  background: linear-gradient(45deg, #6b7280, #9ca3af) !important;
+  border-radius: 10px !important;
+  z-index: -1 !important;
+}
+
+.toolbar-btn-selected svg,
+.toolbar-btn-selected .lucide {
+  color: #ffffff !important;
+  fill: none !important;
+  stroke: #ffffff !important;
+  stroke-width: 2.5 !important;
+}
+
+.toolbar-btn-default {
+  background-color: transparent !important;
+  color: #ffffff !important;
+  border: 1px solid transparent !important;
+  border-radius: 6px !important;
+  padding: 8px !important;
+  transition: all 0.2s ease !important;
+}
+
+.toolbar-btn-default:hover {
+  background-color: #525252 !important;
+  color: #ffffff !important;
+  border: 1px solid #6b7280 !important;
+}
+
+.toolbar-btn-default svg,
+.toolbar-btn-default .lucide {
+  color: #ffffff !important;
+  fill: none !important;
+  stroke: #ffffff !important;
+  stroke-width: 2 !important;
+}
+
+/* Force override any conflicting styles */
+button.toolbar-btn-selected,
+motion-button.toolbar-btn-selected,
+[class*="toolbar-btn-selected"] {
+  background-color: #6b7280 !important;
+  color: #ffffff !important;
+  border: 2px solid #9ca3af !important;
+}
+
+button.toolbar-btn-selected svg,
+motion-button.toolbar-btn-selected svg,
+[class*="toolbar-btn-selected"] svg {
+  color: #ffffff !important;
+  stroke: #ffffff !important;
+}
+
+/* Force eraser.io style on all backgrounds */
+.bg-white { background-color: var(--bg-primary) !important; }
+.bg-black { background-color: var(--bg-primary) !important; }
+
+/* Dark theme overrides */
+.dark\:bg-black { background-color: var(--bg-primary) !important; }
+.dark\:bg-gray-900 { background-color: var(--bg-primary) !important; }
+.dark\:bg-gray-800 { background-color: var(--bg-primary) !important; }
+.dark\:bg-gray-700 { background-color: var(--bg-secondary) !important; }
+.dark\:bg-gray-600 { background-color: var(--bg-tertiary) !important; }
+.dark\:bg-gray-500 { background-color: var(--bg-selected) !important; }
+.dark\:border-gray-800 { border-color: var(--border-secondary) !important; }
+.dark\:border-gray-700 { border-color: var(--border-primary) !important; }
+.dark\:border-gray-600 { border-color: var(--border-primary) !important; }
+.dark\:text-white { color: var(--text-primary) !important; }
+.dark\:text-gray-300 { color: var(--text-secondary) !important; }
+.dark\:text-gray-400 { color: var(--text-tertiary) !important; }
+
+/* React Flow specific overrides for eraser.io style */
+.react-flow__background { background-color: var(--bg-primary) !important; }
+.react-flow__minimap { background-color: var(--bg-secondary) !important; }
+.react-flow__controls { background-color: var(--bg-secondary) !important; }
+
+@layer base {
+  body {
+    @apply font-sans antialiased;
+    overflow-x: hidden;
+    background-color: var(--canvas-bg);
+    color: var(--panel-text);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Enhanced glassmorphism effect */
+  .glass-card {
+    background: rgba(31, 41, 55, 0.3);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(75, 85, 99, 0.3);
+  }
+  
+  .light .glass-card {
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(229, 231, 235, 0.5);
+  }
+  
+  /* Subtle glow effects */
+  .glow-blue {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.15);
+  }
+  
+  .glow-purple {
+    box-shadow: 0 0 20px rgba(147, 51, 234, 0.15);
+  }
+  
+  .glow-emerald {
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.15);
+  }
+}
+
+@layer utilities {
+  /* Custom animations */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-float-delayed {
+    animation: float 6s ease-in-out infinite 2s;
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  /* Background patterns */
+  .bg-grid-pattern {
+    background-image: 
+      linear-gradient(rgba(75, 85, 99, 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(75, 85, 99, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+  
+  .light .bg-grid-pattern {
+    background-image: 
+      linear-gradient(rgba(229, 231, 235, 0.5) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(229, 231, 235, 0.5) 1px, transparent 1px);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #6b7280;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #4b5563;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #6b7280;
+}
+
+/* React Flow overrides for theming */
+.react-flow__node {
+  font-family: inherit;
+}
+
+.react-flow__edge-path {
+  transition: stroke 0.3s ease;
+}
+
+.react-flow__controls {
+  background: var(--panel-bg) !important;
+  border: 1px solid var(--panel-border) !important;
+  border-radius: 8px !important;
+}
+
+.react-flow__controls button {
+  background: var(--button-bg) !important;
+  border: 1px solid var(--panel-border) !important;
+  color: var(--button-text) !important;
+}
+
+.react-flow__controls button:hover {
+  background: var(--button-hover) !important;
+}
+
+.react-flow__minimap {
+  background: var(--panel-bg) !important;
+  border: 1px solid var(--panel-border) !important;
+}
+
+/* Animation keyframes */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0; 
+    transform: translateY(20px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+@keyframes glow {
+  0% { box-shadow: 0 0 5px rgba(59, 130, 246, 0.2); }
+  100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.4); }
+}
+
+/* Focus styles */
+.focus-visible:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Selection styles */
+::selection {
+  background-color: #3b82f6;
+  color: white;
+}

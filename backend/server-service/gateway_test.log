@@ -1,0 +1,51 @@
+2025/07/16 19:50:38 Starting API Gateway on port 8000
+2025/07/16 19:50:38 Connected to Redis at localhost:6379 with pool size 10
+2025/07/16 19:50:39 Warning: Failed to initialize gRPC clients: failed to create auth service pool: failed to create connection 0: failed to connect to localhost:9000: context deadline exceeded
+2025/07/16 19:50:39 Continuing without backend services (API calls will return errors)
+2025/07/16 19:50:39 HTTP/2 server optimized for maximum throughput
+2025/07/16 19:50:39 API Gateway initialized with HTTP/2 + TLS
+2025/07/16 19:50:39 Starting WebSocket hub...
+2025/07/16 19:50:39 Starting API Gateway on port 8000 with HTTP/2
+2025/07/16 19:50:39 Subscribed to Redis channels: [auth:events:* project:events:* simulation:events:* simulation:data:*]
+2025/07/16 19:50:39 API Gateway starting with HTTP/2 + TLS on 0.0.0.0:8000
+2025/07/16 19:50:43 Started GET /health
+2025/07/16 19:50:43 Completed GET /health with status 0 in 280.139µs
+2025/07/16 19:50:43 Started GET /metrics
+2025/07/16 19:50:43 Completed GET /metrics with status 200 in 91.242µs
+2025/07/16 19:50:43 Started POST /api/auth/validate
+[ERROR] 2025/07/16 19:50:43 handler.go:136: Error: authentication_error | Code: missing_token | Message: Authorization header with Bearer token required | Path: /api/auth/validate | Method: POST | RequestID:  | Caller: /home/satid/Desktop/system/backend/server-service/internal/gateway/gateway.go:292
+2025/07/16 19:50:43 Completed POST /api/auth/validate with status 401 in 176.78µs
+2025/07/16 19:50:43 Started POST /api/auth/validate
+2025/07/16 19:50:43 Completed POST /api/auth/validate with status 200 in 82.872µs
+2025/07/16 19:50:43 Started GET /api/auth/profile
+2025/07/16 19:50:43 Completed GET /api/auth/profile with status 401 in 90.409µs
+2025/07/16 19:50:43 Started GET /api/auth/profile
+2025/07/16 19:50:43 Completed GET /api/auth/profile with status 200 in 94.824µs
+2025/07/16 19:50:43 Started GET /api/auth/permissions
+2025/07/16 19:50:43 Completed GET /api/auth/permissions with status 200 in 87.286µs
+2025/07/16 19:50:43 Started GET /api/auth/health
+2025/07/16 19:50:43 Completed GET /api/auth/health with status 200 in 280.972µs
+2025/07/16 19:50:43 Started GET /api/projects
+2025/07/16 19:50:43 Completed GET /api/projects with status 401 in 89.784µs
+2025/07/16 19:50:43 Started GET /api/projects
+2025/07/16 19:50:43 Completed GET /api/projects with status 200 in 115.729µs
+2025/07/16 19:50:43 Started GET /api/simulations
+2025/07/16 19:50:43 Completed GET /api/simulations with status 401 in 108.067µs
+2025/07/16 19:50:43 Started GET /api/simulations
+2025/07/16 19:50:43 Completed GET /api/simulations with status 200 in 116.479µs
+2025/07/16 19:50:43 Started OPTIONS /health
+2025/07/16 19:50:43 Completed OPTIONS /health with status 200 in 13.41µs
+2025/07/16 19:50:43 Started GET /health
+2025/07/16 19:50:43 Completed GET /health with status 0 in 118.81µs
+2025/07/16 19:50:43 Shutting down API Gateway...
+2025/07/16 19:50:43 Shutting down API Gateway...
+2025/07/16 19:50:43 Closing WebSocket hub...
+2025/07/16 19:50:43 WebSocket hub closed. Total connections served: 0
+2025/07/16 19:50:43 Closing Redis client...
+2025/07/16 19:50:43 WebSocket hub shutting down...
+2025/07/16 19:50:43 Redis message processing stopped
+2025/07/16 19:50:43 Redis client closed
+2025/07/16 19:50:43 API Gateway stopped
+2025/07/16 19:50:43 API Gateway stopped
+2025/07/16 19:50:43 Closing Redis client...
+2025/07/16 19:50:43 Error closing pubsub: redis: client is closed

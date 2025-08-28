@@ -1,0 +1,105 @@
+{
+  "name": "ddr5_6400_consumer_dual_channel",
+  "description": "Consumer DDR5-6400 Dual Channel Memory Configuration (Single Socket)",
+  "type": 1,
+  "version": "1.0",
+  "created_by": "Augment Agent",
+  "created_at": "2025-01-22T00:00:00Z",
+  
+  "baseline_performance": {
+    "capacity_gb": 64,
+    "frequency_mhz": 6400,
+    "cas_latency": 32,
+    "channels": 2,
+    "bandwidth_gbps": 102.4,
+    "access_time": 5.0,
+    "frequency_normalization_baseline": 6400.0
+  },
+
+  "technology_specs": {
+    "memory_type": "DDR5",
+    "queue_processing": {
+      "max_ops_per_tick": 4,
+      "base_complexity_factor": 1.08,
+      "avg_operation_duration_ms": 0.5
+    }
+  },
+  
+  "engine_specific": {
+    "ddr_timings": {
+      "trcd": 32,
+      "trp": 32,
+      "tras": 52,
+      "trefi": 3900,
+      "bank_groups": 8,
+      "banks_per_group": 4,
+      "burst_size_bytes": 64.0,
+      "additional_burst_latency_ns": 1.8
+    },
+    
+    "numa_configuration": {
+      "socket_count": 1,
+      "cross_socket_penalty": 1.0,
+      "inter_socket_latency_ns": 0.0,
+      "local_access_ratio": 1.0
+    },
+    
+    "bandwidth_characteristics": {
+      "peak_bandwidth_gbps": 102.4,
+      "sustained_bandwidth_gbps": 92.0,
+      "saturation_threshold": 0.78,
+      "degradation_curve": "exponential"
+    },
+    
+    "access_patterns": {
+      "sequential_hit_rate": 0.90,
+      "random_hit_rate": 0.30,
+      "stride_hit_rate": 0.65,
+      "row_buffer_size_kb": 16
+    },
+    
+    "realistic_factors": {
+      "refresh_overhead": 0.018,
+      "bank_conflict_probability": 0.09,
+      "bank_conflict_multiplier": 0.5,
+      "queue_depth_impact": {
+        "light_load": 1.0,
+        "medium_load": 1.12,
+        "heavy_load": 1.5
+      }
+    }
+  },
+  
+  "performance_variance": {
+    "base_variance": 0.04,
+    "load_multiplier": 1.15,
+    "scale_reduction": 0.85
+  },
+  
+  "health_thresholds": {
+    "utilization_warning": 0.78,
+    "utilization_critical": 0.92,
+    "temperature_warning": 82.0,
+    "temperature_critical": 92.0,
+    "error_rate_warning": 0.0003,
+    "error_rate_critical": 0.003
+  },
+  
+  "convergence_models": {
+    "row_buffer_hits": {
+      "convergence_point": 0.78,
+      "base_variance": 0.04,
+      "min_operations": 250
+    },
+    "bandwidth_utilization": {
+      "convergence_point": 0.82,
+      "base_variance": 0.06,
+      "min_operations": 400
+    },
+    "numa_locality": {
+      "convergence_point": 0.98,
+      "base_variance": 0.01,
+      "min_operations": 200
+    }
+  }
+}

@@ -1,0 +1,31 @@
+2025/07/16 21:32:21 Starting API Gateway on port 8000
+2025/07/16 21:32:21 Connected to Redis at localhost:6379 with pool size 10
+2025/07/16 21:32:21 Created dynamic gRPC pool for auth-service: 5 initial connections (min: 5, max: 20)
+2025/07/16 21:32:21 ✅ Auth service pool: 5 connections to localhost:9000
+2025/07/16 21:32:22 Warning: Failed to create project service pool: failed to create initial connection 0: failed to connect to localhost:10000: context deadline exceeded
+2025/07/16 21:32:23 Warning: Failed to create simulation service pool: failed to create initial connection 0: failed to connect to localhost:11000: context deadline exceeded
+2025/07/16 21:32:23 🎉 gRPC client pool initialized with 5 total connections
+2025/07/16 21:32:23 ⚠️  Some services unavailable: [project service: failed to create initial connection 0: failed to connect to localhost:10000: context deadline exceeded simulation service: failed to create initial connection 0: failed to connect to localhost:11000: context deadline exceeded]
+2025/07/16 21:32:23 Starting WebSocket hub...
+2025/07/16 21:32:23 HTTP/2 server optimized for maximum throughput
+2025/07/16 21:32:23 API Gateway initialized with HTTP/2 + TLS
+2025/07/16 21:32:23 Starting API Gateway on port 8000 with HTTP/2
+2025/07/16 21:32:23 Subscribed to Redis channels: [auth:events:* project:events:* simulation:events:* simulation:data:*]
+2025/07/16 21:32:23 API Gateway starting with HTTP/2 + TLS on 0.0.0.0:8000
+2025/07/16 21:32:38 Started GET /grpc/stats
+2025/07/16 21:32:38 Failed to marshal JSON response: json: unsupported value: NaN
+2025/07/16 21:32:38 Completed GET /grpc/stats with status 500 in 517.359µs
+2025/07/16 21:33:28 Shutting down API Gateway...
+2025/07/16 21:33:28 Shutting down API Gateway...
+2025/07/16 21:33:28 Closing WebSocket hub...
+2025/07/16 21:33:28 WebSocket hub closed. Total connections served: 0
+2025/07/16 21:33:28 WebSocket hub shutting down...
+2025/07/16 21:33:28 All gRPC connection pools closed
+2025/07/16 21:33:28 Closing Redis client...
+2025/07/16 21:33:28 Redis message processing stopped
+2025/07/16 21:33:28 Redis client closed
+2025/07/16 21:33:28 API Gateway stopped
+2025/07/16 21:33:28 API Gateway stopped
+2025/07/16 21:33:28 All gRPC connection pools closed
+2025/07/16 21:33:28 Closing Redis client...
+2025/07/16 21:33:28 Error closing pubsub: redis: client is closed

@@ -1,0 +1,171 @@
+{
+  "name": "hbm2_server",
+  "type": 1,
+  "description": "HBM2 Server Memory - 64GB capacity, ultra-high bandwidth",
+  "version": "1.0",
+  "baseline_performance": {
+    "capacity_gb": 64,
+    "access_time": 2.5,
+    "bandwidth_gbps": 819.2
+  },
+  "technology_specs": {
+    "memory_type": "HBM2",
+    "frequency": 1600,
+    "cas_latency": 14,
+    "channels": 16,
+    "voltage": 1.2,
+    "form_factor": "Stack"
+  },
+  "engine_specific": {
+    "ddr_timings": {
+      "trcd": 14.0,
+      "trp": 14.0,
+      "tras": 28.0,
+      "trc": 42.0,
+      "trfc": 280.0
+    },
+  "numa_configuration": {
+    "socket_count": 4,
+    "cross_socket_penalty": 2.2,
+    "inter_socket_latency_ns": 150.0,
+    "local_access_ratio": 0.6
+  },
+  "bandwidth_characteristics": {
+    "peak_bandwidth_gbps": 819.2,
+    "sustained_bandwidth_gbps": 750.0,
+    "saturation_threshold": 0.70
+  },
+  "pressure_curves": {
+    "optimal_threshold": 0.70,
+    "warning_threshold": 0.80,
+    "critical_threshold": 0.90,
+    "swap_threshold": 0.85
+  },
+  "gc_behavior": {
+    "java": {
+      "has_gc": true,
+      "trigger_threshold": 0.65,
+      "pause_time_per_gb": 4.0,
+      "efficiency_factor": 1.2
+    },
+    "go": {
+      "has_gc": true,
+      "trigger_threshold": 1.0,
+      "pause_time_per_gb": 0.3,
+      "efficiency_factor": 0.9
+    }
+  },
+  "access_patterns": {
+    "sequential_hit_rate": 0.95,
+    "random_hit_rate": 0.30,
+    "stride_hit_rate": 0.70,
+    "row_buffer_size_kb": 32
+  },
+  "hardware_prefetch": {
+    "prefetcher_count": 8,
+    "sequential_accuracy": 0.95,
+    "stride_accuracy": 0.90,
+    "pattern_accuracy": 0.80,
+    "prefetch_distance": 16,
+    "bandwidth_usage": 0.02,
+    "prefetch_benefit": 0.45
+  },
+  "cache_line_conflicts": {
+    "cache_line_size": 32,
+    "false_sharing_detection": true,
+    "conflict_threshold": 0.15,
+    "conflict_penalty": 0.2,
+    "conflict_window_ticks": 4
+  },
+  "memory_ordering": {
+    "ordering_model": "weak",
+    "reordering_window": 32,
+    "memory_barrier_cost": 8.0,
+    "load_store_reordering": true,
+    "store_store_reordering": true,
+    "load_load_reordering": true,
+    "reordering_benefit": 0.25,
+    "base_reordering_delay": 1
+  },
+  "memory_controller": {
+    "controller_count": 8,
+    "queue_depth": 64,
+    "arbitration_policy": "fair",
+    "bandwidth_per_controller": 102.4,
+    "controller_latency": 5.0,
+    "backpressure_delay": 15.0,
+    "base_queue_delay": 2.0
+  },
+  "advanced_numa": {
+    "node_affinity_policy": "strict",
+    "migration_threshold": 0.5,
+    "base_inter_node_latency": 150.0,
+    "base_bandwidth_gbps": 200.0,
+    "migration_benefit": 80.0,
+    "migration_base_cost": 150.0,
+    "strict_affinity_penalty": 60.0,
+    "preferred_affinity_penalty": 25.0
+  },
+  "virtual_memory": {
+    "page_size": 4096,
+    "tlb_size": 256,
+    "tlb_hit_ratio": 0.99,
+    "page_table_levels": 4,
+    "page_walk_latency": 10.0,
+    "swap_enabled": false,
+    "swap_latency": 0.0,
+    "tlb_hit_latency": 0.2,
+    "page_fault_probability": 0.001
+  },
+  "ecc_modeling": {
+    "ecc_enabled": true,
+    "single_bit_error_rate": 0.02,
+    "multi_bit_error_rate": 0.0001,
+    "correction_latency": 15.0,
+    "detection_latency": 1.0,
+    "multi_bit_penalty": 500.0
+  },
+  "power_states": {
+    "state_transition_cost": 25.0,
+    "active_power_draw": 25.0,
+    "standby_power_draw": 15.0,
+    "sleep_power_draw": 5.0,
+    "wakeup_latency": 100.0,
+    "idle_threshold": 500.0
+  },
+  "enhanced_thermal": {
+    "heat_dissipation_rate": 0.92,
+    "thermal_capacity": 40.0,
+    "ambient_temperature": 22.0,
+    "base_heat_per_operation": 0.15,
+    "thermal_zones": [
+      {
+        "max_temperature": 95.0,
+        "heat_generation": 8.0,
+        "cooling_capacity": 35.0,
+        "thermal_mass": 20.0
+      },
+      {
+        "max_temperature": 95.0,
+        "heat_generation": 8.0,
+        "cooling_capacity": 35.0,
+        "thermal_mass": 20.0
+      },
+      {
+        "max_temperature": 95.0,
+        "heat_generation": 8.0,
+        "cooling_capacity": 35.0,
+        "thermal_mass": 20.0
+      },
+      {
+        "max_temperature": 95.0,
+        "heat_generation": 8.0,
+        "cooling_capacity": 35.0,
+        "thermal_mass": 20.0
+      }
+    ],
+    "throttling_thresholds": [85.0, 90.0, 95.0],
+    "throttling_levels": [0.1, 0.4, 0.8]
+    }
+  }
+}

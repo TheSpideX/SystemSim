@@ -1,0 +1,165 @@
+{
+  "name": "Web Server CPU",
+  "type": 0,
+  "description": "Intel Xeon Gold 5318Y - 24 cores, 2.1GHz base, 3.4GHz boost, Optimized for web server workloads with balanced performance",
+  "version": "2.1",
+  "baseline_performance": {
+    "base_processing_time": 0.09,
+    "cores": 24,
+    "base_clock": 2.1,
+    "boost_clock": 3.4
+  },
+  "technology_specs": {
+    "cache_l1_kb": 32,
+    "cache_l2_kb": 1280,
+    "cache_l3_mb": 36,
+    "memory_channels": 8,
+    "tdp": 150,
+    "thermal_limit": 85,
+    "manufacturing_process": "10nm",
+    "socket": "LGA4189",
+    "max_memory": 2048
+  },
+  "load_curves": {
+    "default": {
+      "optimal_threshold": 0.80,
+      "warning_threshold": 0.90,
+      "critical_threshold": 0.95,
+      "optimal_factor": 1.0,
+      "warning_factor": 1.2,
+      "critical_factor": 2.2
+    }
+  },
+  "engine_specific": {
+    "vectorization": {
+      "supported_instructions": ["SSE4.2", "AVX2", "AVX512"],
+      "vector_width": 512,
+      "simd_efficiency": 0.83,
+      "operation_vectorizability": {
+        "matrix_multiply": 0.85,
+        "image_process": 0.80,
+        "ml_inference": 0.75,
+        "array_sum": 0.90,
+        "vector_add": 0.90,
+        "fft": 0.80,
+        "crypto_hash": 0.72,
+        "string_process": 0.28,
+        "database_query": 0.18,
+        "network_process": 0.20,
+        "web_request": 0.15
+      }
+    },
+    "cache_behavior": {
+      "l1_hit_ratio_target": 0.94,
+      "l2_hit_ratio_target": 0.84,
+      "l3_hit_ratio_target": 0.72,
+      "cache_line_size": 64,
+      "l1_hit_multiplier": 1.0,
+      "l2_hit_multiplier": 1.2,
+      "l3_hit_multiplier": 1.9,
+      "memory_access_multiplier": 7.5,
+      "warmup_operations": 120,
+      "prefetch_efficiency": 0.82
+    },
+    "thermal_behavior": {
+      "heat_generation_rate": 0.9,
+      "cooling_capacity": 180,
+      "cooling_efficiency": 0.90,
+      "ambient_temp": 22,
+      "thermal_throttle_temp": 85,
+      "thermal_mass": 35
+    },
+    "numa_behavior": {
+      "cross_socket_penalty": 1.7,
+      "memory_bandwidth": 131072,
+      "numa_nodes": 2,
+      "local_memory_ratio": 0.82
+    },
+    "boost_behavior": {
+      "single_core_boost": 3.4,
+      "all_core_boost": 2.8,
+      "boost_duration": 15.0,
+      "thermal_dependent": true,
+      "load_dependent": true
+    },
+    "hyperthreading": {
+      "enabled": true,
+      "threads_per_core": 2,
+      "efficiency_factor": 0.72
+    },
+    "parallel_processing": {
+      "enabled": true,
+      "max_parallelizable_ratio": 0.85,
+      "overhead_per_core": 0.022,
+      "synchronization_overhead": 0.12,
+      "parallelizability_by_complexity": {
+        "O(1)": 0.35,
+        "O(log n)": 0.60,
+        "O(n)": 0.78,
+        "O(n log n)": 0.82,
+        "O(n²)": 0.88
+      },
+      "max_cores_for_complexity": {
+        "O(1)": 1,
+        "O(log n)": 4,
+        "O(n)": 12,
+        "O(n log n)": 20,
+        "O(n²)": 24
+      },
+      "efficiency_curve": {
+        "1": 1.0,
+        "2": 0.94,
+        "4": 0.88,
+        "8": 0.82,
+        "12": 0.78,
+        "16": 0.74,
+        "20": 0.70,
+        "24": 0.68
+      }
+    },
+    "memory_bandwidth": {
+      "total_bandwidth_gbps": 131.0,
+      "per_core_degradation": 0.035,
+      "contention_threshold": 8,
+      "severe_contention_probability": 0.12,
+      "severe_contention_penalty": 0.14
+    },
+    "branch_prediction": {
+      "base_accuracy": 0.94,
+      "random_pattern_accuracy": 0.84,
+      "loop_pattern_accuracy": 0.97,
+      "call_return_accuracy": 0.98,
+      "misprediction_penalty": 0.16,
+      "pipeline_depth": 12
+    },
+    "advanced_prefetch": {
+      "hardware_prefetchers": 3,
+      "sequential_accuracy": 0.87,
+      "stride_accuracy": 0.82,
+      "pattern_accuracy": 0.75,
+      "prefetch_distance": 6,
+      "bandwidth_usage": 0.12
+    },
+    "language_multipliers": {
+      "c": 1.25,
+      "cpp": 1.25,
+      "rust": 1.15,
+      "go": 1.0,
+      "java": 1.08,
+      "csharp": 1.05,
+      "nodejs": 0.82,
+      "python": 0.30,
+      "ruby": 0.26,
+      "php": 0.40
+    },
+    "complexity_factors": {
+      "O(1)": 1.0,
+      "O(log n)": 1.5,
+      "O(n)": 2.1,
+      "O(n log n)": 3.2,
+      "O(n²)": 5.2,
+      "O(n³)": 8.5,
+      "O(2^n)": 16.0
+    }
+  }
+}

@@ -1,0 +1,157 @@
+{
+  "name": "ddr5_6400_server",
+  "type": 1,
+  "description": "DDR5-6400 Server Memory - 128GB capacity, high performance",
+  "version": "1.0",
+  "baseline_performance": {
+    "capacity_gb": 128,
+    "frequency_mhz": 6400,
+    "cas_latency": 32,
+    "channels": 4,
+    "access_time": 5.0,
+    "bandwidth_gbps": 204.8,
+    "frequency_normalization_baseline": 6400.0
+  },
+  "technology_specs": {
+    "memory_type": "DDR5",
+    "frequency": 6400,
+    "cas_latency": 32,
+    "channels": 4,
+    "voltage": 1.1,
+    "form_factor": "DIMM"
+  },
+  "engine_specific": {
+    "ddr_timings": {
+      "trcd": 32.0,
+      "trp": 32.0,
+      "tras": 52.0,
+      "trc": 84.0,
+      "trfc": 560.0
+    },
+  "numa_configuration": {
+    "socket_count": 2,
+    "cross_socket_penalty": 1.6,
+    "inter_socket_latency_ns": 80.0,
+    "local_access_ratio": 0.8
+  },
+  "bandwidth_characteristics": {
+    "peak_bandwidth_gbps": 204.8,
+    "sustained_bandwidth_gbps": 180.0,
+    "saturation_threshold": 0.75
+  },
+  "pressure_curves": {
+    "optimal_threshold": 0.75,
+    "warning_threshold": 0.85,
+    "critical_threshold": 0.92,
+    "swap_threshold": 0.88
+  },
+  "gc_behavior": {
+    "java": {
+      "has_gc": true,
+      "trigger_threshold": 0.70,
+      "pause_time_per_gb": 6.0,
+      "efficiency_factor": 1.1
+    },
+    "go": {
+      "has_gc": true,
+      "trigger_threshold": 1.0,
+      "pause_time_per_gb": 0.4,
+      "efficiency_factor": 0.85
+    }
+  },
+  "access_patterns": {
+    "sequential_hit_rate": 0.90,
+    "random_hit_rate": 0.20,
+    "stride_hit_rate": 0.55,
+    "row_buffer_size_kb": 16
+  },
+  "hardware_prefetch": {
+    "prefetcher_count": 4,
+    "sequential_accuracy": 0.90,
+    "stride_accuracy": 0.80,
+    "pattern_accuracy": 0.60,
+    "prefetch_distance": 8,
+    "bandwidth_usage": 0.03,
+    "prefetch_benefit": 0.35
+  },
+  "cache_line_conflicts": {
+    "cache_line_size": 64,
+    "false_sharing_detection": true,
+    "conflict_threshold": 0.25,
+    "conflict_penalty": 0.3,
+    "conflict_window_ticks": 8
+  },
+  "memory_ordering": {
+    "ordering_model": "weak",
+    "reordering_window": 16,
+    "memory_barrier_cost": 15.0,
+    "load_store_reordering": true,
+    "store_store_reordering": true,
+    "load_load_reordering": true,
+    "reordering_benefit": 0.15,
+    "base_reordering_delay": 1
+  },
+  "memory_controller": {
+    "controller_count": 4,
+    "queue_depth": 32,
+    "arbitration_policy": "priority",
+    "bandwidth_per_controller": 51.2,
+    "controller_latency": 10.0,
+    "backpressure_delay": 30.0,
+    "base_queue_delay": 5.0
+  },
+  "advanced_numa": {
+    "node_affinity_policy": "preferred",
+    "migration_threshold": 0.6,
+    "base_inter_node_latency": 80.0,
+    "base_bandwidth_gbps": 120.0,
+    "migration_benefit": 60.0,
+    "migration_base_cost": 80.0,
+    "strict_affinity_penalty": 40.0,
+    "preferred_affinity_penalty": 15.0
+  },
+  "virtual_memory": {
+    "page_size": 4096,
+    "tlb_size": 128,
+    "tlb_hit_ratio": 0.98,
+    "page_table_levels": 5,
+    "page_walk_latency": 20.0,
+    "swap_enabled": true,
+    "swap_latency": 8000000.0,
+    "tlb_hit_latency": 0.5,
+    "page_fault_probability": 0.005
+  },
+  "ecc_modeling": {
+    "ecc_enabled": true,
+    "single_bit_error_rate": 0.05,
+    "multi_bit_error_rate": 0.0005,
+    "correction_latency": 30.0,
+    "detection_latency": 3.0,
+    "multi_bit_penalty": 800.0
+  },
+  "power_states": {
+    "state_transition_cost": 50.0,
+    "active_power_draw": 12.0,
+    "standby_power_draw": 5.0,
+    "sleep_power_draw": 1.0,
+    "wakeup_latency": 300.0,
+    "idle_threshold": 800.0
+  },
+  "enhanced_thermal": {
+    "heat_dissipation_rate": 0.98,
+    "thermal_capacity": 60.0,
+    "ambient_temperature": 22.0,
+    "base_heat_per_operation": 0.08,
+    "thermal_zones": [
+      {
+        "max_temperature": 80.0,
+        "heat_generation": 4.0,
+        "cooling_capacity": 25.0,
+        "thermal_mass": 30.0
+      }
+    ],
+    "throttling_thresholds": [70.0, 75.0, 80.0],
+    "throttling_levels": [0.05, 0.2, 0.5]
+    }
+  }
+}
